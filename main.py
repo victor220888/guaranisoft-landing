@@ -9,16 +9,24 @@ import time
 from collections import defaultdict
 from pathlib import Path
 
+import db  # Importamos nuestro nuevo módulo
+
 from fastapi import FastAPI, Form, Request
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from dotenv import load_dotenv
 
+from fastapi.security import HTTPBasic, HTTPBasicCredentials
+from fastapi import Depends, HTTPException, status
+import secrets
+
 load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent
 app = FastAPI(title="Ñande ERP — GuaraníSoft", docs_url=None, redoc_url=None)
+
+db.init_db() # <--- Agrega esto al iniciar la app
 
 app.mount("/static", StaticFiles(directory=BASE_DIR / "static"), name="static")
 templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
@@ -27,6 +35,20 @@ templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
 _last_sent: dict[str, float] = defaultdict(float)
 RATE_LIMIT_SECONDS = 60
 
+security = HTTPBasic()
+
+# Configura esto en tu .env: ADMIN_USER y ADMIN_PASSWORD
+def verify_admin(credentials: HTTPBasicCredentials = Depends(security)):
+    correct_user = secrets.compare_digest(credentials.username, os.getenv("ADMIN_USER", "admin"))
+    correct_pass = secrets.compare_digest(credentials.password, os.getenv("ADMIN_PASSWORD", "secret"))
+    if not (correct_user and correct_pass):
+        raise HTTPException(status_code=401, detail="Credenciales incorrectas")
+    return True
+
+@app.get("/admin/leads")
+async def ver_leads(admin: bool = Depends(verify_admin)):
+    leads = db.get_all_leads()
+    return {"leads": leads}
 
 # ── Página principal ────────────────────────────────────────────────────────
 @app.get("/", response_class=HTMLResponse)
@@ -68,6 +90,8 @@ Email:     {email}
 Mensaje:
 {mensaje}
 """
+    # 1. GUARDAR EN DB (Prioridad máxima)
+    db.save_lead(nombre, empresa, telefono, email, mensaje)
 
     if smtp_user and smtp_pass:
         try:
