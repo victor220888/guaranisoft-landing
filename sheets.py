@@ -8,6 +8,7 @@ Sheet: "Leads GuaraníSoft"
   - Pestaña "Ñande CRM"  → leads del producto CRM (futuro)
 """
 
+import os
 import gspread
 from datetime import datetime
 
@@ -15,10 +16,24 @@ SHEET_NAME = "Leads GuaraníSoft"
 WORKSHEET_ERP = "Ñande ERP"
 WORKSHEET_CRM = "Ñande CRM"
 
+# Buscar el JSON en múltiples ubicaciones (local + Render)
+_SA_PATHS = [
+    'service_account.json',                    # Local (raíz)
+    '/etc/secrets/service_account.json',       # Render Secret Files
+    os.path.join(os.getcwd(), 'service_account.json'),
+]
+
+def _get_sa_path():
+    for p in _SA_PATHS:
+        if os.path.exists(p):
+            return p
+    return 'service_account.json'  # default, aunque no exista (para ver el error)
+
 
 def _get_worksheet(name):
     """Conecta al Sheet y devuelve la worksheet especificada."""
-    gc = gspread.service_account(filename='service_account.json')
+    sa_path = _get_sa_path()
+    gc = gspread.service_account(filename=sa_path)
     sh = gc.open(SHEET_NAME)
     try:
         return sh.worksheet(name)
