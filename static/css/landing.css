@@ -1,0 +1,375 @@
+/* ── Landing Ñande ERP — estilos custom sobre Bootstrap 5 ────────────── */
+
+:root {
+    --morado: #5B2A86;
+    --verde: #4A7C59;
+    --gris-fondo: #F5F7FA;
+    --gris-texto: #2D2D2D;
+    --gris-claro: #6B7280;
+}
+
+/* ── Generales ───────────────────────────────────────────────────────── */
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: var(--gris-texto);
+    scroll-behavior: smooth;
+}
+
+section {
+    padding: 80px 0;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+}
+
+/* ── Navbar ──────────────────────────────────────────────────────────── */
+.navbar-landing {
+    background: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    padding: 12px 0;
+}
+.navbar-landing img {
+    height: 40px;
+}
+.navbar-landing .nav-link {
+    color: var(--gris-texto);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+.navbar-landing .nav-link:hover {
+    color: var(--morado);
+}
+
+/* ── Hero ────────────────────────────────────────────────────────────── */
+.hero {
+    background: linear-gradient(180deg, var(--gris-fondo) 0%, #FFFFFF 100%);
+    padding: 100px 0 80px;
+    text-align: center;
+}
+.hero h1 {
+    font-size: 2.8rem;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+}
+.hero .tagline {
+    color: var(--morado);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.hero .subtitle {
+    color: var(--gris-claro);
+    font-size: 1.15rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+.hero .logo-hero {
+    max-width: 320px;
+    margin-bottom: 2rem;
+}
+
+/* ── Botones ─────────────────────────────────────────────────────────── */
+.btn-morado {
+    background: var(--morado);
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+.btn-morado:hover {
+    background: #4a2270;
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(91,42,134,0.25);
+}
+.btn-verde {
+    background: var(--verde);
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+.btn-verde:hover {
+    background: #3d6b4a;
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(74,124,89,0.25);
+}
+.btn-outline-morado {
+    border: 2px solid var(--morado);
+    color: var(--morado);
+    background: transparent;
+    padding: 10px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+.btn-outline-morado:hover {
+    background: var(--morado);
+    color: white;
+}
+
+/* ── Secciones ───────────────────────────────────────────────────────── */
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.section-title h2 {
+    font-size: 2rem;
+    color: var(--gris-texto);
+}
+.section-title p {
+    color: var(--gris-claro);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0.5rem auto 0;
+}
+
+/* ── Problema/Solución ───────────────────────────────────────────────── */
+.problema-solucion .col-md-6 {
+    padding: 2rem;
+}
+.problema-solucion .problema {
+    background: #FFF5F5;
+    border-radius: 16px;
+}
+.problema-solucion .solucion {
+    background: var(--gris-fondo);
+    border-radius: 16px;
+    border-left: 4px solid var(--morado);
+}
+
+/* ── Features ────────────────────────────────────────────────────────── */
+.feature-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    padding: 2rem;
+    height: 100%;
+    transition: all 0.3s;
+    border: 1px solid #F0F0F0;
+}
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    border-color: var(--morado);
+}
+.feature-card .icon {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+.feature-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--morado);
+}
+.feature-card p {
+    color: var(--gris-claro);
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+/* ── Cómo funciona ───────────────────────────────────────────────────── */
+.como-funciona {
+    background: var(--gris-fondo);
+}
+.paso {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+.paso .num {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--morado);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+.paso h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+.paso p {
+    color: var(--gris-claro);
+    font-size: 0.95rem;
+}
+
+/* ── Stats ───────────────────────────────────────────────────────────── */
+.stats {
+    background: var(--morado);
+    color: white;
+    padding: 60px 0;
+}
+.stat-item {
+    text-align: center;
+}
+.stat-item .num {
+    font-size: 2.5rem;
+    font-weight: 800;
+    display: block;
+}
+.stat-item .label {
+    font-size: 0.95rem;
+    opacity: 0.85;
+}
+
+/* ── Precios ─────────────────────────────────────────────────────────── */
+.precios-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    padding: 3rem;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.precios-card h3 {
+    color: var(--morado);
+}
+.precios-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    text-align: left;
+}
+.precios-card ul li {
+    padding: 0.5rem 0;
+    color: var(--gris-claro);
+}
+.precios-card ul li i {
+    color: var(--verde);
+    margin-right: 0.5rem;
+}
+
+/* ── Contacto ────────────────────────────────────────────────────────── */
+.contacto {
+    background: var(--gris-fondo);
+}
+.contacto-form {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    padding: 2.5rem;
+}
+.contacto-form .form-control {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #E0E0E0;
+}
+.contacto-form .form-control:focus {
+    border-color: var(--morado);
+    box-shadow: 0 0 0 3px rgba(91,42,134,0.1);
+}
+.contacto-info {
+    padding-left: 1.5rem;
+}
+.contacto-info li {
+    margin-bottom: 1rem;
+    list-style: none;
+}
+.contacto-info a {
+    color: var(--gris-texto);
+    text-decoration: none;
+}
+.contacto-info a:hover {
+    color: var(--morado);
+}
+.alert-success-custom {
+    background: #D1FAE5;
+    border: 1px solid #6EE7B7;
+    color: #065F46;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* ── Footer ──────────────────────────────────────────────────────────── */
+footer {
+    background: #1F2937;
+    color: #9CA3AF;
+    padding: 40px 0;
+    font-size: 0.9rem;
+}
+footer a {
+    color: #9CA3AF;
+    text-decoration: none;
+}
+footer a:hover {
+    color: white;
+}
+
+/* ── WhatsApp flotante ───────────────────────────────────────────────── */
+.whatsapp-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(37,211,102,0.4);
+    z-index: 999;
+    transition: all 0.3s;
+}
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(37,211,102,0.5);
+}
+.whatsapp-float svg {
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+
+/* ── Animación fade-in ──────────────────────────────────────────────── */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    .hero .tagline {
+        font-size: 1.1rem;
+    }
+    .hero .subtitle {
+        font-size: 1rem;
+    }
+    section {
+        padding: 50px 0;
+    }
+    .section-title h2 {
+        font-size: 1.5rem;
+    }
+    .contacto-info {
+        padding-left: 0;
+        margin-top: 2rem;
+    }
+    .precios-card {
+        padding: 2rem 1.5rem;
+    }
+}
