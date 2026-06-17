@@ -3,3 +3,4 @@ __pycache__/
 *.pyc
 .env
 leads.db
+service_account.json
