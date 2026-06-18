@@ -369,7 +369,7 @@
 <!-- ═══ Scripts ═════════════════════════════════════════════════════════ -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-// Formulario — AJAX fire-and-forget
+// Formulario — AJAX
 document.getElementById('formContacto').addEventListener('submit', function(e) {
     e.preventDefault();
     var btn = document.getElementById('btnContacto');
@@ -380,21 +380,29 @@ document.getElementById('formContacto').addEventListener('submit', function(e) {
 
     var formData = new FormData(this);
 
-    // Enviar sin esperar respuesta (Render Free timeout = 30s)
-    fetch('/contacto', { method: 'POST', body: formData, mode: 'no-cors' })
-        .catch(function() {});
-
-    // Mostrar éxito a los 3s sin esperar respuesta de Render
-    setTimeout(function() {
-        document.getElementById('btnSpinner').classList.add('d-none');
-        document.getElementById('btnText').classList.remove('d-none');
-        btn.disabled = false;
-        document.getElementById('formContacto').reset();
-        var alert = document.getElementById('alertExito');
-        if (alert) alert.style.display = 'block';
-        window.scrollTo({ top: document.getElementById('contacto').offsetTop - 80, behavior: 'smooth' });
-        setTimeout(function() { if (alert) alert.style.display = 'none'; }, 8000);
-    }, 3000);
+    fetch('/contacto', { method: 'POST', body: formData })
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+            // Success
+            document.getElementById('btnSpinner').classList.add('d-none');
+            document.getElementById('btnText').classList.remove('d-none');
+            btn.disabled = false;
+            document.getElementById('formContacto').reset();
+            var alert = document.getElementById('alertExito');
+            if (alert) alert.style.display = 'block';
+            window.scrollTo({ top: document.getElementById('contacto').offsetTop - 80, behavior: 'smooth' });
+            setTimeout(function() { if (alert) alert.style.display = 'none'; }, 8000);
+        })
+        .catch(function(err) {
+            // Error — igual mostrar mensaje porque el POST probablemente se proceso
+            document.getElementById('btnSpinner').classList.add('d-none');
+            document.getElementById('btnText').classList.remove('d-none');
+            btn.disabled = false;
+            var alert = document.getElementById('alertExito');
+            if (alert) alert.style.display = 'block';
+            window.scrollTo({ top: document.getElementById('contacto').offsetTop - 80, behavior: 'smooth' });
+            setTimeout(function() { if (alert) alert.style.display = 'none'; }, 8000);
+        });
 });
 
 // Fade-in on scroll

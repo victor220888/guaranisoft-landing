@@ -6,6 +6,7 @@ Run: uvicorn main:app --host 0.0.0.0 --port 8000
 
 import os
 import time
+import asyncio
 from collections import defaultdict
 from pathlib import Path
 
@@ -14,7 +15,7 @@ import sheets      # Google Sheets (primario, persistente)
 import secrets
 
 from fastapi import FastAPI, Form, Request, Depends, HTTPException, status
-from fastapi.responses import HTMLResponse, RedirectResponse
+from fastapi.responses import HTMLResponse, RedirectResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
@@ -57,6 +58,56 @@ async def index(request: Request, sent: str | None = None):
     return templates.TemplateResponse(request, "index.html", {"sent": sent == "1"})
 
 
+# ── Función para enviar email en background ─────────────────────────────────
+async def _send_email_async(nombre, empresa, telefono, email, mensaje):
+    smtp_user = os.getenv("SMTP_USER", "")
+    smtp_pass = os.getenv("SMTP_PASSWORD", "")
+    contact_email = os.getenv("CONTACT_EMAIL", "contacto@guaranisof.com")
+
+    if not smtp_user or not smtp_pass:
+        return
+
+    body = f"""\
+Nuevo contacto desde la landing page de Ñande ERP
+
+Nombre:    {nombre}
+Empresa:   {empresa or '—'}
+Teléfono:  {telefono or '—'}
+Email:     {email}
+
+Mensaje:
+{mensaje}
+"""
+
+    try:
+        import aiosmtplib
+        from email.mime.text import MIMEText
+        from email.mime.multipart import MIMEMultipart
+
+        msg = MIMEMultipart()
+        msg["From"] = smtp_user
+        msg["To"] = contact_email
+        msg["Reply-To"] = email
+        msg["Subject"] = f"Contacto landing — {nombre}"
+        msg.attach(MIMEText(body, "plain", "utf-8"))
+
+        await asyncio.wait_for(
+            aiosmtplib.send(
+                msg,
+                hostname="smtp.gmail.com",
+                port=587,
+                start_tls=True,
+                username=smtp_user,
+                password=smtp_pass,
+            ),
+            timeout=10  # máximo 10s, si no larga
+        )
+    except asyncio.TimeoutError:
+        print("[SMTP] Timeout — Render bloquea SMTP, el lead ya está en Sheets")
+    except Exception as e:
+        print(f"[SMTP ERROR] {e}")
+
+
 # ── Formulario de contacto ─────────────────────────────────────────────────
 @app.post("/contacto")
 async def contacto(
@@ -72,7 +123,7 @@ async def contacto(
     # Rate limit
     now = time.time()
     if now - _last_sent[client_ip] < RATE_LIMIT_SECONDS:
-        return RedirectResponse(url="/#contacto?sent=rate", status_code=303)
+        return JSONResponse({"status": "rate_limited"}, status_code=429)
     _last_sent[client_ip] = now
 
     # 1. Guardar en Google Sheets (primario, persistente)
@@ -81,48 +132,11 @@ async def contacto(
     # 2. Guardar en SQLite (fallback local)
     db.save_lead(nombre, empresa, telefono, email, mensaje)
 
-    # 3. Enviar email
-    smtp_user = os.getenv("SMTP_USER", "")
-    smtp_pass = os.getenv("SMTP_PASSWORD", "")
-    contact_email = os.getenv("CONTACT_EMAIL", "contacto@guaranisof.com")
+    # 3. Enviar email en background (no bloquear la respuesta)
+    asyncio.create_task(_send_email_async(nombre, empresa, telefono, email, mensaje))
 
-    body = f"""\
-Nuevo contacto desde la landing page de Ñande ERP
-
-Nombre:    {nombre}
-Empresa:   {empresa or '—'}
-Teléfono:  {telefono or '—'}
-Email:     {email}
-
-Mensaje:
-{mensaje}
-"""
-
-    if smtp_user and smtp_pass:
-        try:
-            import aiosmtplib
-            from email.mime.text import MIMEText
-            from email.mime.multipart import MIMEMultipart
-
-            msg = MIMEMultipart()
-            msg["From"] = smtp_user
-            msg["To"] = contact_email
-            msg["Reply-To"] = email
-            msg["Subject"] = f"Contacto landing — {nombre}"
-            msg.attach(MIMEText(body, "plain", "utf-8"))
-
-            await aiosmtplib.send(
-                msg,
-                hostname="smtp.gmail.com",
-                port=587,
-                start_tls=True,
-                username=smtp_user,
-                password=smtp_pass,
-            )
-        except Exception as e:
-            print(f"[SMTP ERROR] {e}")
-
-    return RedirectResponse(url="/?sent=1#contacto", status_code=303)
+    # 4. Responder inmediatamente
+    return JSONResponse({"status": "ok"})
 
 
 # ── Health check (para Railway/Render) ──────────────────────────────────────
