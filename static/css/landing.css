@@ -287,6 +287,14 @@ h1, h2, h3 {
 .contacto-info a:hover {
     color: var(--morado);
 }
+.alert-warning-custom {
+    background: #FEF3C7;
+    border: 1px solid #FCD34D;
+    color: #92400E;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
 .alert-success-custom {
     background: #D1FAE5;
     border: 1px solid #6EE7B7;

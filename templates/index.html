@@ -274,6 +274,10 @@
             <div class="col-lg-7 fade-in">
                 <div class="contacto-form">
                     
+                    <div id="alertRate" class="alert-warning-custom" style="display:none;">
+                        <i class="bi bi-clock me-2"></i>
+                        Ya enviaste un mensaje. Esperá 60 segundos antes de enviar otro.
+                    </div>
                     <div id="alertExito" class="alert-success-custom" style="display:none;">
                         <i class="bi bi-check-circle-fill me-2"></i>
                         ¡Gracias! Tu mensaje fue enviado. Te contactaremos a la brevedad.
@@ -381,8 +385,22 @@ document.getElementById('formContacto').addEventListener('submit', function(e) {
     var formData = new FormData(this);
 
     fetch('/contacto', { method: 'POST', body: formData })
-        .then(function(r) { return r.json(); })
+        .then(function(r) {
+            if (r.status === 429) {
+                // Rate limited
+                document.getElementById('btnSpinner').classList.add('d-none');
+                document.getElementById('btnText').classList.remove('d-none');
+                btn.disabled = false;
+                var alert = document.getElementById('alertRate');
+                if (alert) alert.style.display = 'block';
+                window.scrollTo({ top: document.getElementById('contacto').offsetTop - 80, behavior: 'smooth' });
+                setTimeout(function() { if (alert) alert.style.display = 'none'; }, 10000);
+                return null;
+            }
+            return r.json();
+        })
         .then(function(data) {
+            if (!data) return;
             // Success
             document.getElementById('btnSpinner').classList.add('d-none');
             document.getElementById('btnText').classList.remove('d-none');
@@ -394,7 +412,7 @@ document.getElementById('formContacto').addEventListener('submit', function(e) {
             setTimeout(function() { if (alert) alert.style.display = 'none'; }, 8000);
         })
         .catch(function(err) {
-            // Error — igual mostrar mensaje porque el POST probablemente se proceso
+            // Error — igual mostrar mensaje
             document.getElementById('btnSpinner').classList.add('d-none');
             document.getElementById('btnText').classList.remove('d-none');
             btn.disabled = false;
