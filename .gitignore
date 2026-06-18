@@ -4,3 +4,5 @@ __pycache__/
 .env
 leads.db
 service_account.json
+*.json:Zone.Identifier
+tmp_test*.py
