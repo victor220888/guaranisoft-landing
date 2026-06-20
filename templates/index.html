@@ -381,14 +381,6 @@
             <div class="col-lg-7 fade-in">
                 <div class="contacto-form">
                     
-                    <div id="alertRate" class="alert-warning-custom" style="display:none;">
-                        <i class="bi bi-clock me-2"></i>
-                        Ya enviaste un mensaje. Por favor esperá 60 segundos antes de intentar de nuevo.
-                    </div>
-                    <div id="alertExito" class="alert-success-custom" style="display:none;">
-                        <i class="bi bi-check-circle-fill me-2"></i>
-                        ¡Excelente! Recibimos tus datos. Te vamos a escribir por WhatsApp muy pronto para coordinar.
-                    </div>
                     <form id="formContacto" onsubmit="return false;">
                         <div class="row g-3">
                             <div class="col-md-6">
@@ -415,7 +407,7 @@
                                 <button type="submit" class="btn btn-morado w-100" id="btnContacto">
                                     <span id="btnText"><i class="bi bi-calendar-check me-2"></i>Agendar demostración</span>
                                     <span id="btnSpinner" class="d-none">
-                                        <span class="spinner-border spinner-border-sm me-2"></span>Enviando...
+                                        <span class="spinner-border spinner-border-sm me-2"></span>Enviando, esto puede tardar unos segundos...
                                     </span>
                                 </button>
                             </div>
@@ -480,6 +472,35 @@
 <!-- ═══ Scripts ═════════════════════════════════════════════════════════ -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
+// Contenedor de toasts
+(function() {
+    var container = document.createElement('div');
+    container.id = 'toast-container';
+    container.style.cssText = 'position:fixed;top:24px;right:24px;z-index:10000;display:flex;flex-direction:column;gap:12px;max-width:380px;';
+    document.body.appendChild(container);
+})();
+
+function showToast(type, message) {
+    var container = document.getElementById('toast-container');
+    var toast = document.createElement('div');
+    var bgColor = type === 'success' ? '#D1FAE5' : '#FEF3C7';
+    var borderColor = type === 'success' ? '#6EE7B7' : '#FCD34D';
+    var textColor = type === 'success' ? '#065F46' : '#92400E';
+    var icon = type === 'success' ? 'bi-check-circle-fill' : 'bi-clock';
+    toast.style.cssText = 'background:' + bgColor + ';border:1px solid ' + borderColor + ';color:' + textColor + ';border-radius:10px;padding:1rem 1.25rem;display:flex;align-items:flex-start;gap:0.5rem;box-shadow:0 8px 24px rgba(0,0,0,0.12);opacity:0;transform:translateX(100%);transition:opacity 0.3s ease,transform 0.3s ease;font-size:0.9rem;line-height:1.4;';
+    toast.innerHTML = '<i class="bi ' + icon + '" style="margin-top:2px;flex-shrink:0;"></i><span>' + message + '</span>';
+    container.appendChild(toast);
+    requestAnimationFrame(function() {
+        toast.style.opacity = '1';
+        toast.style.transform = 'translateX(0)';
+    });
+    setTimeout(function() {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateX(100%)';
+        setTimeout(function() { toast.remove(); }, 300);
+    }, 6000);
+}
+
 // Formulario — AJAX
 document.getElementById('formContacto').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -497,10 +518,7 @@ document.getElementById('formContacto').addEventListener('submit', function(e) {
                 document.getElementById('btnSpinner').classList.add('d-none');
                 document.getElementById('btnText').classList.remove('d-none');
                 btn.disabled = false;
-                var alert = document.getElementById('alertRate');
-                if (alert) alert.style.display = 'block';
-                window.scrollTo({ top: document.getElementById('contacto').offsetTop - 80, behavior: 'smooth' });
-                setTimeout(function() { if (alert) alert.style.display = 'none'; }, 10000);
+                showToast('warning', 'Ya enviaste un mensaje. Por favor esperá 60 segundos antes de intentar de nuevo.');
                 return null;
             }
             return r.json();
@@ -511,19 +529,13 @@ document.getElementById('formContacto').addEventListener('submit', function(e) {
             document.getElementById('btnText').classList.remove('d-none');
             btn.disabled = false;
             document.getElementById('formContacto').reset();
-            var alert = document.getElementById('alertExito');
-            if (alert) alert.style.display = 'block';
-            window.scrollTo({ top: document.getElementById('contacto').offsetTop - 80, behavior: 'smooth' });
-            setTimeout(function() { if (alert) alert.style.display = 'none'; }, 8000);
+            showToast('success', '¡Excelente! Recibimos tus datos. Te vamos a escribir por WhatsApp muy pronto para coordinar.');
         })
         .catch(function(err) {
             document.getElementById('btnSpinner').classList.add('d-none');
             document.getElementById('btnText').classList.remove('d-none');
             btn.disabled = false;
-            var alert = document.getElementById('alertExito');
-            if (alert) alert.style.display = 'block';
-            window.scrollTo({ top: document.getElementById('contacto').offsetTop - 80, behavior: 'smooth' });
-            setTimeout(function() { if (alert) alert.style.display = 'none'; }, 8000);
+            showToast('success', '¡Excelente! Recibimos tus datos. Te vamos a escribir por WhatsApp muy pronto para coordinar.');
         });
 });
 
