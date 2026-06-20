@@ -188,6 +188,21 @@ h1, h2, h3, h4, h5, .navbar-brand {
     flex-shrink: 0;
 }
 
+/* ── Badge "Bajo demanda" en módulos ─────────────────────────────────── */
+.badge-optional {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 0.15rem 0.5rem;
+    border-radius: 10px;
+    background: rgba(91,42,134,0.1);
+    color: var(--morado);
+    margin-left: 0.4rem;
+    vertical-align: middle;
+}
+
 /* ── Problema/Solución ───────────────────────────────────────────────── */
 .problema-solucion .col-md-6 {
     padding: 2rem;
