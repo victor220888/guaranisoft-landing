@@ -94,7 +94,9 @@ Mensaje:
 {mensaje}
 """
     # 1. GUARDAR EN DB (Prioridad máxima)
-    db.save_lead(nombre, empresa, telefono, email, mensaje)
+    db_saved = db.save_lead(nombre, empresa, telefono, email, mensaje)
+    if not db_saved:
+        print("[DB ERROR] No se pudo guardar el lead")
 
     # 2. Enviar email (no bloquea la respuesta si falla)
     if smtp_user and smtp_pass:
