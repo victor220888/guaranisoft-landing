@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-primary">
+  <path d="M12 6 L12 42 L24 38 L36 42 L36 6 L24 10 L12 6 Z"/>
+  <line x1="17" y1="18" x2="31" y2="18"/>
+  <line x1="17" y1="24" x2="31" y2="24"/>
+  <path d="M19 31 L16 34 L19 37" class="icon-accent"/>
+  <path d="M29 31 L32 34 L29 37" class="icon-accent"/>
+  <line x1="16" y1="34" x2="32" y2="34" class="icon-accent"/>
+</svg>

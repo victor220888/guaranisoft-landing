@@ -10,9 +10,35 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://guaranisof.com">
 
+    <meta property="og:image" content="https://guaranisof.com/static/img/og-image.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Ñande ERP",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Windows",
+      "description": "ERP paraguayo con facturación electrónica SIFEN, cumplimiento tributario Ley 6380 y contabilidad. Hecho en Paraguay por GuaraníSoft.",
+      "url": "https://guaranisof.com",
+      "publisher": {
+        "@type": "Organization",
+        "name": "GuaraníSoft",
+        "url": "https://guaranisof.com"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "PYG",
+        "price": "4500000",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+    </script>
+
     <link rel="icon" type="image/svg+xml" href="/static/img/favicon.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link href="/static/css/landing.css" rel="stylesheet">
 </head>
 <body>
@@ -55,8 +81,35 @@
                 <i class="bi bi-whatsapp me-2"></i>WhatsApp
             </a>
         </div>
+        <div class="hero-screenshot fade-in">
+            <img src="/static/img/dashboard.png" alt="Dashboard de Ñande ERP" class="img-fluid">
+        </div>
     </div>
 </section>
+
+<!-- ═══ Badges de cumplimiento ═════════════════════════════════════════ -->
+<div class="badges-cumplimiento">
+    <div class="container">
+        <div class="badges-row fade-in">
+            <span class="badge-cumpl">
+                <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 1 L10 19 M2 5 L18 5 M4 5 L4 12 L16 12 L16 5"/><path d="M7 19 L13 19" stroke-width="2"/></svg>
+                SIFEN v150
+            </span>
+            <span class="badge-cumpl">
+                <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 3 L4 17 L16 17 L16 7 L12 3 Z"/><path d="M12 3 L12 7 L16 7"/><line x1="7" y1="10" x2="13" y2="10"/><line x1="7" y1="13" x2="13" y2="13"/></svg>
+                Ley 6380/2019
+            </span>
+            <span class="badge-cumpl verde">
+                <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6 L4 14 L16 14 L16 6 Z"/><line x1="7" y1="6" x2="7" y2="14"/><line x1="13" y1="6" x2="13" y2="14"/><circle cx="10" cy="10" r="2" fill="currentColor" stroke="none"/></svg>
+                RG 49/14
+            </span>
+            <span class="badge-cumpl verde">
+                <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L12 7 L17 7 L13 11 L15 16 L10 13 L5 16 L7 11 L3 7 L8 7 Z"/></svg>
+                RESIMPLE / Marangatú
+            </span>
+        </div>
+    </div>
+</div>
 
 <!-- ═══ Problema / Solución ═════════════════════════════════════════════ -->
 <section class="problema-solucion">
@@ -103,7 +156,9 @@
 
             <div class="col-md-6 col-lg-4 fade-in">
                 <div class="feature-card">
-                    <span class="icon">📊</span>
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="36" height="36" rx="8"/><line x1="13" y1="30" x2="13" y2="24" stroke-width="3"/><line x1="20" y1="30" x2="20" y2="18" stroke-width="3"/><line x1="27" y1="30" x2="27" y2="21" style="stroke:#4A7C59" stroke-width="3"/><line x1="34" y1="30" x2="34" y2="14" style="stroke:#4A7C59" stroke-width="3"/><line x1="10" y1="34" x2="38" y2="34"/></svg>
+                    </div>
                     <h3>Dashboard e Indicadores</h3>
                     <p>Tableros en tiempo real: ventas del día, stock bajo, cuentas por cobrar, flujo de caja. Decisiones con datos, no con intuición.</p>
                 </div>
@@ -111,7 +166,9 @@
 
             <div class="col-md-6 col-lg-4 fade-in">
                 <div class="feature-card">
-                    <span class="icon">🛒</span>
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6 L12 42 L24 38 L36 42 L36 6 L24 10 L12 6 Z"/><line x1="17" y1="18" x2="31" y2="18"/><line x1="17" y1="24" x2="31" y2="24"/><path d="M19 31 L16 34 L19 37" style="stroke:#4A7C59"/><path d="M29 31 L32 34 L29 37" style="stroke:#4A7C59"/><line x1="16" y1="34" x2="32" y2="34" style="stroke:#4A7C59"/></svg>
+                    </div>
                     <h3>Ventas y Compras</h3>
                     <p>Facturación, notas de crédito/débito, cobros, pagos, adelantos. Carga rápida para operadores. Todo conectado a inventario y caja.</p>
                 </div>
@@ -119,7 +176,9 @@
 
             <div class="col-md-6 col-lg-4 fade-in">
                 <div class="feature-card">
-                    <span class="icon">📦</span>
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 16 L24 8 L40 16 L40 38 L24 46 L8 38 Z"/><path d="M8 16 L24 24 L40 16"/><line x1="24" y1="24" x2="24" y2="46"/><rect x="15" y="20" width="6" height="6" rx="1" style="stroke:#4A7C59"/><rect x="27" y="20" width="6" height="6" rx="1" style="stroke:#4A7C59"/><rect x="21" y="30" width="6" height="6" rx="1" style="stroke:#4A7C59"/></svg>
+                    </div>
                     <h3>Inventario</h3>
                     <p>Kardex por producto, ajustes, traslados entre depósitos, control de stock en tiempo real. Multisucursal y multidepósito.</p>
                 </div>
@@ -127,15 +186,19 @@
 
             <div class="col-md-6 col-lg-4 fade-in">
                 <div class="feature-card">
-                    <span class="icon">🧾</span>
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 L12 44 L36 44 L36 12 L28 4 Z"/><path d="M28 4 L28 12 L36 12"/><line x1="17" y1="20" x2="31" y2="20"/><line x1="17" y1="25" x2="31" y2="25"/><rect x="17" y="30" width="12" height="12" rx="2" style="stroke:#4A7C59"/><rect x="20" y="33" width="2" height="2" fill="#4A7C59" stroke="none"/><rect x="24" y="33" width="2" height="2" fill="#4A7C59" stroke="none"/><rect x="20" y="37" width="2" height="2" fill="#4A7C59" stroke="none"/><rect x="24" y="37" width="2" height="2" fill="#4A7C59" stroke="none"/></svg>
+                    </div>
                     <h3>Facturación Electrónica SIFEN</h3>
-                    <p>7 tipos de DTE: factura, nota de crédito, nota de débito, autofactura, nota de remisión, retención, exportación. Firma digital, QR, lotes, eventos, consulta CDC. SIFEN v150.</p>
+                    <p>Facturación electrónica SIFEN desarrollada a medida para tu empresa. Implementamos los tipos de DTE que necesitás, con firma digital, QR y gestión de lotes. Cumplimiento SIFEN v150.</p>
                 </div>
             </div>
 
             <div class="col-md-6 col-lg-4 fade-in">
                 <div class="feature-card">
-                    <span class="icon">⚖️</span>
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="24" y1="6" x2="24" y2="42"/><line x1="14" y1="42" x2="34" y2="42"/><line x1="8" y1="14" x2="40" y2="14"/><line x1="8" y1="14" x2="8" y2="22"/><path d="M3 22 L13 22 L11 27 L5 27 Z" style="stroke:#4A7C59"/><line x1="40" y1="14" x2="40" y2="22"/><path d="M35 22 L45 22 L43 27 L37 27 Z" style="stroke:#4A7C59"/><circle cx="24" cy="10" r="3"/></svg>
+                    </div>
                     <h3>Tributario y Fiscal</h3>
                     <p>Liquidadores automáticos: IRE, IDU, IRP (Ley 6380/2019). DDJJ, pagos, retenciones, pérdidas fiscales, ajustes. Registro Marangatú (RESIMPLE).</p>
                 </div>
@@ -143,7 +206,9 @@
 
             <div class="col-md-6 col-lg-4 fade-in">
                 <div class="feature-card">
-                    <span class="icon">📚</span>
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8 L8 40 L24 42 L40 40 L40 8 L24 10 Z"/><line x1="24" y1="10" x2="24" y2="42"/><line x1="12" y1="16" x2="20" y2="16" style="stroke:#4A7C59"/><line x1="12" y1="21" x2="20" y2="21" style="stroke:#4A7C59"/><line x1="12" y1="26" x2="20" y2="26" style="stroke:#4A7C59"/><line x1="12" y1="31" x2="20" y2="31" style="stroke:#4A7C59"/><line x1="28" y1="16" x2="36" y2="16" style="stroke:#4A7C59"/><line x1="28" y1="21" x2="36" y2="21" style="stroke:#4A7C59"/><line x1="28" y1="26" x2="36" y2="26" style="stroke:#4A7C59"/><line x1="28" y1="31" x2="36" y2="31" style="stroke:#4A7C59"/></svg>
+                    </div>
                     <h3>Contabilidad</h3>
                     <p>Asientos, plan de cuentas, ejercicios fiscales, centros de costo, plantillas, cierre de ejercicio. Reportes completos. Generación automática desde operaciones.</p>
                 </div>
@@ -151,7 +216,9 @@
 
             <div class="col-md-6 col-lg-4 fade-in">
                 <div class="feature-card">
-                    <span class="icon">💵</span>
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="16" width="36" height="20" rx="3"/><circle cx="24" cy="26" r="5" style="stroke:#4A7C59"/><circle cx="24" cy="26" r="2" fill="#4A7C59" stroke="none"/><circle cx="12" cy="22" r="1.5" fill="currentColor" stroke="none"/><circle cx="36" cy="30" r="1.5" fill="currentColor" stroke="none"/><line x1="12" y1="30" x2="16" y2="30"/><line x1="32" y1="22" x2="36" y2="22"/></svg>
+                    </div>
                     <h3>Cajas</h3>
                     <p>Panel de cajas, movimientos, disponibilidades, verificación/arqueo, cierre del día. Multimoneda (GS y USD).</p>
                 </div>
@@ -159,7 +226,9 @@
 
             <div class="col-md-6 col-lg-4 fade-in">
                 <div class="feature-card">
-                    <span class="icon">🏦</span>
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="4" width="24" height="40" rx="4"/><rect x="16" y="8" width="16" height="8" rx="2" style="stroke:#4A7C59"/><circle cx="18" cy="22" r="1.5" fill="currentColor" stroke="none"/><circle cx="24" cy="22" r="1.5" fill="currentColor" stroke="none"/><circle cx="30" cy="22" r="1.5" fill="currentColor" style="fill:#4A7C59" stroke="none"/><circle cx="18" cy="28" r="1.5" fill="currentColor" stroke="none"/><circle cx="24" cy="28" r="1.5" fill="currentColor" stroke="none"/><circle cx="30" cy="28" r="1.5" fill="currentColor" style="fill:#4A7C59" stroke="none"/><circle cx="18" cy="34" r="1.5" fill="currentColor" stroke="none"/><circle cx="24" cy="34" r="1.5" fill="currentColor" stroke="none"/><circle cx="30" cy="34" r="1.5" fill="currentColor" style="fill:#4A7C59" stroke="none"/><line x1="16" y1="40" x2="32" y2="40" style="stroke:#4A7C59"/></svg>
+                    </div>
                     <h3>Préstamos</h3>
                     <p>Amortización, cálculo de intereses, cuotas, seguimiento de pagos. Ideal para empresas con financiamiento interno.</p>
                 </div>
@@ -167,7 +236,9 @@
 
             <div class="col-md-6 col-lg-4 fade-in">
                 <div class="feature-card">
-                    <span class="icon">🏢</span>
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="24" r="11"/><circle cx="34" cy="24" r="11" style="stroke:#4A7C59"/><text x="11" y="28" font-family="sans-serif" font-size="10" font-weight="700" fill="currentColor" stroke="none">Gs</text><text x="30" y="28" font-family="sans-serif" font-size="11" font-weight="700" fill="currentColor" style="fill:#4A7C59" stroke="none">$</text></svg>
+                    </div>
                     <h3>Multimoneda y Multisucursal</h3>
                     <p>Guaraníes y dólares. Múltiples sucursales, puntos de emisión y depósitos. Timbrados por punto de emisión.</p>
                 </div>
@@ -216,20 +287,14 @@
         <div class="row g-4">
             <div class="col-6 col-md-3 fade-in">
                 <div class="stat-item">
-                    <span class="num">96</span>
-                    <span class="label">Tablas de datos</span>
+                    <span class="num">48h</span>
+                    <span class="label">Instalación lista</span>
                 </div>
             </div>
             <div class="col-6 col-md-3 fade-in">
                 <div class="stat-item">
-                    <span class="num">350+</span>
-                    <span class="label">Endpoints</span>
-                </div>
-            </div>
-            <div class="col-6 col-md-3 fade-in">
-                <div class="stat-item">
-                    <span class="num">7</span>
-                    <span class="label">Tipos de DTE SIFEN</span>
+                    <span class="num">9</span>
+                    <span class="label">Módulos integrados</span>
                 </div>
             </div>
             <div class="col-6 col-md-3 fade-in">
@@ -237,6 +302,40 @@
                     <span class="num">100%</span>
                     <span class="label">Cumplimiento Ley 6380</span>
                 </div>
+            </div>
+            <div class="col-6 col-md-3 fade-in">
+                <div class="stat-item">
+                    <span class="num">WhatsApp</span>
+                    <span class="label">Soporte directo, no call center</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ Prueba social ═══════════════════════════════════════════════════ -->
+<section class="prueba-social">
+    <div class="container">
+        <div class="prueba-social-card fade-in">
+            <div class="prueba-social-icon">
+                <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M8 8 L8 40 L24 42 L40 40 L40 8 L24 10 Z"/>
+                    <line x1="24" y1="10" x2="24" y2="42"/>
+                    <line x1="12" y1="16" x2="20" y2="16" style="stroke:#4A7C59"/>
+                    <line x1="12" y1="21" x2="20" y2="21" style="stroke:#4A7C59"/>
+                    <line x1="12" y1="26" x2="20" y2="26" style="stroke:#4A7C59"/>
+                    <line x1="28" y1="16" x2="36" y2="16" style="stroke:#4A7C59"/>
+                    <line x1="28" y1="21" x2="36" y2="21" style="stroke:#4A7C59"/>
+                    <line x1="28" y1="26" x2="36" y2="26" style="stroke:#4A7C59"/>
+                </svg>
+            </div>
+            <blockquote>
+                "Desarrollado dentro de una empresa paraguaya, probado contra la legislación real:
+                <strong>Ley 6380/2019</strong>, <strong>RG 49/14</strong>, <strong>RESIMPLE</strong>
+                y <strong>SIFEN v150</strong>. No es un sistema adaptado — está construido desde cero para Paraguay."
+            </blockquote>
+            <div class="prueba-social-firma">
+                <strong>GuaraníSoft</strong> · Desarrollo de software paraguayo
             </div>
         </div>
     </div>
@@ -251,6 +350,11 @@
         </div>
         <div class="precios-card fade-in">
             <h3>Licencia única + mantenimiento mensual</h3>
+            <div class="precio-desde">
+                <span class="desde-label">Base desde</span>
+                <span class="desde-monto">Gs. 4.500.000</span>
+                <span class="desde-nota">+ módulos según tu empresa</span>
+            </div>
             <ul>
                 <li><i class="bi bi-check-circle-fill"></i> <strong>Base:</strong> Ventas, compras, inventario, cajas, libro IVA, retenciones</li>
                 <li><i class="bi bi-check-circle-fill"></i> <strong>Módulos:</strong> SIFEN, Tributario, Contabilidad, Dashboard, Préstamos — se activan por empresa</li>
@@ -258,7 +362,7 @@
                 <li><i class="bi bi-check-circle-fill"></i> <strong>Instalación:</strong> Local en Windows, sin dependencia de internet</li>
                 <li><i class="bi bi-check-circle-fill"></i> <strong>Capacitación:</strong> Incluida en la instalación</li>
             </ul>
-            <a href="#contacto" class="btn btn-morado mt-3">Consultá por precio</a>
+            <a href="#contacto" class="btn btn-morado mt-3">Consultá por tu combinación</a>
         </div>
     </div>
 </section>

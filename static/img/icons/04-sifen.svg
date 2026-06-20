@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-primary">
+  <path d="M12 4 L12 44 L36 44 L36 12 L28 4 Z"/>
+  <path d="M28 4 L28 12 L36 12"/>
+  <line x1="17" y1="20" x2="31" y2="20"/>
+  <line x1="17" y1="25" x2="31" y2="25"/>
+  <rect x="17" y="30" width="12" height="12" rx="2" class="icon-accent"/>
+  <rect x="20" y="33" width="2" height="2" fill="currentColor" class="icon-accent-fill" stroke="none"/>
+  <rect x="24" y="33" width="2" height="2" fill="currentColor" class="icon-accent-fill" stroke="none"/>
+  <rect x="20" y="37" width="2" height="2" fill="currentColor" class="icon-accent-fill" stroke="none"/>
+  <rect x="24" y="37" width="2" height="2" fill="currentColor" class="icon-accent-fill" stroke="none"/>
+</svg>

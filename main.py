@@ -6,27 +6,27 @@ Run: uvicorn main:app --host 0.0.0.0 --port 8000
 
 import os
 import time
-import asyncio
 from collections import defaultdict
 from pathlib import Path
 
-import db          # SQLite (fallback local)
-import sheets      # Google Sheets (primario, persistente)
-import secrets
+import db  # Importamos nuestro nuevo módulo
 
-from fastapi import FastAPI, Form, Request, Depends, HTTPException, status
-from fastapi.responses import HTMLResponse, RedirectResponse, JSONResponse
+from fastapi import FastAPI, Form, Request
+from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from fastapi.security import HTTPBasic, HTTPBasicCredentials
 from dotenv import load_dotenv
+
+from fastapi.security import HTTPBasic, HTTPBasicCredentials
+from fastapi import Depends, HTTPException, status
+import secrets
 
 load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent
 app = FastAPI(title="Ñande ERP — GuaraníSoft", docs_url=None, redoc_url=None)
 
-db.init_db()
+db.init_db() # <--- Agrega esto al iniciar la app
 
 app.mount("/static", StaticFiles(directory=BASE_DIR / "static"), name="static")
 templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
@@ -37,7 +37,7 @@ RATE_LIMIT_SECONDS = 60
 
 security = HTTPBasic()
 
-
+# Configura esto en tu .env: ADMIN_USER y ADMIN_PASSWORD
 def verify_admin(credentials: HTTPBasicCredentials = Depends(security)):
     correct_user = secrets.compare_digest(credentials.username, os.getenv("ADMIN_USER", "admin"))
     correct_pass = secrets.compare_digest(credentials.password, os.getenv("ADMIN_PASSWORD", "secret"))
@@ -45,67 +45,15 @@ def verify_admin(credentials: HTTPBasicCredentials = Depends(security)):
         raise HTTPException(status_code=401, detail="Credenciales incorrectas")
     return True
 
-
 @app.get("/admin/leads")
 async def ver_leads(admin: bool = Depends(verify_admin)):
     leads = db.get_all_leads()
     return {"leads": leads}
 
-
 # ── Página principal ────────────────────────────────────────────────────────
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request, sent: str | None = None):
     return templates.TemplateResponse(request, "index.html", {"sent": sent == "1"})
-
-
-# ── Función para enviar email en background ─────────────────────────────────
-async def _send_email_async(nombre, empresa, telefono, email, mensaje):
-    smtp_user = os.getenv("SMTP_USER", "")
-    smtp_pass = os.getenv("SMTP_PASSWORD", "")
-    contact_email = os.getenv("CONTACT_EMAIL", "contacto@guaranisof.com")
-
-    if not smtp_user or not smtp_pass:
-        return
-
-    body = f"""\
-Nuevo contacto desde la landing page de Ñande ERP
-
-Nombre:    {nombre}
-Empresa:   {empresa or '—'}
-Teléfono:  {telefono or '—'}
-Email:     {email}
-
-Mensaje:
-{mensaje}
-"""
-
-    try:
-        import aiosmtplib
-        from email.mime.text import MIMEText
-        from email.mime.multipart import MIMEMultipart
-
-        msg = MIMEMultipart()
-        msg["From"] = smtp_user
-        msg["To"] = contact_email
-        msg["Reply-To"] = email
-        msg["Subject"] = f"Contacto landing — {nombre}"
-        msg.attach(MIMEText(body, "plain", "utf-8"))
-
-        await asyncio.wait_for(
-            aiosmtplib.send(
-                msg,
-                hostname="smtp.gmail.com",
-                port=587,
-                start_tls=True,
-                username=smtp_user,
-                password=smtp_pass,
-            ),
-            timeout=10  # máximo 10s, si no larga
-        )
-    except asyncio.TimeoutError:
-        print("[SMTP] Timeout — Render bloquea SMTP, el lead ya está en Sheets")
-    except Exception as e:
-        print(f"[SMTP ERROR] {e}")
 
 
 # ── Formulario de contacto ─────────────────────────────────────────────────
@@ -123,20 +71,53 @@ async def contacto(
     # Rate limit
     now = time.time()
     if now - _last_sent[client_ip] < RATE_LIMIT_SECONDS:
-        return JSONResponse({"status": "rate_limited"}, status_code=429)
+        return RedirectResponse(url="/#contacto?sent=rate", status_code=303)
     _last_sent[client_ip] = now
 
-    # 1. Guardar en Google Sheets (primario, persistente)
-    sheets.append_to_sheet(nombre, empresa, telefono, email, mensaje)
+    # Enviar email
+    smtp_user = os.getenv("SMTP_USER", "")
+    smtp_pass = os.getenv("SMTP_PASSWORD", "")
+    contact_email = os.getenv("CONTACT_EMAIL", "contacto@guaranisof.com")
 
-    # 2. Guardar en SQLite (fallback local)
+    body = f"""\
+Nuevo contacto desde la landing page de Ñande ERP
+
+Nombre:    {nombre}
+Empresa:   {empresa or '—'}
+Teléfono:  {telefono or '—'}
+Email:     {email}
+
+Mensaje:
+{mensaje}
+"""
+    # 1. GUARDAR EN DB (Prioridad máxima)
     db.save_lead(nombre, empresa, telefono, email, mensaje)
 
-    # 3. Enviar email en background (no bloquear la respuesta)
-    asyncio.create_task(_send_email_async(nombre, empresa, telefono, email, mensaje))
+    if smtp_user and smtp_pass:
+        try:
+            import aiosmtplib
+            from email.mime.text import MIMEText
+            from email.mime.multipart import MIMEMultipart
 
-    # 4. Responder inmediatamente
-    return JSONResponse({"status": "ok"})
+            msg = MIMEMultipart()
+            msg["From"] = smtp_user
+            msg["To"] = contact_email
+            msg["Reply-To"] = email
+            msg["Subject"] = f"Contacto landing — {nombre}"
+            msg.attach(MIMEText(body, "plain", "utf-8"))
+
+            await aiosmtplib.send(
+                msg,
+                hostname="smtp.gmail.com",
+                port=587,
+                start_tls=True,
+                username=smtp_user,
+                password=smtp_pass,
+            )
+        except Exception as e:
+            print(f"[SMTP ERROR] {e}")
+
+    return RedirectResponse(url="/?sent=1#contacto", status_code=303)
 
 
 # ── Health check (para Railway/Render) ──────────────────────────────────────
