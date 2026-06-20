@@ -12,7 +12,7 @@ from pathlib import Path
 import db  # Importamos nuestro nuevo módulo
 
 from fastapi import FastAPI, Form, Request
-from fastapi.responses import HTMLResponse, RedirectResponse
+from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from dotenv import load_dotenv
@@ -71,13 +71,16 @@ async def contacto(
     # Rate limit
     now = time.time()
     if now - _last_sent[client_ip] < RATE_LIMIT_SECONDS:
-        return RedirectResponse(url="/#contacto?sent=rate", status_code=303)
+        return JSONResponse(
+            status_code=429,
+            content={"ok": False, "error": "rate_limit"}
+        )
     _last_sent[client_ip] = now
 
     # Enviar email
     smtp_user = os.getenv("SMTP_USER", "")
     smtp_pass = os.getenv("SMTP_PASSWORD", "")
-    contact_email = os.getenv("CONTACT_EMAIL", "contacto@guaranisof.com")
+    contact_email = os.getenv("CONTACT_EMAIL", "ventas@guaranisof.com")
 
     body = f"""\
 Nuevo contacto desde la landing page de Ñande ERP
@@ -93,6 +96,7 @@ Mensaje:
     # 1. GUARDAR EN DB (Prioridad máxima)
     db.save_lead(nombre, empresa, telefono, email, mensaje)
 
+    # 2. Enviar email (no bloquea la respuesta si falla)
     if smtp_user and smtp_pass:
         try:
             import aiosmtplib
@@ -117,7 +121,10 @@ Mensaje:
         except Exception as e:
             print(f"[SMTP ERROR] {e}")
 
-    return RedirectResponse(url="/?sent=1#contacto", status_code=303)
+    return JSONResponse(
+        status_code=200,
+        content={"ok": True}
+    )
 
 
 # ── Health check (para Railway/Render) ──────────────────────────────────────

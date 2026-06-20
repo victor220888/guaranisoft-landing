@@ -535,7 +535,7 @@ document.getElementById('formContacto').addEventListener('submit', function(e) {
             document.getElementById('btnSpinner').classList.add('d-none');
             document.getElementById('btnText').classList.remove('d-none');
             btn.disabled = false;
-            showToast('success', '¡Excelente! Recibimos tus datos. Te vamos a escribir por WhatsApp muy pronto para coordinar.');
+            showToast('warning', 'Ocurrió un error al enviar. Probá de nuevo o escribinos directo por WhatsApp.');
         });
 });
 
