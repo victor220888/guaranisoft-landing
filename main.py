@@ -10,6 +10,7 @@ from collections import defaultdict
 from pathlib import Path
 
 import db  # Importamos nuestro nuevo módulo
+import sheets  # Integración Google Sheets
 
 from fastapi import FastAPI, Form, Request
 from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse
@@ -93,10 +94,15 @@ Email:     {email}
 Mensaje:
 {mensaje}
 """
-    # 1. GUARDAR EN DB (Prioridad máxima)
-    db_saved = db.save_lead(nombre, empresa, telefono, email, mensaje)
-    if not db_saved:
-        print("[DB ERROR] No se pudo guardar el lead")
+    # 1. GUARDAR EN GOOGLE SHEETS (Prioridad máxima)
+    sheet_saved = sheets.append_to_sheet(nombre, empresa, telefono, email, mensaje)
+    if sheet_saved:
+        print(f"[SHEETS] Lead guardado: {nombre} — {email}")
+    else:
+        print(f"[SHEETS ERROR] No se pudo guardar el lead en Google Sheets")
+
+    # 2. BACKUP en SQLite local
+    db.save_lead(nombre, empresa, telefono, email, mensaje)
 
     # 2. Enviar email (no bloquea la respuesta si falla)
     if smtp_user and smtp_pass:
