@@ -165,7 +165,7 @@ index.html
 │
 ├── Section: Hero (#top)
 │   ├── Logo con eslogan (logo-eslogan.svg)
-│   ├── Tagline: "ERP paraguayo. Cumplimiento real. Soporte local."
+│   ├── Tagline: "Hecho en Paraguay. Hecho para Paraguay."
 │   ├── Subtítulo
 │   └── CTAs: Solicitar demo + WhatsApp
 │
@@ -290,7 +290,7 @@ Todos usan la paleta morado `#5B2A86` + verde `#4A7C59`.
 <title>Ñande ERP — ERP paraguayo con facturación electrónica SIFEN | GuaraníSoft</title>
 <meta name="description" content="ERP paraguayo con facturación electrónica SIFEN, cumplimiento tributario Ley 6380 y contabilidad. Hecho en Paraguay por GuaraníSoft.">
 <meta property="og:title" content="Ñande ERP — ERP paraguayo">
-<meta property="og:description" content="Cumplimiento real. Soporte local. Facturación SIFEN, tributario, contabilidad.">
+<meta property="og:description" content="Hecho en Paraguay. Hecho para Paraguay. Facturación SIFEN, tributario, contabilidad.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://guaranisof.com">
 ```

@@ -65,7 +65,7 @@
 - **Logo completo:** `docs/logo_conceptos/P3_con_eslogan.svg`
 - **Logo compacto:** en la landing `/static/img/logo-compacto.svg`
 - **Paleta:** morado `#5B2A86`, verde `#4A7C59`, gris `#F5F7FA`
-- **Eslogan:** "ERP paraguayo. Cumplimiento real. Soporte local."
+- **Eslogan:** "Hecho en Paraguay. Hecho para Paraguay."
 
 ---
 

@@ -48,7 +48,7 @@
   <text x="760" y="340" font-family="'Plus Jakarta Sans','Segoe UI',sans-serif" font-size="72" font-weight="700" fill="#4A7C59">ERP</text>
 
   <!-- Eslogan -->
-  <text x="600" y="400" text-anchor="middle" font-family="'Inter','Segoe UI',sans-serif" font-size="28" font-weight="400" fill="#5A6470">ERP paraguayo. Cumplimiento real. Soporte local.</text>
+  <text x="600" y="400" text-anchor="middle" font-family="'Inter','Segoe UI',sans-serif" font-size="28" font-weight="400" fill="#5A6470">Hecho en Paraguay. Hecho para Paraguay.</text>
 
   <!-- Badges inferiores -->
   <g transform="translate(600,490)">

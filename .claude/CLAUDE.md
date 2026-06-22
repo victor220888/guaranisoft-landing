@@ -70,7 +70,7 @@ ADMIN_PASSWORD=change_this
 ## Branding
 - **Logo:** Ñ pixelada (morado #5B2A86) + "ande ERP" text + mburucuyá watermark
 - **Colors:** morado #5B2A86, verde #4A7C59, gris #F5F7FA
-- **Slogan:** "ERP paraguayo. Cumplimiento real. Soporte local."
+- **Slogan:** "Hecho en Paraguay. Hecho para Paraguay."
 - **Do not change colors or logo without owner authorization**
 
 ## Owner
