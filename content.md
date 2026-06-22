@@ -164,24 +164,52 @@ Inversión Transparente
 **Subtítulo:**
 Un sistema que es tuyo, con el respaldo que necesitás.
 
-**Título de tarjeta:**
-Licencia única + Soporte Mensual
+### Plan Fundador (1 cupo disponible)
+
+**Descripción:**
+Para nuestra primera empresa piloto. Acompañamiento total y beneficio exclusivo.
 
 **Precio:**
-- Label: Base desde
-- Monto: Gs. 4.500.000
-- Nota: Licencia de un solo pago.
+- Label: Licencia con 70% de descuento
+- Precio regular tachado: Gs. 4.500.000
+- Precio con descuento: Gs. 1.350.000
+- Nota: En 3 cuotas de Gs. 450.000 sin interés
 
 **Incluye:**
-- **Sistema Base:** Punto de Venta, Ventas, Compras, Inventario, Cajas y Tributario.
-- **Contabilidad de regalo:** Incluida sin costo hasta 2027 por lanzamiento.
-- **Implementación Vip:** Acompañamiento personalizado en la carga inicial y capacitación.
-- **Instalación Segura:** Funcionamiento local (Windows) para velocidad en mostrador.
-- **Mantenimiento Bonificado:** Los primeros 6 meses de soporte y actualizaciones corren por nuestra cuenta.
-- **Módulo SIFEN Opcional:** Posibilidad de desarrollar e integrar facturación electrónica SIFEN por pedido.
+- **1 mes de prueba gratis** sin compromiso
+- **Sistema completo:** POS, Ventas, Compras, Inventario, Cajas, Tributario y Contabilidad
+- **Mantenimiento con 70% off** (contado, desde Gs. 60.000/mes según tu negocio)
+- **Implementación Vip:** Acompañamiento personalizado y capacitación
+- **Instalación local** en Windows, sin depender de internet
+- **Soporte WhatsApp directo**, no call center
 
 **Botón:**
-Quiero armar mi cotización
+Quiero ser el Fundador
+
+### Promo Mundial — 50% off
+
+**Descripción:**
+Vigente hasta el final del Mundial. Arrancá con tu sistema a mitad de precio.
+
+**Precio:**
+- Label: Licencia con 50% de descuento
+- Precio regular tachado: Gs. 4.500.000
+- Precio con descuento: Gs. 2.250.000
+- Nota: En 3 cuotas de Gs. 750.000 sin interés
+
+**Incluye:**
+- **1 mes de prueba gratis** sin compromiso
+- **Sistema completo:** POS, Ventas, Compras, Inventario, Cajas, Tributario y Contabilidad
+- **Mantenimiento con 50% off** (contado, desde Gs. 100.000/mes según tu negocio)
+- **Implementación Vip:** Acompañamiento personalizado y capacitación
+- **Instalación local** en Windows, sin depender de internet
+- **Soporte WhatsApp directo**, no call center
+
+**Botón:**
+Aprovechar la promo
+
+### Nota
+El mantenimiento es opcional. Sin mantenimiento, las incidencias se cobran por separado. El rango de mantenimiento regular va de Gs. 200.000 a Gs. 600.000/mes según el tamaño de tu negocio.
 
 ---
 

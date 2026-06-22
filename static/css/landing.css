@@ -353,9 +353,45 @@ h1, h2, h3, h4, h5, .navbar-brand {
     text-align: center;
     max-width: 600px;
     margin: 0 auto;
+    position: relative;
+}
+.precios-fundador {
+    border: 2px solid var(--morado);
+    box-shadow: 0 8px 32px rgba(91,42,134,0.15);
+}
+.precios-mundial {
+    border: 2px solid var(--verde);
+    box-shadow: 0 8px 32px rgba(74,124,89,0.15);
 }
 .precios-card h3 {
     color: var(--morado);
+}
+.precios-mundial h3 {
+    color: var(--verde);
+}
+.plan-badge {
+    display: inline-block;
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--morado);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.35rem 1.2rem;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+.plan-badge-verde {
+    background: var(--verde);
+}
+.plan-desc {
+    color: var(--gris-claro);
+    font-size: 0.9rem;
+    margin-bottom: 0;
 }
 .precio-desde {
     margin: 1.5rem 0;
@@ -374,12 +410,21 @@ h1, h2, h3, h4, h5, .navbar-brand {
     letter-spacing: 0.05em;
     font-weight: 500;
 }
+.precio-tachado {
+    font-size: 1.1rem;
+    color: var(--gris-claro);
+    text-decoration: line-through;
+    font-weight: 500;
+}
 .precio-desde .desde-monto {
     font-size: 2.2rem;
     font-weight: 800;
     color: var(--morado);
     font-family: 'Plus Jakarta Sans', sans-serif;
     line-height: 1.1;
+}
+.precios-mundial .precio-desde .desde-monto {
+    color: var(--verde);
 }
 .precio-desde .desde-nota {
     font-size: 0.85rem;
@@ -398,6 +443,17 @@ h1, h2, h3, h4, h5, .navbar-brand {
 .precios-card ul li i {
     color: var(--verde);
     margin-right: 0.5rem;
+}
+.precios-nota {
+    text-align: center;
+    max-width: 600px;
+    margin: 2rem auto 0;
+    color: var(--gris-claro);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+.precios-nota i {
+    color: var(--morado);
 }
 
 /* ── Contacto ────────────────────────────────────────────────────────── */
