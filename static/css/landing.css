@@ -313,7 +313,6 @@ h1, h2, h3, h4, h5, .navbar-brand {
     padding: 3rem;
     max-width: 800px;
     margin: 0 auto;
-    text-align: center;
     box-shadow: 0 4px 16px rgba(0,0,0,0.06);
     border-left: 4px solid var(--morado);
 }
@@ -323,25 +322,114 @@ h1, h2, h3, h4, h5, .navbar-brand {
     display: flex;
     justify-content: center;
 }
-.prueba-social-card blockquote {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: var(--gris-texto);
-    margin: 0 0 1.5rem 0;
-    padding: 0;
-    border: none;
-    font-style: italic;
+.quien-detras {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
 }
-.prueba-social-card blockquote strong {
+.quien-avatar {
+    flex-shrink: 0;
     color: var(--morado);
-    font-style: normal;
+    background: var(--gris-fondo);
+    border-radius: 50%;
+    width: 72px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.prueba-social-firma {
+.quien-texto h3 {
+    color: var(--morado);
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+}
+.quien-texto p {
     color: var(--gris-claro);
     font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
 }
-.prueba-social-firma strong {
-    color: var(--verde);
+.quien-texto strong {
+    color: var(--gris-texto);
+}
+
+/* ── Módulos extra (secundarios) ─────────────────────────────────────── */
+.modulos-extra {
+    margin-top: 3rem;
+}
+.modulos-extra-title {
+    text-align: center;
+    color: var(--gris-claro);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+.modulos-extra-title::before,
+.modulos-extra-title::after {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 1px;
+    background: #DDD;
+    vertical-align: middle;
+    margin: 0 1rem;
+}
+.feature-card-sm {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    height: 100%;
+    border: 1px solid #F0F0F0;
+    transition: all 0.3s;
+}
+.feature-card-sm:hover {
+    border-color: var(--morado);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+.feature-icon-sm {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 0.75rem;
+    color: var(--morado);
+}
+.feature-icon-sm svg {
+    width: 100%;
+    height: 100%;
+}
+.feature-card-sm h4 {
+    font-size: 0.95rem;
+    color: var(--morado);
+    margin-bottom: 0.35rem;
+}
+.feature-card-sm p {
+    font-size: 0.85rem;
+    color: var(--gris-claro);
+    margin-bottom: 0;
+    line-height: 1.4;
+}
+.modulos-extra-note {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    color: var(--gris-claro);
+    font-size: 0.9rem;
+}
+.modulos-extra-note i {
+    color: var(--morado);
+}
+
+/* ── Hero prueba gratis ──────────────────────────────────────────────── */
+.hero-prueba-gratis {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(91,42,134,0.1);
+    color: var(--morado);
+    padding: 0.5rem 1.25rem;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
 }
 
 /* ── Precios ─────────────────────────────────────────────────────────── */

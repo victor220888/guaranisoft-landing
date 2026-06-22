@@ -29,25 +29,28 @@ Punto de Venta, Inventario y Contabilidad. Soporte local directo y cumplimiento 
 - Contacto
 
 **Botón:**
-Agendar demostración
+Solicitar demo
 
 ---
 
 ## Hero
 
 **Eslogan (debajo del logo):**
-Gestión empresarial. Soporte local. Cero estrés.
+Tu mostrador, tu depósito y tu contabilidad, ordenados y al día.
 
 **Subtítulo:**
-El sistema que ordena el día a día de tu negocio. Punto de Venta ágil, control de inventario exacto y tu contabilidad siempre al día bajo la normativa de la SET.
+Hecho en Paraguay, con soporte directo del que lo programó. Punto de Venta ágil, control de inventario exacto y tu contabilidad siempre al día bajo la normativa de la SET.
+
+**Badge de prueba gratis:**
+1 mes de prueba gratis, sin compromiso
 
 **Botones:**
-- Solicitar demo gratuita
+- Solicitar demo
 - Hablar por WhatsApp
 
 ---
 
-## Badges de cumplimiento
+## Badges
 
 **4 badges (texto corto):**
 - Punto de Venta Rápido
@@ -70,7 +73,7 @@ Llevar el control de las ventas en el mostrador, cuadrar la caja diaria y saber 
 
 ---
 
-## Features — Módulos clave para tu empresa
+## Módulos
 
 **Título de sección:**
 Módulos clave para tu empresa
@@ -78,32 +81,35 @@ Módulos clave para tu empresa
 **Subtítulo:**
 Empezá por ordenar tu mostrador y tu depósito, nosotros nos encargamos del resto.
 
-### Módulo 1: Punto de Venta y Facturación
+### Módulos principales (4):
+
+**1. Punto de Venta y Facturación**
 Velocidad extrema en mostrador. Carga rápida para tus operadores, conexión directa con inventario y múltiples métodos de cobro. Ideal para atención ágil al cliente.
 
-### Módulo 2: Control de Inventario
+**2. Control de Inventario**
 Saber qué tenés es clave. Kardex por producto, ajustes de stock, traslados entre depósitos y alertas de stock bajo. Manejá múltiples sucursales sin perder el control.
 
-### Módulo 3: Gestión de Cajas
+**3. Gestión de Cajas**
 Terminá con los faltantes. Panel de control detallado, aperturas, movimientos de entrada/salida, verificación, arqueo ciego y cierre del día con máxima seguridad.
 
-### Módulo 4: Contabilidad Automática
+**4. Contabilidad Automática**
 Tus operaciones diarias generan la contabilidad solas. Plan de cuentas, asientos automáticos, ejercicios fiscales y generación de reportes listos para tus obligaciones.
 
-### Módulo 5: Tributario y Fiscal
-Cumplimiento sin esfuerzo. Generación de información para IRE, IDU, IRP (Ley 6380/2019) y retenciones. Tus números siempre claros para la SET.
+### Y además:
 
-### Módulo 6: Compras y Cuentas por Pagar
-Registrá tus compras de mercadería e insumos, controlá tus fechas de vencimiento y mantené un historial limpio con tus proveedores.
+**Tributario y Fiscal**
+IRE, IDU, IRP (Ley 6380/2019), retenciones, Marangatú. Tus números claros para la SET.
 
-### Módulo 7: Dashboard e Indicadores
-Toda tu empresa en una pantalla. Tableros visuales con las ventas del día, top de productos más vendidos y flujo de caja para que tomes decisiones con datos reales.
+**Compras y Cuentas por Pagar**
+Registrá compras, controlá vencimientos y mantené un historial limpio con proveedores.
 
-### Módulo 8: Préstamos Internos
-Amortización, cálculo de intereses y seguimiento de cuotas. Una herramienta excelente si tu empresa ofrece financiamiento a clientes o empleados.
+**Dashboard e Indicadores**
+Tableros visuales: ventas del día, top productos, flujo de caja. Decisiones con datos reales.
 
-### Módulo 9: Facturación Electrónica SIFEN (Bajo demanda)
-Integramos la facturación electrónica SIFEN a tu medida. Lo desarrollamos y adaptamos exclusivamente bajo pedido para las empresas que necesitan dar el salto, asegurando un proceso certificado y sin interrumpir tu operativa diaria.
+**Préstamos Internos**
+Amortización, intereses, cuotas. Ideal si ofrecés financiamiento a clientes o empleados.
+
+**Facturación Electrónica SIFEN** — Integrada a medida bajo demanda. La desarrollamos y adaptamos exclusivamente para las empresas que necesitan dar el salto.
 
 ---
 
@@ -119,10 +125,10 @@ Acompañamiento personalizado 1 a 1 para asegurar tu éxito
 Agendás una demo, nos contás cómo funciona tu local o empresa y vemos juntos si somos el ajuste perfecto para tus necesidades.
 
 ### Paso 2: Instalación Segura
-Instalamos el software de forma local en tu computadora. Esto garantiza que tus datos sean 100% privados y que puedas seguir facturando a máxima velocidad sin depender de internet.
+Instalamos el software de forma local en tu computadora. Tus datos son 100% privados y, si se corta el internet, seguís vendiendo y facturando. Solo la transmisión a SIFEN necesita conexión.
 
 ### Paso 3: Acompañamiento Total
-Te capacitamos a vos y a tu equipo. Al trabajar con nosotros en esta etapa, tendrás línea directa con los desarrolladores para asegurar que el sistema potencie tu forma de trabajar.
+Te capacitamos a vos y a tu equipo. Línea directa con el desarrollador para asegurar que el sistema potencie tu forma de trabajar.
 
 ---
 
@@ -133,8 +139,8 @@ Te capacitamos a vos y a tu equipo. Al trabajar con nosotros en esta etapa, tend
 - Label: Operación centralizada
 
 **Stat 2:**
-- Número: 0
-- Label: Dependencia de internet para vender
+- Número: Local
+- Label: Tus datos viven en tu máquina, no en la nube
 
 **Stat 3:**
 - Número: 100%
@@ -142,32 +148,35 @@ Te capacitamos a vos y a tu equipo. Al trabajar con nosotros en esta etapa, tend
 
 **Stat 4:**
 - Número: WhatsApp
-- Label: Soporte directo sin bots
+- Label: Soporte directo del que lo programó
 
 ---
 
-## Prueba social
+## ¿Quién está detrás?
 
-**Quote:**
-"Construimos Ñande ERP trabajando codo a codo con la realidad comercial de Paraguay. Nuestro compromiso es darte una herramienta rapidísima para tu punto de venta, y la total tranquilidad de que tu inventario, tu caja y tu contabilidad están exactos y listos para cualquier exigencia fiscal."
+Hola, soy **Victor Román**, desarrollador paraguayo. Construí Ñande ERP desde cero, trabajando dentro de una empresa real, probando contra la legislación paraguaya: Ley 6380/2019, RG 49/14, RESIMPLE y SIFEN v150.
 
-**Firma:**
-GuaraníSoft · Desarrollo de software paraguayo
+Cuando me escribís, hablás con el que lo programó. No hay call center, no hay intermediarios. Soporte directo, decisiones rápidas.
+
+**Botón:** Hablar con Victor
 
 ---
 
-## Precios
+## Precios — Plan Fundador
 
 **Título de sección:**
-Inversión Transparente
+Plan Fundador
 
 **Subtítulo:**
-Un sistema que es tuyo, con el respaldo que necesitás.
+Para las primeras 3 empresas que confíen en Ñande ERP. Beneficio exclusivo y permanente.
 
-### Plan Fundador (1 cupo disponible)
+**Badge:** 3 cupos disponibles
+
+**Título de tarjeta:**
+Plan Fundador — 70% off
 
 **Descripción:**
-Para nuestra primera empresa piloto. Acompañamiento total y beneficio exclusivo.
+Para nuestras primeras empresas piloto. Acompañamiento total y beneficio exclusivo de por vida.
 
 **Precio:**
 - Label: Licencia con 70% de descuento
@@ -180,35 +189,13 @@ Para nuestra primera empresa piloto. Acompañamiento total y beneficio exclusivo
 - **Sistema completo:** POS, Ventas, Compras, Inventario, Cajas, Tributario y Contabilidad
 - **Mantenimiento con 70% off** (contado, desde Gs. 60.000/mes según tu negocio)
 - **Implementación Vip:** Acompañamiento personalizado y capacitación
-- **Instalación local** en Windows, sin depender de internet
-- **Soporte WhatsApp directo**, no call center
+- **Instalación local** en Windows. Seguís operando aunque se corte el internet.
+- **Soporte WhatsApp directo** del que lo programó
 
 **Botón:**
-Quiero ser el Fundador
+Solicitar demo
 
-### Promo Mundial — 50% off
-
-**Descripción:**
-Vigente hasta el final del Mundial. Arrancá con tu sistema a mitad de precio.
-
-**Precio:**
-- Label: Licencia con 50% de descuento
-- Precio regular tachado: Gs. 4.500.000
-- Precio con descuento: Gs. 2.250.000
-- Nota: En 3 cuotas de Gs. 750.000 sin interés
-
-**Incluye:**
-- **1 mes de prueba gratis** sin compromiso
-- **Sistema completo:** POS, Ventas, Compras, Inventario, Cajas, Tributario y Contabilidad
-- **Mantenimiento con 50% off** (contado, desde Gs. 100.000/mes según tu negocio)
-- **Implementación Vip:** Acompañamiento personalizado y capacitación
-- **Instalación local** en Windows, sin depender de internet
-- **Soporte WhatsApp directo**, no call center
-
-**Botón:**
-Aprovechar la promo
-
-### Nota
+**Nota:**
 El mantenimiento es opcional. Sin mantenimiento, las incidencias se cobran por separado. El rango de mantenimiento regular va de Gs. 200.000 a Gs. 600.000/mes según el tamaño de tu negocio.
 
 ---
@@ -229,7 +216,7 @@ Dejanos tus datos para coordinar una demostración personalizada
 - Breve detalle de lo que buscás organizar *
 
 **Botón:**
-Agendar demostración
+Solicitar demo
 
 **Mensaje de éxito:**
 ¡Excelente! Recibimos tus datos. Te vamos a escribir por WhatsApp muy pronto para coordinar.
