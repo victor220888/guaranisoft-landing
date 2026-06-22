@@ -125,7 +125,7 @@ Acompañamiento personalizado 1 a 1 para asegurar tu éxito
 Agendás una demo, nos contás cómo funciona tu local o empresa y vemos juntos si somos el ajuste perfecto para tus necesidades.
 
 ### Paso 2: Instalación Segura
-Instalamos el software de forma local en tu computadora. Tus datos son 100% privados y, si se corta el internet, seguís vendiendo y facturando. Solo la transmisión a SIFEN necesita conexión.
+Instalamos el software de forma local en tu computadora. Tus datos son 100% privados, y si se te corta el internet no paras: seguís cargando ventas y movimientos, y el sistema sincroniza con el SIFEN apenas vuelve la conexión.
 
 ### Paso 3: Acompañamiento Total
 Te capacitamos a vos y a tu equipo. Línea directa con el desarrollador para asegurar que el sistema potencie tu forma de trabajar.
@@ -140,7 +140,7 @@ Te capacitamos a vos y a tu equipo. Línea directa con el desarrollador para ase
 
 **Stat 2:**
 - Número: Local
-- Label: Tus datos viven en tu máquina, no en la nube
+- Label: Tus datos y tu operación viven en tu máquina
 
 **Stat 3:**
 - Número: 100%
@@ -148,15 +148,15 @@ Te capacitamos a vos y a tu equipo. Línea directa con el desarrollador para ase
 
 **Stat 4:**
 - Número: WhatsApp
-- Label: Soporte directo del que lo programó
+- Label: Soporte directo, sin bots ni call center
 
 ---
 
 ## ¿Quién está detrás?
 
-Hola, soy **Victor Román**, desarrollador paraguayo. Construí Ñande ERP desde cero, trabajando dentro de una empresa real, probando contra la legislación paraguaya: Ley 6380/2019, RG 49/14, RESIMPLE y SIFEN v150.
+Soy **Lic. Victor Román**, desarrollador paraguayo con más de 10 años de experiencia en el mercado, creando herramientas que brindan soluciones reales para empresas. Construí Ñande ERP desde cero, trabajando codo a codo con la realidad comercial de Paraguay: Ley 6380/2019, RG 49/14, RESIMPLE y SIFEN v150.
 
-Cuando me escribís, hablás con el que lo programó. No hay call center, no hay intermediarios. Soporte directo, decisiones rápidas.
+Mi compromiso es darte una herramienta rapidísima para tu mostrador, y la tranquilidad de que tu inventario, tu caja y tu contabilidad están exactos y listos para cualquier exigencia fiscal. Cuando trabajás conmigo, le hablás directo al que programa el sistema.
 
 **Botón:** Hablar con Victor
 
@@ -170,7 +170,7 @@ Plan Fundador
 **Subtítulo:**
 Para las primeras 3 empresas que confíen en Ñande ERP. Beneficio exclusivo y permanente.
 
-**Badge:** 3 cupos disponibles
+**Badge:** Quedan 3 de 3 cupos
 
 **Título de tarjeta:**
 Plan Fundador — 70% off
@@ -187,16 +187,16 @@ Para nuestras primeras empresas piloto. Acompañamiento total y beneficio exclus
 **Incluye:**
 - **1 mes de prueba gratis** sin compromiso
 - **Sistema completo:** POS, Ventas, Compras, Inventario, Cajas, Tributario y Contabilidad
-- **Mantenimiento con 70% off** (contado, desde Gs. 60.000/mes según tu negocio)
+- **Mantenimiento con 70% off**
 - **Implementación Vip:** Acompañamiento personalizado y capacitación
-- **Instalación local** en Windows. Seguís operando aunque se corte el internet.
+- **Instalación local** en Windows: si se corta el internet, tu operación no se frena
 - **Soporte WhatsApp directo** del que lo programó
 
 **Botón:**
 Solicitar demo
 
 **Nota:**
-El mantenimiento es opcional. Sin mantenimiento, las incidencias se cobran por separado. El rango de mantenimiento regular va de Gs. 200.000 a Gs. 600.000/mes según el tamaño de tu negocio.
+Después de los 3 fundadores, la licencia vuelve a Gs. 4.500.000. El mantenimiento es opcional — sin mantenimiento, las incidencias se cobran por separado.
 
 ---
 
