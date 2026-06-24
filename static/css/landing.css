@@ -203,6 +203,102 @@ h1, h2, h3, h4, h5, .navbar-brand {
     vertical-align: middle;
 }
 
+/* ── Diferenciadores ─────────────────────────────────────────────────── */
+.diferenciadores {
+    padding: 50px 0;
+    background: white;
+    border-bottom: 1px solid #EEE;
+}
+.diferenciadores-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.diferenciador {
+    text-align: center;
+    padding: 1rem;
+}
+.diferenciador svg {
+    color: var(--morado);
+    margin-bottom: 0.75rem;
+}
+.diferenciador h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--gris-texto);
+    margin-bottom: 0.35rem;
+}
+.diferenciador p {
+    font-size: 0.85rem;
+    color: var(--gris-claro);
+    margin-bottom: 0;
+    line-height: 1.4;
+}
+
+/* ── ¿Qué problemas resuelve? ────────────────────────────────────────── */
+.problemas {
+    background: var(--gris-fondo);
+}
+.problema-card {
+    background: white;
+    border-radius: 14px;
+    padding: 2rem;
+    height: 100%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    border: 1px solid #F0F0F0;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+.problema-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(91,42,134,0.1);
+    border-color: var(--morado);
+}
+.problema-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1rem;
+    color: var(--morado);
+}
+.problema-icon svg {
+    width: 100%;
+    height: 100%;
+}
+.problema-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gris-texto);
+    margin-bottom: 0.6rem;
+    line-height: 1.4;
+}
+.problema-card p {
+    font-size: 0.9rem;
+    color: var(--gris-claro);
+    line-height: 1.5;
+    margin-bottom: 0;
+    flex-grow: 1;
+}
+.problema-card-cta {
+    background: linear-gradient(135deg, var(--morado) 0%, #4a2270 100%);
+    border: none;
+}
+.problema-card-cta h3 {
+    color: white;
+}
+.problema-card-cta p {
+    color: rgba(255,255,255,0.85);
+}
+.problema-card-cta .problema-icon {
+    color: white;
+    opacity: 0.9;
+}
+.problema-card-cta .btn {
+    align-self: flex-start;
+}
+
 /* ── Problema/Solución ───────────────────────────────────────────────── */
 .problema-solucion .col-md-6 {
     padding: 2rem;

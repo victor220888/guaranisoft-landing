@@ -39,7 +39,7 @@ Solicitar demo
 Tu mostrador, tu depósito y tu contabilidad, ordenados y al día.
 
 **Subtítulo:**
-Hecho en Paraguay, con soporte directo del que lo programó. Punto de Venta ágil, control de inventario exacto y tu contabilidad siempre al día bajo la normativa de la SET.
+Ventas, stock, caja y contabilidad conectados en un solo sistema. Diseñado para Paraguay, sin depender de internet.
 
 **Badge de prueba gratis:**
 1 mes de prueba gratis, sin compromiso
@@ -47,6 +47,28 @@ Hecho en Paraguay, con soporte directo del que lo programó. Punto de Venta ági
 **Botones:**
 - Solicitar demo
 - Hablar por WhatsApp
+
+---
+
+## Diferenciadores (4 pilares)
+
+1. **Diseñado para Paraguay** — Ley 6380, SIFEN, RESIMPLE. Cumplimiento real, no adaptado.
+2. **Sin depender de internet** — Tu operación sigue aunque se corte la conexión. Sincroniza SIFEN al volver.
+3. **Control total en un solo lugar** — Ventas, stock, caja y contabilidad conectados. Todo actualizado en tiempo real.
+4. **Soporte directo del que lo programó** — WhatsApp directo a Victor. Sin bots, sin call center, sin vueltas.
+
+---
+
+## ¿Qué problemas resuelve?
+
+Título: "¿Sabés realmente cómo está tu negocio?"
+
+1. **¿Vendés todos los días pero no sabés exactamente cuánto ganaste?** — Reportes claros de ventas, gastos y rentabilidad por producto, categoría y período.
+2. **¿Tu stock nunca coincide con lo que hay en el depósito?** — Cada venta y movimiento actualiza el inventario automáticamente. Kardex, alertas de stock bajo, múltiples sucursales.
+3. **¿Cerrar caja te consume demasiado tiempo todos los días?** — Aperturas, arqueo ciego y cierre del día en minutos.
+4. **¿Necesitás prepararte para la facturación electrónica?** — SIFEN integrado. DTEs cumpliendo Ley 6380/2019, RG 49/14 y RESIMPLE.
+5. **¿Tenés la información repartida entre cuadernos, Excel y WhatsApp?** — Centralizá ventas, inventario, clientes y finanzas en un solo sistema.
+6. **CTA:** "¿Listo para tomar el control?" — Agendá una demo y descubrí en 15 minutos dónde Ñande ERP puede ayudarte.
 
 ---
 
