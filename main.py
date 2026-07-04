@@ -13,7 +13,7 @@ import db  # Importamos nuestro nuevo módulo
 import sheets  # Integración Google Sheets
 
 from fastapi import FastAPI, Form, Request
-from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse
+from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from dotenv import load_dotenv
@@ -133,6 +133,17 @@ Mensaje:
         status_code=200,
         content={"ok": True}
     )
+
+
+# ── Static root files ──────────────────────────────────────────────────────
+@app.get("/robots.txt")
+async def robots():
+    return FileResponse(BASE_DIR / "static" / "robots.txt")
+
+
+@app.get("/sitemap.xml")
+async def sitemap():
+    return FileResponse(BASE_DIR / "static" / "sitemap.xml")
 
 
 # ── Health check (para Railway/Render) ──────────────────────────────────────
