@@ -425,14 +425,15 @@ h1, h2, h3, h4, h5, .navbar-brand {
 }
 .quien-avatar {
     flex-shrink: 0;
-    color: var(--morado);
-    background: var(--gris-fondo);
-    border-radius: 50%;
     width: 72px;
     height: 72px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+}
+.quien-avatar img {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 .quien-texto h3 {
     color: var(--morado);
