@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" role="document">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,25 +36,25 @@
 
     <link rel="icon" type="image/svg+xml" href="/static/img/favicon.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="/static/css/landing.css" rel="stylesheet">
 </head>
 <body>
 
 <!-- ═══ Navbar ═════════════════════════════════════════════════════════ -->
-<nav class="navbar navbar-landing fixed-top navbar-expand-lg">
+<nav class="navbar navbar-landing fixed-top navbar-expand-lg" role="navigation" aria-label="Navegación principal">
     <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="#" aria-label="Ñande ERP — Ir al inicio">
             <img src="/static/img/logo-compacto.svg" alt="Ñande ERP">
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
+                aria-controls="navMain" aria-expanded="false" aria-label="Abrir menú de navegación">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navMain">
             <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                <li class="nav-item"><a class="nav-link" href="#pilares">Por qué Ñande</a></li>
                 <li class="nav-item"><a class="nav-link" href="#problemas">¿Problemas?</a></li>
-                <li class="nav-item"><a class="nav-link" href="#beneficios">Beneficios</a></li>
                 <li class="nav-item"><a class="nav-link" href="#modulos">Módulos</a></li>
                 <li class="nav-item"><a class="nav-link" href="#precios">Precios</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
@@ -67,58 +67,73 @@
 </nav>
 
 <!-- ═══ Hero ═══════════════════════════════════════════════════════════ -->
-<section class="hero" id="top">
+<main role="main">
+<section class="hero" id="top" aria-labelledby="hero-heading">
     <div class="container">
-        <img src="/static/img/logo-eslogan.svg" alt="Ñande ERP" class="img-fluid logo-hero">
-        <div class="tagline">Tu mostrador, tu depósito y tu contabilidad, ordenados y al día.</div>
+        <img src="/static/img/logo-eslogan.svg" alt="Ñande ERP — ERP paraguayo. Cumplimiento real. Soporte local." class="img-fluid logo-hero">
+        <p class="tagline" id="hero-heading">Tu mostrador, tu depósito y tu contabilidad, ordenados y al día.</p>
         <p class="subtitle">
             Ventas, stock, caja y contabilidad conectados en un solo sistema.
             Diseñado para Paraguay, sin depender de internet.
         </p>
         <div class="hero-prueba-gratis fade-in">
-            <i class="bi bi-gift-fill me-2"></i>1 mes de prueba gratis, sin compromiso
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
+            1 mes de prueba gratis, sin compromiso
         </div>
         <div class="d-flex gap-3 justify-content-center flex-wrap">
             <a href="#contacto" class="btn btn-morado">Solicitar demo</a>
             <a href="https://wa.me/595992504620" target="_blank" rel="noopener" class="btn btn-verde">
-                <i class="bi bi-whatsapp me-2"></i>Hablar por WhatsApp
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="margin-right: 0.5rem; vertical-align: -3px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                Hablar por WhatsApp
             </a>
         </div>
         <div class="hero-screenshot fade-in">
             <div class="browser-frame">
                 <div class="browser-bar">
-                    <span class="dot dot-red"></span>
-                    <span class="dot dot-yellow"></span>
-                    <span class="dot dot-green"></span>
+                    <span class="dot dot-red" aria-hidden="true"></span>
+                    <span class="dot dot-yellow" aria-hidden="true"></span>
+                    <span class="dot dot-green" aria-hidden="true"></span>
                     <span class="browser-url">nande-erp.local/dashboard</span>
                 </div>
-                <img src="/static/img/dashboard.png" alt="Dashboard de Ñande ERP" class="img-fluid">
+                <img src="/static/img/dashboard.png" alt="Dashboard de Ñande ERP mostrando el panel de control con indicadores de ventas, stock y caja">
             </div>
         </div>
     </div>
 </section>
 
-<!-- ═══ Diferenciadores ════════════════════════════════════════════════ -->
-<section class="diferenciadores">
+<!-- ═══ Pilares — Por qué Ñande ERP ════════════════════════════════════ -->
+<section class="pilares section-compact" id="pilares" aria-labelledby="pilares-heading">
     <div class="container">
-        <div class="diferenciadores-row fade-in">
-            <div class="diferenciador">
-                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 L2 7 L12 12 L22 7 Z"/><path d="M2 17 L12 22 L22 17"/><path d="M2 12 L12 17 L22 12"/></svg>
+        <div class="section-title fade-in">
+            <h2 id="pilares-heading">Por qué las empresas paraguayas eligen Ñande ERP</h2>
+            <p>Cuatro razones que hacen la diferencia frente a cualquier otro sistema</p>
+        </div>
+        <div class="pilares-row stagger-children">
+            <div class="pilar fade-in">
+                <div class="pilar-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 L2 7 L12 12 L22 7 Z"/><path d="M2 17 L12 22 L22 17"/><path d="M2 12 L12 17 L22 12"/></svg>
+                </div>
                 <h4>Diseñado para Paraguay</h4>
-                <p>Ley 6380, SIFEN, RESIMPLE. Cumplimiento real, no adaptado.</p>
+                <p>Ley 6380, SIFEN, RESIMPLE. Cumplimiento real, no adaptado de otro país.</p>
             </div>
-            <div class="diferenciador">
-                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12 L9 16 L19 6"/><path d="M12 2 A10 10 0 0 1 22 12 A10 10 0 0 1 12 22 A10 10 0 0 1 2 12"/><line x1="2" y1="12" x2="5" y2="12" stroke-dasharray="2 2"/></svg>
+            <div class="pilar fade-in">
+                <div class="pilar-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12 L9 16 L19 6"/><circle cx="12" cy="12" r="10"/></svg>
+                </div>
                 <h4>Sin depender de internet</h4>
                 <p>Tu operación sigue aunque se corte la conexión. Sincroniza SIFEN al volver.</p>
             </div>
-            <div class="diferenciador">
-                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="3" y1="9" x2="21" y2="9"/><circle cx="7" cy="15" r="1.5" fill="currentColor" stroke="none"/><circle cx="12" cy="15" r="1.5" fill="currentColor" stroke="none"/><circle cx="17" cy="15" r="1.5" fill="currentColor" stroke="none"/></svg>
+            <div class="pilar fade-in">
+                <div class="pilar-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="3" y1="9" x2="21" y2="9"/><circle cx="7" cy="15" r="1.5" fill="currentColor" stroke="none"/><circle cx="12" cy="15" r="1.5" fill="currentColor" stroke="none"/><circle cx="17" cy="15" r="1.5" fill="currentColor" stroke="none"/></svg>
+                </div>
                 <h4>Control total en un solo lugar</h4>
                 <p>Ventas, stock, caja y contabilidad conectados. Todo actualizado en tiempo real.</p>
             </div>
-            <div class="diferenciador">
-                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5 C21 16 17 19 12 19 C10.5 19 9 18.7 7.7 18.2 L3 19 L4.3 15.5 C3.5 14.4 3 13 3 11.5 C3 7 7 4 12 4 C17 4 21 7 21 11.5 Z"/></svg>
+            <div class="pilar fade-in">
+                <div class="pilar-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5 C21 16 17 19 12 19 C10.5 19 9 18.7 7.7 18.2 L3 19 L4.3 15.5 C3.5 14.4 3 13 3 11.5 C3 7 7 4 12 4 C17 4 21 7 21 11.5 Z"/></svg>
+                </div>
                 <h4>Soporte directo del que lo programó</h4>
                 <p>WhatsApp directo a Victor. Sin bots, sin call center, sin vueltas.</p>
             </div>
@@ -127,7 +142,7 @@
 </section>
 
 <!-- ═══ Badges ════════════════════════════════════════════════════════ -->
-<div class="badges-cumplimiento">
+<div class="badges-cumplimiento" aria-label="Certificaciones y capacidades">
     <div class="container">
         <div class="badges-row fade-in">
             <span class="badge-cumpl">
@@ -151,26 +166,26 @@
 </div>
 
 <!-- ═══ ¿Qué problemas resuelve? ═══════════════════════════════════════ -->
-<section class="problemas" id="problemas">
+<section class="problemas" id="problemas" aria-labelledby="problemas-heading">
     <div class="container">
         <div class="section-title fade-in">
-            <h2>¿Sabés realmente cómo está tu negocio?</h2>
+            <h2 id="problemas-heading">¿Sabés realmente cómo está tu negocio?</h2>
             <p>Las preguntas que más le duelen a un comerciante — y cómo las resolvemos</p>
         </div>
-        <div class="row g-4">
+        <div class="row g-4 stagger-children">
             <div class="col-md-6 col-lg-4 fade-in">
                 <div class="problema-card">
                     <div class="problema-icon">
-                        <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2 V22"/><path d="M8 6 Q12 3 16 6"/><path d="M8 11 Q12 8 16 11"/><path d="M8 16 Q12 13 16 16"/><circle cx="12" cy="20" r="1.5" fill="currentColor" stroke="none"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2 V22"/><path d="M8 6 Q12 3 16 6"/><path d="M8 11 Q12 8 16 11"/><path d="M8 16 Q12 13 16 16"/><circle cx="12" cy="20" r="1.5" fill="currentColor" stroke="none"/></svg>
                     </div>
                     <h3>¿Vendés todos los días pero no sabés exactamente cuánto ganaste?</h3>
-                    <p>Obtené reportes claros de ventas, gastos y rentabilidad por producto, categoría y período. Sin planillas, sin cálculos manuales.</p>
+                    <p>Reportes claros de ventas, gastos y rentabilidad por producto, categoría y período. Sin planillas, sin cálculos manuales.</p>
                 </div>
             </div>
             <div class="col-md-6 col-lg-4 fade-in">
                 <div class="problema-card">
                     <div class="problema-icon">
-                        <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="3" x2="9" y2="21"/><path d="M13 13 L17 17" stroke-width="1.5"/><circle cx="15" cy="15" r="2" fill="currentColor" stroke="none" opacity="0.2"/><circle cx="15" cy="15" r="2"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="3" x2="9" y2="21"/><circle cx="15" cy="15" r="2"/></svg>
                     </div>
                     <h3>¿Tu stock nunca coincide con lo que hay en el depósito?</h3>
                     <p>Cada venta y movimiento actualiza el inventario automáticamente. Kardex por producto, alertas de stock bajo y control de múltiples sucursales.</p>
@@ -179,7 +194,7 @@
             <div class="col-md-6 col-lg-4 fade-in">
                 <div class="problema-card">
                     <div class="problema-icon">
-                        <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7 V12 L16 14"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7 V12 L16 14"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/></svg>
                     </div>
                     <h3>¿Cerrar caja te consume demasiado tiempo todos los días?</h3>
                     <p>Registrá ingresos y egresos en un solo lugar. Aperturas, arqueo ciego y cierre del día en minutos, no en horas.</p>
@@ -188,7 +203,7 @@
             <div class="col-md-6 col-lg-4 fade-in">
                 <div class="problema-card">
                     <div class="problema-icon">
-                        <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="3" width="16" height="18" rx="2"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="12" y2="16"/><path d="M10 21 L14 21" stroke-width="2"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="3" width="16" height="18" rx="2"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="12" y2="16"/></svg>
                     </div>
                     <h3>¿Necesitás prepararte para la facturación electrónica?</h3>
                     <p>SIFEN integrado al sistema. Generá DTEs cumpliendo Ley 6380/2019, RG 49/14 y RESIMPLE sin salir de Ñande ERP.</p>
@@ -197,7 +212,7 @@
             <div class="col-md-6 col-lg-4 fade-in">
                 <div class="problema-card">
                     <div class="problema-icon">
-                        <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="6" height="5" rx="1"/><rect x="11" y="4" width="6" height="5" rx="1"/><rect x="3" y="12" width="6" height="5" rx="1"/><rect x="11" y="12" width="6" height="5" rx="1"/><line x1="19" y1="6" x2="22" y2="6"/><line x1="19" y1="9" x2="22" y2="9"/><line x1="19" y1="14" x2="22" y2="14"/><line x1="19" y1="17" x2="22" y2="17"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="6" height="5" rx="1"/><rect x="11" y="4" width="6" height="5" rx="1"/><rect x="3" y="12" width="6" height="5" rx="1"/><rect x="11" y="12" width="6" height="5" rx="1"/><line x1="19" y1="6" x2="22" y2="6"/><line x1="19" y1="9" x2="22" y2="9"/><line x1="19" y1="14" x2="22" y2="14"/><line x1="19" y1="17" x2="22" y2="17"/></svg>
                     </div>
                     <h3>¿Tenés la información repartida entre cuadernos, Excel y WhatsApp?</h3>
                     <p>Centralizá ventas, inventario, clientes y finanzas en un solo sistema. Todo conectado, todo actualizado, todo en un lugar.</p>
@@ -206,7 +221,7 @@
             <div class="col-md-6 col-lg-4 fade-in">
                 <div class="problema-card problema-card-cta">
                     <div class="problema-icon">
-                        <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12 L21 12"/><path d="M15 6 L21 12 L15 18"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12 L21 12"/><path d="M15 6 L21 12 L15 18"/></svg>
                     </div>
                     <h3>¿Listo para tomar el control?</h3>
                     <p>Agendá una demo y descubrí en 15 minutos dónde Ñande ERP puede ayudarte a ganar tiempo y dinero.</p>
@@ -217,162 +232,124 @@
     </div>
 </section>
 
-<!-- ═══ Problema / Solución ═════════════════════════════════════════════ -->
-<section class="problema-solucion" id="beneficios">
+<!-- ═══ Módulos ════════════════════════════════════════════════════════ -->
+<section id="modulos" aria-labelledby="modulos-heading">
     <div class="container">
         <div class="section-title fade-in">
-            <h2>El control total de tu negocio, en un solo lugar</h2>
-        </div>
-        <div class="row align-items-center">
-            <div class="col-md-6 fade-in">
-                <div class="problema">
-                    <h4 class="mb-3"><i class="bi bi-exclamation-triangle text-danger me-2"></i>El problema</h4>
-                    <p class="text-muted">
-                        Llevar el control de las ventas en el mostrador, cuadrar la caja diaria
-                        y saber exactamente qué hay en el depósito suele ser un dolor de cabeza
-                        cuando los sistemas están desconectados. Si a esto le sumamos tener que
-                        preparar la información para el contador o prever la facturación electrónica,
-                        el día a día se vuelve lento y propenso a errores.
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-6 fade-in">
-                <div class="solucion">
-                    <h4 class="mb-3" style="color: var(--morado);">
-                        <i class="bi bi-check-circle me-2"></i>La solución
-                    </h4>
-                    <p class="text-muted">
-                        Ñande ERP centraliza la operación. Cada vez que hacés una venta, el stock
-                        se descuenta, la caja se actualiza y el asiento contable se genera
-                        automáticamente. Todo pensado bajo las exigencias fiscales de Paraguay
-                        para que operes con tranquilidad hoy y escales sin límites mañana.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ═══ Features / Módulos ══════════════════════════════════════════════ -->
-<section id="modulos">
-    <div class="container">
-        <div class="section-title fade-in">
-            <h2>Módulos clave para tu empresa</h2>
+            <h2 id="modulos-heading">Módulos clave para tu empresa</h2>
             <p>Empezá por ordenar tu mostrador y tu depósito, nosotros nos encargamos del resto.</p>
         </div>
 
-        <!-- Módulos principales -->
-        <div class="row g-4">
+        <div class="row g-4 stagger-children">
             <div class="col-md-6 col-lg-3 fade-in">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="8" width="36" height="24" rx="3"/><line x1="6" y1="16" x2="42" y2="16"/><rect x="10" y="20" width="10" height="8" rx="1" fill="currentColor" stroke="none" opacity="0.15"/><rect x="10" y="20" width="10" height="8" rx="1"/><circle cx="34" cy="24" r="3" style="stroke:#4A7C59"/><line x1="14" y1="36" x2="34" y2="36"/><line x1="24" y1="32" x2="24" y2="40"/><path d="M18 44 L30 44" stroke-width="2.5" style="stroke:#4A7C59"/></svg>
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="8" width="36" height="24" rx="3"/><line x1="6" y1="16" x2="42" y2="16"/><rect x="10" y="20" width="10" height="8" rx="1" fill="currentColor" stroke="none" opacity="0.15"/><rect x="10" y="20" width="10" height="8" rx="1"/><circle cx="34" cy="24" r="3" style="stroke:#4A7C59"/><line x1="14" y1="36" x2="34" y2="36"/><line x1="24" y1="32" x2="24" y2="40"/><path d="M18 44 L30 44" stroke-width="2.5" style="stroke:#4A7C59"/></svg>
                     </div>
                     <h3>Punto de Venta y Facturación</h3>
-                    <p>Velocidad extrema en mostrador. Carga rápida para tus operadores, conexión directa con inventario y múltiples métodos de cobro. Ideal para atención ágil al cliente.</p>
+                    <p>Velocidad extrema en mostrador. Carga rápida para tus operadores, conexión directa con inventario y múltiples métodos de cobro.</p>
                 </div>
             </div>
-
             <div class="col-md-6 col-lg-3 fade-in">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 16 L24 8 L40 16 L40 38 L24 46 L8 38 Z"/><path d="M8 16 L24 24 L40 16"/><line x1="24" y1="24" x2="24" y2="46"/><rect x="15" y="20" width="6" height="6" rx="1" style="stroke:#4A7C59"/><rect x="27" y="20" width="6" height="6" rx="1" style="stroke:#4A7C59"/><rect x="21" y="30" width="6" height="6" rx="1" style="stroke:#4A7C59"/></svg>
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 16 L24 8 L40 16 L40 38 L24 46 L8 38 Z"/><path d="M8 16 L24 24 L40 16"/><line x1="24" y1="24" x2="24" y2="46"/><rect x="15" y="20" width="6" height="6" rx="1" style="stroke:#4A7C59"/><rect x="27" y="20" width="6" height="6" rx="1" style="stroke:#4A7C59"/><rect x="21" y="30" width="6" height="6" rx="1" style="stroke:#4A7C59"/></svg>
                     </div>
                     <h3>Control de Inventario</h3>
-                    <p>Saber qué tenés es clave. Kardex por producto, ajustes de stock, traslados entre depósitos y alertas de stock bajo. Manejá múltiples sucursales sin perder el control.</p>
+                    <p>Saber qué tenés es clave. Kardex por producto, ajustes de stock, traslados entre depósitos y alertas de stock bajo.</p>
                 </div>
             </div>
-
             <div class="col-md-6 col-lg-3 fade-in">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="16" width="36" height="20" rx="3"/><circle cx="24" cy="26" r="5" style="stroke:#4A7C59"/><circle cx="24" cy="26" r="2" fill="#4A7C59" stroke="none"/><circle cx="12" cy="22" r="1.5" fill="currentColor" stroke="none"/><circle cx="36" cy="30" r="1.5" fill="currentColor" stroke="none"/><line x1="12" y1="30" x2="16" y2="30"/><line x1="32" y1="22" x2="36" y2="22"/></svg>
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="16" width="36" height="20" rx="3"/><circle cx="24" cy="26" r="5" style="stroke:#4A7C59"/><circle cx="24" cy="26" r="2" fill="#4A7C59" stroke="none"/><circle cx="12" cy="22" r="1.5" fill="currentColor" stroke="none"/><circle cx="36" cy="30" r="1.5" fill="currentColor" stroke="none"/><line x1="12" y1="30" x2="16" y2="30"/><line x1="32" y1="22" x2="36" y2="22"/></svg>
                     </div>
                     <h3>Gestión de Cajas</h3>
-                    <p>Terminá con los faltantes. Panel de control detallado, aperturas, movimientos de entrada/salida, verificación, arqueo ciego y cierre del día con máxima seguridad.</p>
+                    <p>Terminá con los faltantes. Panel de control detallado, aperturas, movimientos, verificación, arqueo ciego y cierre del día.</p>
                 </div>
             </div>
-
             <div class="col-md-6 col-lg-3 fade-in">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8 L8 40 L24 42 L40 40 L40 8 L24 10 Z"/><line x1="24" y1="10" x2="24" y2="42"/><line x1="12" y1="16" x2="20" y2="16" style="stroke:#4A7C59"/><line x1="12" y1="21" x2="20" y2="21" style="stroke:#4A7C59"/><line x1="12" y1="26" x2="20" y2="26" style="stroke:#4A7C59"/><line x1="12" y1="31" x2="20" y2="31" style="stroke:#4A7C59"/><line x1="28" y1="16" x2="36" y2="16" style="stroke:#4A7C59"/><line x1="28" y1="21" x2="36" y2="21" style="stroke:#4A7C59"/><line x1="28" y1="26" x2="36" y2="26" style="stroke:#4A7C59"/><line x1="28" y1="31" x2="36" y2="31" style="stroke:#4A7C59"/></svg>
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8 L8 40 L24 42 L40 40 L40 8 L24 10 Z"/><line x1="24" y1="10" x2="24" y2="42"/><line x1="12" y1="16" x2="20" y2="16" style="stroke:#4A7C59"/><line x1="12" y1="21" x2="20" y2="21" style="stroke:#4A7C59"/><line x1="12" y1="26" x2="20" y2="26" style="stroke:#4A7C59"/><line x1="12" y1="31" x2="20" y2="31" style="stroke:#4A7C59"/><line x1="28" y1="16" x2="36" y2="16" style="stroke:#4A7C59"/><line x1="28" y1="21" x2="36" y2="21" style="stroke:#4A7C59"/><line x1="28" y1="26" x2="36" y2="26" style="stroke:#4A7C59"/><line x1="28" y1="31" x2="36" y2="31" style="stroke:#4A7C59"/></svg>
                     </div>
                     <h3>Contabilidad Automática</h3>
-                    <p>Tus operaciones diarias generan la contabilidad solas. Plan de cuentas, asientos automáticos, ejercicios fiscales y generación de reportes listos para tus obligaciones.</p>
+                    <p>Tus operaciones diarias generan la contabilidad solas. Plan de cuentas, asientos automáticos, ejercicios fiscales y reportes.</p>
                 </div>
             </div>
         </div>
 
-        <!-- Y además -->
+        <!-- Secundarios -->
         <div class="modulos-extra fade-in">
             <h3 class="modulos-extra-title">Y además</h3>
-            <div class="row g-3">
-                <div class="col-md-6 col-lg-3">
+            <div class="row g-3 stagger-children">
+                <div class="col-md-6 col-lg-3 fade-in">
                     <div class="feature-card-sm">
                         <div class="feature-icon-sm">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="24" y1="6" x2="24" y2="42"/><line x1="14" y1="42" x2="34" y2="42"/><line x1="8" y1="14" x2="40" y2="14"/><line x1="8" y1="14" x2="8" y2="22"/><path d="M3 22 L13 22 L11 27 L5 27 Z" style="stroke:#4A7C59"/><line x1="40" y1="14" x2="40" y2="22"/><path d="M35 22 L45 22 L43 27 L37 27 Z" style="stroke:#4A7C59"/><circle cx="24" cy="10" r="3"/></svg>
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="24" y1="6" x2="24" y2="42"/><line x1="14" y1="42" x2="34" y2="42"/><line x1="8" y1="14" x2="40" y2="14"/><path d="M3 22 L13 22 L11 27 L5 27 Z" style="stroke:#4A7C59"/><line x1="40" y1="14" x2="40" y2="22"/><path d="M35 22 L45 22 L43 27 L37 27 Z" style="stroke:#4A7C59"/><circle cx="24" cy="10" r="3"/></svg>
                         </div>
                         <h4>Tributario y Fiscal</h4>
                         <p>IRE, IDU, IRP (Ley 6380/2019), retenciones, Marangatú. Tus números claros para la SET.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-lg-3 fade-in">
                     <div class="feature-card-sm">
                         <div class="feature-icon-sm">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6 L12 42 L24 38 L36 42 L36 6 L24 10 L12 6 Z"/><line x1="17" y1="18" x2="31" y2="18"/><line x1="17" y1="24" x2="31" y2="24"/><path d="M19 31 L16 34 L19 37" style="stroke:#4A7C59"/><path d="M29 31 L32 34 L29 37" style="stroke:#4A7C59"/><line x1="16" y1="34" x2="32" y2="34" style="stroke:#4A7C59"/></svg>
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6 L12 42 L24 38 L36 42 L36 6 L24 10 L12 6 Z"/><line x1="17" y1="18" x2="31" y2="18"/><line x1="17" y1="24" x2="31" y2="24"/></svg>
                         </div>
                         <h4>Compras y Cuentas por Pagar</h4>
                         <p>Registrá compras, controlá vencimientos y mantené un historial limpio con proveedores.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-lg-3 fade-in">
                     <div class="feature-card-sm">
                         <div class="feature-icon-sm">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="36" height="36" rx="8"/><line x1="13" y1="30" x2="13" y2="24" stroke-width="3"/><line x1="20" y1="30" x2="20" y2="18" stroke-width="3"/><line x1="27" y1="30" x2="27" y2="21" style="stroke:#4A7C59" stroke-width="3"/><line x1="34" y1="30" x2="34" y2="14" style="stroke:#4A7C59" stroke-width="3"/><line x1="10" y1="34" x2="38" y2="34"/></svg>
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="36" height="36" rx="8"/><line x1="13" y1="30" x2="13" y2="24" stroke-width="3"/><line x1="20" y1="30" x2="20" y2="18" stroke-width="3"/><line x1="27" y1="30" x2="27" y2="21" style="stroke:#4A7C59" stroke-width="3"/><line x1="34" y1="30" x2="34" y2="14" style="stroke:#4A7C59" stroke-width="3"/><line x1="10" y1="34" x2="38" y2="34"/></svg>
                         </div>
                         <h4>Dashboard e Indicadores</h4>
                         <p>Tableros visuales: ventas del día, top productos, flujo de caja. Decisiones con datos reales.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-lg-3 fade-in">
                     <div class="feature-card-sm">
                         <div class="feature-icon-sm">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="4" width="24" height="40" rx="4"/><rect x="16" y="8" width="16" height="8" rx="2" style="stroke:#4A7C59"/><circle cx="18" cy="22" r="1.5" fill="currentColor" stroke="none"/><circle cx="24" cy="22" r="1.5" fill="currentColor" stroke="none"/><circle cx="30" cy="22" r="1.5" fill="currentColor" style="fill:#4A7C59" stroke="none"/><circle cx="18" cy="28" r="1.5" fill="currentColor" stroke="none"/><circle cx="24" cy="28" r="1.5" fill="currentColor" stroke="none"/><circle cx="30" cy="28" r="1.5" fill="currentColor" style="fill:#4A7C59" stroke="none"/><circle cx="18" cy="34" r="1.5" fill="currentColor" stroke="none"/><circle cx="24" cy="34" r="1.5" fill="currentColor" stroke="none"/><circle cx="30" cy="34" r="1.5" fill="currentColor" style="fill:#4A7C59" stroke="none"/><line x1="16" y1="40" x2="32" y2="40" style="stroke:#4A7C59"/></svg>
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="4" width="24" height="40" rx="4"/><rect x="16" y="8" width="16" height="8" rx="2" style="stroke:#4A7C59"/><circle cx="18" cy="22" r="1.5" fill="currentColor" stroke="none"/><circle cx="24" cy="22" r="1.5" fill="currentColor" stroke="none"/><circle cx="30" cy="22" r="1.5" fill="currentColor" style="fill:#4A7C59" stroke="none"/></svg>
                         </div>
                         <h4>Préstamos Internos</h4>
                         <p>Amortización, intereses, cuotas. Ideal si ofrecés financiamiento a clientes o empleados.</p>
                     </div>
                 </div>
             </div>
-            <div class="modulos-extra-note fade-in">
-                <p><i class="bi bi-info-circle me-1"></i> <strong>Facturación Electrónica SIFEN</strong> — Integrada a medida bajo demanda. La desarrollamos y adaptamos exclusivamente para las empresas que necesitan dar el salto.</p>
+            <div class="modulos-extra-note">
+                <p>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    <strong>Facturación Electrónica SIFEN</strong> — Integrada a medida bajo demanda. La desarrollamos y adaptamos exclusivamente para las empresas que necesitan dar el salto.
+                </p>
             </div>
         </div>
-
     </div>
 </section>
 
 <!-- ═══ Cómo funciona ═══════════════════════════════════════════════════ -->
-<section class="como-funciona" id="como-funciona">
+<section class="como-funciona section-compact" id="como-funciona" aria-labelledby="como-funciona-heading">
     <div class="container">
         <div class="section-title fade-in">
-            <h2>Tu puesta en marcha</h2>
+            <h2 id="como-funciona-heading">Tu puesta en marcha</h2>
             <p>Acompañamiento personalizado 1 a 1 para asegurar tu éxito</p>
         </div>
-        <div class="row">
+        <div class="row stagger-children">
             <div class="col-md-4 fade-in">
                 <div class="paso">
                     <span class="num">1</span>
                     <h3>Nos conocemos</h3>
-                    <p>Agendás una demo, nos contás cómo funciona tu local o empresa y vemos juntos si somos el ajuste perfecto para tus necesidades.</p>
+                    <p>Agendás una demo, nos contás cómo funciona tu local o empresa y vemos juntos si somos el ajuste perfecto.</p>
                 </div>
             </div>
             <div class="col-md-4 fade-in">
                 <div class="paso">
                     <span class="num">2</span>
                     <h3>Instalación Segura</h3>
-                    <p>Instalamos el software de forma local en tu computadora. Tus datos son 100% privados, y si se te corta el internet no paras: seguís cargando ventas y movimientos, y el sistema sincroniza con el SIFEN apenas vuelve la conexión.</p>
+                    <p>Instalamos el software de forma local en tu computadora. Tus datos son 100% privados, y si se corta internet no parás: seguís cargando ventas y el sistema sincroniza con SIFEN al volver.</p>
                 </div>
             </div>
             <div class="col-md-4 fade-in">
@@ -387,31 +364,31 @@
 </section>
 
 <!-- ═══ Stats ══════════════════════════════════════════════════════════ -->
-<section class="stats">
+<section class="stats section-compact" aria-label="Indicadores del sistema">
     <div class="container">
-        <div class="row g-4">
+        <div class="row g-4 stagger-children">
             <div class="col-6 col-md-3 fade-in">
                 <div class="stat-item">
-                    <span class="num">100%</span>
-                    <span class="label">Operación centralizada</span>
+                    <span class="num">Windows</span>
+                    <span class="label">Instalación local, 100% portable. Sin depender de la nube.</span>
                 </div>
             </div>
             <div class="col-6 col-md-3 fade-in">
                 <div class="stat-item">
-                    <span class="num">Local</span>
-                    <span class="label">Tus datos y tu operación viven en tu máquina</span>
+                    <span class="num">Paraguay</span>
+                    <span class="label">Hecho para PyMEs paraguayas. Ley 6380, SIFEN, Marangatú.</span>
                 </div>
             </div>
             <div class="col-6 col-md-3 fade-in">
                 <div class="stat-item">
-                    <span class="num">100%</span>
-                    <span class="label">Adaptado a la Ley 6380</span>
+                    <span class="num">Integral</span>
+                    <span class="label">POS + Inventario + Cajas + Contabilidad en un solo sistema.</span>
                 </div>
             </div>
             <div class="col-6 col-md-3 fade-in">
                 <div class="stat-item">
-                    <span class="num">WhatsApp</span>
-                    <span class="label">Soporte directo, sin bots ni call center</span>
+                    <span class="num">Directo</span>
+                    <span class="label">Soporte vía WhatsApp. Sin bots, sin call center, sin vueltas.</span>
                 </div>
             </div>
         </div>
@@ -419,7 +396,7 @@
 </section>
 
 <!-- ═══ Quién está detrás ═══════════════════════════════════════════════ -->
-<section class="prueba-social">
+<section class="prueba-social" aria-labelledby="quien-heading">
     <div class="container">
         <div class="prueba-social-card fade-in">
             <div class="quien-detras">
@@ -427,20 +404,20 @@
                     <img src="/static/img/victor-roman.jpg" alt="Lic. Victor Román" width="72" height="72" style="border-radius:50%;object-fit:cover;">
                 </div>
                 <div class="quien-texto">
-                    <h3>¿Quién está detrás?</h3>
+                    <h3 id="quien-heading">¿Quién está detrás?</h3>
                     <p>
                         Soy <strong>Lic. Victor Román</strong>, desarrollador paraguayo con más de 10 años
                         de experiencia en el mercado, creando herramientas que brindan soluciones reales
                         para empresas. Construí Ñande ERP desde cero, trabajando codo a codo con la
                         realidad comercial de Paraguay: Ley 6380/2019, RG 49/14, RESIMPLE y SIFEN v150.
                     </p>
-                    <p>
+                    <p class="mb-0">
                         Mi compromiso es darte una herramienta rapidísima para tu mostrador, y la
                         tranquilidad de que tu inventario, tu caja y tu contabilidad están exactos y
                         listos para cualquier exigencia fiscal. Cuando trabajás conmigo, le hablás
                         directo al que programa el sistema.
                     </p>
-                    <a href="#contacto" class="btn btn-outline-morado btn-sm mt-2">Hablar con Victor</a>
+                    <a href="#contacto" class="btn btn-outline-morado btn-sm mt-3">Hablar con Victor</a>
                 </div>
             </div>
         </div>
@@ -448,10 +425,10 @@
 </section>
 
 <!-- ═══ Precios ═════════════════════════════════════════════════════════ -->
-<section id="precios">
+<section id="precios" aria-labelledby="precios-heading">
     <div class="container">
         <div class="section-title fade-in">
-            <h2>Plan Fundador</h2>
+            <h2 id="precios-heading">Plan Fundador</h2>
             <p>Para las primeras 3 empresas que confíen en Ñande ERP. Beneficio exclusivo y permanente.</p>
         </div>
         <div class="precios-card precios-fundador fade-in">
@@ -465,59 +442,83 @@
                 <span class="desde-nota">En 3 cuotas de Gs. 450.000 sin interés</span>
             </div>
             <ul>
-                <li><i class="bi bi-gift-fill" style="color: var(--morado);"></i> <strong>1 mes de prueba gratis</strong> sin compromiso</li>
-                <li><i class="bi bi-check-circle-fill"></i> <strong>Sistema completo:</strong> POS, Ventas, Compras, Inventario, Cajas, Tributario y Contabilidad</li>
-                <li><i class="bi bi-check-circle-fill"></i> <strong>Mantenimiento con 70% off</strong></li>
-                <li><i class="bi bi-check-circle-fill"></i> <strong>Implementación Vip:</strong> Acompañamiento personalizado y capacitación</li>
-                <li><i class="bi bi-check-circle-fill"></i> <strong>Instalación local</strong> en Windows: si se corta el internet, tu operación no se frena</li>
-                <li><i class="bi bi-check-circle-fill"></i> <strong>Soporte WhatsApp directo</strong> del que lo programó</li>
+                <li>
+                    <svg class="gift" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
+                    <strong>1 mes de prueba gratis</strong> sin compromiso
+                </li>
+                <li>
+                    <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <strong>Sistema completo:</strong> POS, Ventas, Compras, Inventario, Cajas, Tributario y Contabilidad
+                </li>
+                <li>
+                    <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <strong>Mantenimiento con 70% off</strong>
+                </li>
+                <li>
+                    <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <strong>Implementación Vip:</strong> Acompañamiento personalizado y capacitación
+                </li>
+                <li>
+                    <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <strong>Instalación local</strong> en Windows: si se corta el internet, tu operación no se frena
+                </li>
+                <li>
+                    <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <strong>Soporte WhatsApp directo</strong> del que lo programó
+                </li>
             </ul>
             <a href="#contacto" class="btn btn-morado mt-3">Solicitar demo</a>
         </div>
 
         <div class="precios-nota fade-in">
-            <p><i class="bi bi-info-circle me-1"></i> Después de los 3 fundadores, la licencia vuelve a <strong>Gs. 4.500.000</strong>. El mantenimiento es opcional — sin mantenimiento, las incidencias se cobran por separado.</p>
+            <p>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                Después de los 3 fundadores, la licencia vuelve a <strong>Gs. 4.500.000</strong>. El mantenimiento es opcional — sin mantenimiento, las incidencias se cobran por separado.
+            </p>
         </div>
     </div>
 </section>
 
 <!-- ═══ Contacto ════════════════════════════════════════════════════════ -->
-<section class="contacto" id="contacto">
+<section class="contacto" id="contacto" aria-labelledby="contacto-heading">
     <div class="container">
         <div class="section-title fade-in">
-            <h2>Hablemos de tu negocio</h2>
+            <h2 id="contacto-heading">Hablemos de tu negocio</h2>
             <p>Dejanos tus datos para coordinar una demostración personalizada</p>
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-7 fade-in">
                 <div class="contacto-form">
-                    <form id="formContacto" onsubmit="return false;">
+                    <form id="formContacto" onsubmit="return false;" aria-label="Formulario de contacto para demo">
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <label class="form-label">Nombre *</label>
-                                <input type="text" name="nombre" class="form-control" required>
+                                <label class="form-label" for="campo-nombre">Nombre *</label>
+                                <input type="text" name="nombre" id="campo-nombre" class="form-control" required aria-required="true">
                             </div>
                             <div class="col-md-6">
-                                <label class="form-label">Empresa</label>
-                                <input type="text" name="empresa" class="form-control">
+                                <label class="form-label" for="campo-empresa">Empresa</label>
+                                <input type="text" name="empresa" id="campo-empresa" class="form-control">
                             </div>
                             <div class="col-md-6">
-                                <label class="form-label">Teléfono / WhatsApp *</label>
-                                <input type="tel" name="telefono" class="form-control" required>
+                                <label class="form-label" for="campo-telefono">Teléfono / WhatsApp *</label>
+                                <input type="tel" name="telefono" id="campo-telefono" class="form-control" required aria-required="true">
                             </div>
                             <div class="col-md-6">
-                                <label class="form-label">Email *</label>
-                                <input type="email" name="email" class="form-control" required>
+                                <label class="form-label" for="campo-email">Email *</label>
+                                <input type="email" name="email" id="campo-email" class="form-control" required aria-required="true">
                             </div>
                             <div class="col-12">
-                                <label class="form-label">Breve detalle de lo que buscás organizar *</label>
-                                <textarea name="mensaje" class="form-control" rows="4" required></textarea>
+                                <label class="form-label" for="campo-mensaje">Breve detalle de lo que buscás organizar *</label>
+                                <textarea name="mensaje" id="campo-mensaje" class="form-control" rows="4" required aria-required="true"></textarea>
                             </div>
                             <div class="col-12">
                                 <button type="submit" class="btn btn-morado w-100" id="btnContacto">
-                                    <span id="btnText"><i class="bi bi-calendar-check me-2"></i>Solicitar demo</span>
+                                    <span id="btnText">
+                                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.5rem; vertical-align: -3px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                        Solicitar demo
+                                    </span>
                                     <span id="btnSpinner" class="d-none">
-                                        <span class="spinner-border spinner-border-sm me-2"></span>Enviando, esto puede tardar unos segundos...
+                                        <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Enviando, esto puede tardar unos segundos...
                                     </span>
                                 </button>
                             </div>
@@ -528,21 +529,21 @@
             <div class="col-lg-4 fade-in">
                 <div class="contacto-info">
                     <h4 class="mb-3" style="color: var(--morado);">Contacto directo</h4>
-                    <ul class="ps-0">
+                    <ul>
                         <li>
-                            <i class="bi bi-envelope me-2 text-muted"></i>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4 L12 13 L2 4"/></svg>
                             <a href="mailto:ventas@guaranisof.com">ventas@guaranisof.com</a>
                         </li>
                         <li>
-                            <i class="bi bi-headset me-2 text-muted"></i>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
                             <a href="mailto:soporte@guaranisof.com">soporte@guaranisof.com</a>
                         </li>
                         <li>
-                            <i class="bi bi-whatsapp me-2 text-muted"></i>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
                             <a href="https://wa.me/595992504620" target="_blank" rel="noopener">+595 992 504 620</a>
                         </li>
                         <li>
-                            <i class="bi bi-linkedin me-2 text-muted"></i>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
                             <a href="https://www.linkedin.com/in/victor-roman-226bb155/" target="_blank" rel="noopener">LinkedIn</a>
                         </li>
                     </ul>
@@ -557,13 +558,14 @@
         </div>
     </div>
 </section>
+</main>
 
 <!-- ═══ Footer ══════════════════════════════════════════════════════════ -->
-<footer>
+<footer role="contentinfo">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-6 text-md-start text-center mb-2 mb-md-0">
-                <strong style="color: white;">Ñande ERP</strong> por GuaraníSoft —
+                <strong>Ñande ERP</strong> por GuaraníSoft —
                 <a href="https://guaranisof.com">guaranisof.com</a>
             </div>
             <div class="col-md-6 text-md-end text-center">
@@ -575,18 +577,18 @@
 </footer>
 
 <!-- ═══ WhatsApp flotante ═══════════════════════════════════════════════ -->
-<a href="https://wa.me/595992504620" target="_blank" rel="noopener" class="whatsapp-float" title="Escribinos, te respondemos al instante">
+<a href="https://wa.me/595992504620" target="_blank" rel="noopener" class="whatsapp-float"
+   title="Escribinos, te respondemos al instante" aria-label="Chatear por WhatsApp">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
 </a>
 
 <!-- ═══ Scripts ═════════════════════════════════════════════════════════ -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-// Contenedor de toasts
+// ── Toast container ──
 (function() {
     var container = document.createElement('div');
     container.id = 'toast-container';
-    container.style.cssText = 'position:fixed;top:24px;right:24px;z-index:10000;display:flex;flex-direction:column;gap:12px;max-width:380px;';
     document.body.appendChild(container);
 })();
 
@@ -596,9 +598,8 @@ function showToast(type, message) {
     var bgColor = type === 'success' ? '#D1FAE5' : '#FEF3C7';
     var borderColor = type === 'success' ? '#6EE7B7' : '#FCD34D';
     var textColor = type === 'success' ? '#065F46' : '#92400E';
-    var icon = type === 'success' ? 'bi-check-circle-fill' : 'bi-clock';
-    toast.style.cssText = 'background:' + bgColor + ';border:1px solid ' + borderColor + ';color:' + textColor + ';border-radius:10px;padding:1rem 1.25rem;display:flex;align-items:flex-start;gap:0.5rem;box-shadow:0 8px 24px rgba(0,0,0,0.12);opacity:0;transform:translateX(100%);transition:opacity 0.3s ease,transform 0.3s ease;font-size:0.9rem;line-height:1.4;';
-    toast.innerHTML = '<i class="bi ' + icon + '" style="margin-top:2px;flex-shrink:0;"></i><span>' + message + '</span>';
+    toast.style.cssText = 'background:' + bgColor + ';border:1px solid ' + borderColor + ';color:' + textColor + ';border-radius:10px;padding:0.9rem 1.1rem;display:flex;align-items:flex-start;gap:0.5rem;box-shadow:0 8px 24px rgba(0,0,0,0.12);opacity:0;transform:translateX(24px);transition:opacity 0.25s ease,transform 0.25s ease;font-size:0.88rem;line-height:1.4;';
+    toast.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top:2px;flex-shrink:0;"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>' + message + '</span>';
     container.appendChild(toast);
     requestAnimationFrame(function() {
         toast.style.opacity = '1';
@@ -606,12 +607,12 @@ function showToast(type, message) {
     });
     setTimeout(function() {
         toast.style.opacity = '0';
-        toast.style.transform = 'translateX(100%)';
-        setTimeout(function() { toast.remove(); }, 300);
+        toast.style.transform = 'translateX(24px)';
+        setTimeout(function() { toast.remove(); }, 250);
     }, 6000);
 }
 
-// Formulario — AJAX
+// ── Formulario AJAX ──
 document.getElementById('formContacto').addEventListener('submit', function(e) {
     e.preventDefault();
     var btn = document.getElementById('btnContacto');
@@ -649,13 +650,24 @@ document.getElementById('formContacto').addEventListener('submit', function(e) {
         });
 });
 
-// Fade-in on scroll
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
+// ── Navbar scroll effect ──
+window.addEventListener('scroll', function() {
+    var nav = document.querySelector('.navbar-landing');
+    if (window.scrollY > 20) {
+        nav.classList.add('scrolled');
+    } else {
+        nav.classList.remove('scrolled');
+    }
+});
+
+// ── Fade-in + stagger ──
+var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
         if (e.isIntersecting) e.target.classList.add('visible');
     });
 }, { threshold: 0.1 });
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
 </script>
 
 </body>
