@@ -948,3 +948,10 @@ footer a:hover { color: white; }
     max-width: 480px;
     margin: 0 auto 1.75rem;
 }
+.corp-nav-link {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--morado) !important;
+}
+.corp-nav-link span { color: var(--verde); }
+.corp-nav-link:hover { opacity: 0.8; }
