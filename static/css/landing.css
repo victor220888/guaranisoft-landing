@@ -878,47 +878,53 @@ footer a:hover { color: white; }
     .hero-prueba-gratis { font-size: 0.82rem; }
 }
 
-/* ── Capturas en cards de módulos ───────────────────────────────────── */
-.modulo-shot {
+/* ── Galería de capturas de módulos ─────────────────────────────────── */
+.modulos-galeria {
+    margin-top: 2.5rem;
+}
+.modulos-galeria-title {
+    text-align: center;
+    color: var(--gris-claro);
+    font-size: 0.88rem;
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+}
+.galeria-shot {
     display: block;
     width: 100%;
-    margin-top: 1rem;
     padding: 0;
-    border: 1px solid var(--borde);
-    border-radius: var(--radius-sm);
-    background: var(--gris-fondo);
-    overflow: hidden;
+    border: none;
+    background: none;
     cursor: zoom-in;
-    position: relative;
-    transition: border-color var(--duration-fast) var(--ease-out),
-                box-shadow var(--duration-fast) var(--ease-out);
+    text-align: center;
 }
-.modulo-shot:hover,
-.modulo-shot:focus-visible {
-    border-color: var(--morado);
-    box-shadow: var(--shadow-md);
+.galeria-shot .browser-frame {
+    display: block;
+    transition: transform var(--duration-normal) var(--ease-out),
+                box-shadow var(--duration-normal) var(--ease-out);
 }
-.modulo-shot img {
+.galeria-shot:hover .browser-frame,
+.galeria-shot:focus-visible .browser-frame {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-xl);
+}
+.galeria-shot .browser-bar {
+    padding: 8px 12px;
+}
+.galeria-shot .browser-frame img {
     display: block;
     width: 100%;
-    height: auto;
+    height: 170px;
+    object-fit: cover;
+    object-position: top left;
 }
-.modulo-shot-hint {
-    position: absolute;
-    right: 8px;
-    bottom: 8px;
-    background: rgba(91, 42, 134, 0.9);
-    color: #fff;
-    font-size: 0.7rem;
+.galeria-caption {
+    display: inline-block;
+    margin-top: 0.7rem;
+    font-size: 0.85rem;
     font-weight: 600;
-    padding: 0.2rem 0.55rem;
-    border-radius: 999px;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity var(--duration-fast) var(--ease-out);
+    color: var(--morado);
 }
-.modulo-shot:hover .modulo-shot-hint,
-.modulo-shot:focus-visible .modulo-shot-hint { opacity: 1; }
 
 /* ── Lightbox ───────────────────────────────────────────────────────── */
 .lightbox-overlay {
