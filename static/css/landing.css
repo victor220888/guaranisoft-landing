@@ -1048,3 +1048,38 @@ footer a:hover { color: white; }
 @media (max-width: 480px) {
     .corp-hero-wordmark { font-size: 1.9rem; }
 }
+
+/* ── Breadcrumbs ────────────────────────────────────────────────────── */
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    color: var(--gris-claro);
+    margin-bottom: 1.5rem;
+    font-family: var(--font-display);
+    font-weight: 500;
+}
+.breadcrumbs a {
+    color: var(--morado);
+    text-decoration: none;
+}
+.breadcrumbs a:hover { text-decoration: underline; }
+.breadcrumbs [aria-current] { color: var(--gris-medio); }
+
+/* ── Avatar fallback ────────────────────────────────────────────────── */
+.avatar-fallback {
+    display: none;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: var(--morado);
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 0.02em;
+}
