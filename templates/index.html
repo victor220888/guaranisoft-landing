@@ -280,52 +280,6 @@
             </div>
         </div>
 
-        <!-- Galería de capturas -->
-        <div class="modulos-galeria fade-in">
-            <p class="modulos-galeria-title">Así se ve por dentro — hacé click para ampliar</p>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <button type="button" class="galeria-shot" data-lightbox="/static/img/ventas.png" aria-label="Ampliar captura del módulo Punto de Venta">
-                        <span class="browser-frame">
-                            <span class="browser-bar">
-                                <span class="dot dot-red" aria-hidden="true"></span>
-                                <span class="dot dot-yellow" aria-hidden="true"></span>
-                                <span class="dot dot-green" aria-hidden="true"></span>
-                            </span>
-                            <img src="/static/img/ventas.png" alt="Pantalla del módulo Punto de Venta de Ñande ERP" loading="lazy">
-                        </span>
-                        <span class="galeria-caption">Punto de Venta</span>
-                    </button>
-                </div>
-                <div class="col-md-4">
-                    <button type="button" class="galeria-shot" data-lightbox="/static/img/cajas.png" aria-label="Ampliar captura del módulo Gestión de Cajas">
-                        <span class="browser-frame">
-                            <span class="browser-bar">
-                                <span class="dot dot-red" aria-hidden="true"></span>
-                                <span class="dot dot-yellow" aria-hidden="true"></span>
-                                <span class="dot dot-green" aria-hidden="true"></span>
-                            </span>
-                            <img src="/static/img/cajas.png" alt="Pantalla del módulo Gestión de Cajas de Ñande ERP" loading="lazy">
-                        </span>
-                        <span class="galeria-caption">Gestión de Cajas</span>
-                    </button>
-                </div>
-                <div class="col-md-4">
-                    <button type="button" class="galeria-shot" data-lightbox="/static/img/contabilidad.png" aria-label="Ampliar captura del módulo Contabilidad">
-                        <span class="browser-frame">
-                            <span class="browser-bar">
-                                <span class="dot dot-red" aria-hidden="true"></span>
-                                <span class="dot dot-yellow" aria-hidden="true"></span>
-                                <span class="dot dot-green" aria-hidden="true"></span>
-                            </span>
-                            <img src="/static/img/contabilidad.png" alt="Pantalla del módulo Contabilidad Automática de Ñande ERP" loading="lazy">
-                        </span>
-                        <span class="galeria-caption">Contabilidad</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-
         <!-- Secundarios -->
         <div class="modulos-extra fade-in">
             <h3 class="modulos-extra-title">Y además</h3>
@@ -733,37 +687,6 @@ var observer = new IntersectionObserver(function(entries) {
 }, { threshold: 0.1 });
 
 document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
-
-// ── Lightbox de capturas ──
-(function() {
-    var overlay = document.createElement('div');
-    overlay.className = 'lightbox-overlay';
-    overlay.setAttribute('role', 'dialog');
-    overlay.setAttribute('aria-modal', 'true');
-    overlay.setAttribute('aria-label', 'Captura ampliada');
-    overlay.innerHTML = '<img alt=""><button type="button" class="lightbox-close" aria-label="Cerrar">&times;</button>';
-    document.body.appendChild(overlay);
-    var img = overlay.querySelector('img');
-
-    function close() {
-        overlay.classList.remove('open');
-        document.body.style.overflow = '';
-    }
-    overlay.addEventListener('click', close);
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && overlay.classList.contains('open')) close();
-    });
-
-    document.querySelectorAll('[data-lightbox]').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            var thumb = btn.querySelector('img');
-            img.src = btn.getAttribute('data-lightbox');
-            img.alt = thumb ? thumb.alt : '';
-            overlay.classList.add('open');
-            document.body.style.overflow = 'hidden';
-        });
-    });
-})();
 </script>
 
 </body>
