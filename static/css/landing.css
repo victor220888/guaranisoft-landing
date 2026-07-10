@@ -877,3 +877,114 @@ footer a:hover { color: white; }
     .badge-cumpl { font-size: 0.75rem; padding: 0.4rem 0.8rem; }
     .hero-prueba-gratis { font-size: 0.82rem; }
 }
+
+/* ── Capturas en cards de módulos ───────────────────────────────────── */
+.modulo-shot {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0;
+    border: 1px solid var(--borde);
+    border-radius: var(--radius-sm);
+    background: var(--gris-fondo);
+    overflow: hidden;
+    cursor: zoom-in;
+    position: relative;
+    transition: border-color var(--duration-fast) var(--ease-out),
+                box-shadow var(--duration-fast) var(--ease-out);
+}
+.modulo-shot:hover,
+.modulo-shot:focus-visible {
+    border-color: var(--morado);
+    box-shadow: var(--shadow-md);
+}
+.modulo-shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.modulo-shot-hint {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    background: rgba(91, 42, 134, 0.9);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity var(--duration-fast) var(--ease-out);
+}
+.modulo-shot:hover .modulo-shot-hint,
+.modulo-shot:focus-visible .modulo-shot-hint { opacity: 1; }
+
+/* ── Lightbox ───────────────────────────────────────────────────────── */
+.lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(17, 24, 39, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--duration-normal) var(--ease-out),
+                visibility var(--duration-normal) var(--ease-out);
+    cursor: zoom-out;
+}
+.lightbox-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+.lightbox-overlay img {
+    max-width: min(1100px, 95vw);
+    max-height: 90vh;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-xl);
+    background: var(--blanco);
+}
+.lightbox-close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2.2rem;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0.8;
+}
+.lightbox-close:hover { opacity: 1; }
+
+/* ── Testimonios (estructura lista, sección comentada en HTML) ──────── */
+.testimonio-card {
+    background: var(--blanco);
+    border-radius: var(--radius-md);
+    padding: 1.75rem;
+    height: 100%;
+    border: 1px solid var(--borde);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: var(--shadow-sm);
+}
+.testimonio-cita {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--gris-texto);
+    font-style: italic;
+    margin: 0;
+    flex-grow: 1;
+}
+.testimonio-autor {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+.testimonio-autor strong { color: var(--morado); font-size: 0.92rem; }
+.testimonio-autor span { color: var(--gris-claro); font-size: 0.82rem; }

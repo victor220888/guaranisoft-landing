@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" role="document">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +28,7 @@
       "offers": {
         "@type": "Offer",
         "priceCurrency": "PYG",
-        "price": "1350000",
+        "price": "4500000",
         "availability": "https://schema.org/InStock"
       }
     }
@@ -67,14 +67,15 @@
 </nav>
 
 <!-- ═══ Hero ═══════════════════════════════════════════════════════════ -->
-<main role="main">
+<main>
 <section class="hero" id="top" aria-labelledby="hero-heading">
     <div class="container">
         <img src="/static/img/logo-eslogan.svg" alt="Ñande ERP — ERP paraguayo. Cumplimiento real. Soporte local." class="img-fluid logo-hero">
         <p class="tagline" id="hero-heading">Tu mostrador, tu depósito y tu contabilidad, ordenados y al día.</p>
         <p class="subtitle">
             Ventas, stock, caja y contabilidad conectados en un solo sistema.
-            Diseñado para Paraguay, sin depender de internet.
+            Diseñado para Paraguay: seguís vendiendo aunque se corte internet,
+            y sincroniza con SIFEN al volver la conexión.
         </p>
         <div class="hero-prueba-gratis fade-in">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
@@ -248,6 +249,10 @@
                     </div>
                     <h3>Punto de Venta y Facturación</h3>
                     <p>Velocidad extrema en mostrador. Carga rápida para tus operadores, conexión directa con inventario y múltiples métodos de cobro.</p>
+                    <button type="button" class="modulo-shot" data-lightbox="/static/img/ventas.png" aria-label="Ampliar captura del módulo Punto de Venta">
+                        <img src="/static/img/ventas.png" alt="Pantalla del módulo Punto de Venta de Ñande ERP" loading="lazy">
+                        <span class="modulo-shot-hint">Ver pantalla</span>
+                    </button>
                 </div>
             </div>
             <div class="col-md-6 col-lg-3 fade-in">
@@ -266,6 +271,10 @@
                     </div>
                     <h3>Gestión de Cajas</h3>
                     <p>Terminá con los faltantes. Panel de control detallado, aperturas, movimientos, verificación, arqueo ciego y cierre del día.</p>
+                    <button type="button" class="modulo-shot" data-lightbox="/static/img/cajas.png" aria-label="Ampliar captura del módulo Gestión de Cajas">
+                        <img src="/static/img/cajas.png" alt="Pantalla del módulo Gestión de Cajas de Ñande ERP" loading="lazy">
+                        <span class="modulo-shot-hint">Ver pantalla</span>
+                    </button>
                 </div>
             </div>
             <div class="col-md-6 col-lg-3 fade-in">
@@ -275,6 +284,10 @@
                     </div>
                     <h3>Contabilidad Automática</h3>
                     <p>Tus operaciones diarias generan la contabilidad solas. Plan de cuentas, asientos automáticos, ejercicios fiscales y reportes.</p>
+                    <button type="button" class="modulo-shot" data-lightbox="/static/img/contabilidad.png" aria-label="Ampliar captura del módulo Contabilidad">
+                        <img src="/static/img/contabilidad.png" alt="Pantalla del módulo Contabilidad Automática de Ñande ERP" loading="lazy">
+                        <span class="modulo-shot-hint">Ver pantalla</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -398,6 +411,23 @@
 <!-- ═══ Quién está detrás ═══════════════════════════════════════════════ -->
 <section class="prueba-social" aria-labelledby="quien-heading">
     <div class="container">
+        <!-- TESTIMONIOS: descomentar al tener el primero. Completar cita, nombre, empresa y rubro reales. -->
+        <!--
+        <div class="section-title fade-in">
+            <h2 id="testimonios-heading">Lo que dicen nuestros clientes</h2>
+        </div>
+        <div class="row g-4 justify-content-center stagger-children mb-5">
+            <div class="col-md-6 col-lg-4 fade-in">
+                <div class="testimonio-card">
+                    <p class="testimonio-cita">"Cita textual del cliente sobre el cambio que notó con Ñande ERP."</p>
+                    <div class="testimonio-autor">
+                        <strong>Nombre Apellido</strong>
+                        <span>Empresa — Rubro, Ciudad</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        -->
         <div class="prueba-social-card fade-in">
             <div class="quien-detras">
                 <div class="quien-avatar">
@@ -632,6 +662,7 @@ document.getElementById('formContacto').addEventListener('submit', function(e) {
                 showToast('warning', 'Ya enviaste un mensaje. Por favor esperá 60 segundos antes de intentar de nuevo.');
                 return null;
             }
+            if (!r.ok) throw new Error('HTTP ' + r.status);
             return r.json();
         })
         .then(function(data) {
@@ -668,6 +699,37 @@ var observer = new IntersectionObserver(function(entries) {
 }, { threshold: 0.1 });
 
 document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
+
+// ── Lightbox de capturas ──
+(function() {
+    var overlay = document.createElement('div');
+    overlay.className = 'lightbox-overlay';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-label', 'Captura ampliada');
+    overlay.innerHTML = '<img alt=""><button type="button" class="lightbox-close" aria-label="Cerrar">&times;</button>';
+    document.body.appendChild(overlay);
+    var img = overlay.querySelector('img');
+
+    function close() {
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+    overlay.addEventListener('click', close);
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && overlay.classList.contains('open')) close();
+    });
+
+    document.querySelectorAll('[data-lightbox]').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var thumb = btn.querySelector('img');
+            img.src = btn.getAttribute('data-lightbox');
+            img.alt = thumb ? thumb.alt : '';
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+})();
 </script>
 
 </body>
