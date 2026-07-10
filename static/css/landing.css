@@ -1039,3 +1039,12 @@ footer a:hover { color: white; }
 @media (max-width: 576px) {
     .whatsapp-float-tip { display: none; }
 }
+
+/* ── Responsive corporativa ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .corp-producto-card { padding: 2rem 1.25rem; }
+    .corp-producto-logo { max-width: 200px; }
+}
+@media (max-width: 480px) {
+    .corp-hero-wordmark { font-size: 1.9rem; }
+}
