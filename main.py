@@ -70,7 +70,7 @@ async def contacto(
     nombre: str = Form(...),
     empresa: str = Form(""),
     telefono: str = Form(""),
-    email: str = Form(...),
+    email: str = Form(""),
     mensaje: str = Form(...),
 ):
     client_ip = request.client.host if request.client else "unknown"
@@ -95,7 +95,7 @@ Nuevo contacto desde la landing page de Ñande ERP
 Nombre:    {nombre}
 Empresa:   {empresa or '—'}
 Teléfono:  {telefono or '—'}
-Email:     {email}
+Email:     {email or '—'}
 
 Mensaje:
 {mensaje}
@@ -120,7 +120,8 @@ Mensaje:
             msg = MIMEMultipart()
             msg["From"] = smtp_user
             msg["To"] = contact_email
-            msg["Reply-To"] = email
+            if email:
+                msg["Reply-To"] = email
             msg["Subject"] = f"Contacto landing — {nombre}"
             msg.attach(MIMEText(body, "plain", "utf-8"))
 

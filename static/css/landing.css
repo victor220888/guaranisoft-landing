@@ -955,3 +955,87 @@ footer a:hover { color: white; }
 }
 .corp-nav-link span { color: var(--verde); }
 .corp-nav-link:hover { opacity: 0.8; }
+
+/* ── FAQ ─────────────────────────────────────────────────────────────── */
+.faq { background: var(--gris-fondo); }
+.faq-accordion { max-width: 760px; margin: 0 auto; }
+.faq-accordion .accordion-item {
+    border: 1px solid var(--borde);
+    border-radius: var(--radius-sm) !important;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+    background: var(--blanco);
+}
+.faq-accordion .accordion-button {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.98rem;
+    color: var(--gris-texto);
+    background: var(--blanco);
+    box-shadow: none;
+    padding: 1.1rem 1.3rem;
+}
+.faq-accordion .accordion-button:not(.collapsed) {
+    color: var(--morado);
+    background: var(--morado-light);
+}
+.faq-accordion .accordion-button:focus {
+    box-shadow: 0 0 0 3px var(--morado-light);
+    border-color: var(--morado);
+}
+.faq-accordion .accordion-body {
+    color: var(--gris-medio);
+    font-size: 0.93rem;
+    line-height: 1.6;
+    padding: 1rem 1.3rem 1.3rem;
+}
+
+/* ── Barra de cupos (Plan Fundador) ─────────────────────────────────── */
+.cupos-progreso { margin: 0.75rem 0 0.25rem; }
+.cupos-barra {
+    height: 8px;
+    background: var(--morado-light);
+    border-radius: 999px;
+    overflow: hidden;
+    max-width: 260px;
+    margin: 0 auto 0.4rem;
+}
+.cupos-barra span {
+    display: block;
+    height: 100%;
+    background: var(--verde);
+    border-radius: 999px;
+    transition: width 0.4s var(--ease-out);
+}
+.cupos-texto {
+    display: block;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--verde);
+    font-family: var(--font-display);
+}
+
+/* ── Tooltip WhatsApp flotante ──────────────────────────────────────── */
+.whatsapp-float-tip {
+    position: absolute;
+    right: calc(100% + 12px);
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--gris-texto);
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 500;
+    padding: 0.45rem 0.8rem;
+    border-radius: 8px;
+    white-space: nowrap;
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--duration-normal) var(--ease-out);
+}
+.whatsapp-float:hover .whatsapp-float-tip,
+.whatsapp-float:focus-visible .whatsapp-float-tip { opacity: 1; }
+@media (max-width: 576px) {
+    .whatsapp-float-tip { display: none; }
+}
