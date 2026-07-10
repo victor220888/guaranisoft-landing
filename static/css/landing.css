@@ -905,3 +905,46 @@ footer a:hover { color: white; }
 }
 .testimonio-autor strong { color: var(--morado); font-size: 0.92rem; }
 .testimonio-autor span { color: var(--gris-claro); font-size: 0.82rem; }
+
+/* ── Página corporativa GuaraníSoft ─────────────────────────────────── */
+.corp-wordmark {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--morado);
+    letter-spacing: -0.02em;
+}
+.corp-wordmark span { color: var(--verde); }
+.corp-wordmark:hover { color: var(--morado-hover); }
+.corp-hero-wordmark {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(2.4rem, 6vw, 3.6rem);
+    color: var(--morado);
+    letter-spacing: -0.03em;
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+}
+.corp-hero-wordmark span { color: var(--verde); }
+.corp-producto-card {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: 3rem 2rem;
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+}
+.corp-producto-logo {
+    max-width: 260px;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+.corp-producto-desc {
+    color: var(--gris-medio);
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 480px;
+    margin: 0 auto 1.75rem;
+}

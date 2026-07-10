@@ -51,7 +51,8 @@ landing-guaranisoft/
 ├── .env.example
 ├── .gitignore
 ├── templates/
-│   └── index.html       # Landing completa (7 secciones)
+│   ├── home.html        # Página corporativa GuaraníSoft (raíz /)
+│   └── index.html       # Landing Ñande ERP (en /nande-erp)
 ├── static/
 │   ├── css/landing.css
 │   └── img/             # logo-eslogan, logo-compacto, favicon (SVG)
@@ -65,10 +66,13 @@ landing-guaranisoft/
 ## Rutas de la app
 | Método | Path | Descripción |
 |--------|------|-------------|
-| GET | `/` | Landing page |
+| GET | `/` | Página corporativa GuaraníSoft (`home.html`) |
+| GET | `/nande-erp` | Landing del producto Ñande ERP (`index.html`) |
 | POST | `/contacto` | Formulario → JSON {status: ok} |
 | GET | `/health` | Health check |
 | GET | `/admin/leads` | Ver leads (HTTP Basic Auth) |
+
+Las dos páginas son independientes: la corporativa enlaza a Ñande ERP en nueva pestaña (`target="_blank"`).
 
 ## Variables de entorno
 | Variable | Descripción |

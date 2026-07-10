@@ -51,9 +51,15 @@ async def ver_leads(admin: bool = Depends(verify_admin)):
     leads = db.get_all_leads()
     return {"leads": leads}
 
-# ── Página principal ────────────────────────────────────────────────────────
+# ── Página principal (corporativa GuaraníSoft) ─────────────────────────────
 @app.get("/", response_class=HTMLResponse)
-async def index(request: Request, sent: str | None = None):
+async def home(request: Request):
+    return templates.TemplateResponse(request, "home.html", {})
+
+
+# ── Landing Ñande ERP ───────────────────────────────────────────────────────
+@app.get("/nande-erp", response_class=HTMLResponse)
+async def nande_erp(request: Request, sent: str | None = None):
     return templates.TemplateResponse(request, "index.html", {"sent": sent == "1"})
 
 

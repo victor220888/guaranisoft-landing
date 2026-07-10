@@ -14,8 +14,8 @@ cp .env.example .env  # edit with real credentials
 ```
 
 ## Architecture
-- **FastAPI** app with 4 routes: `/`, `/contacto`, `/health`, `/admin/leads`
-- **Jinja2** single-page template (`templates/index.html`)
+- **FastAPI** app with 5 main routes: `/` (corporativa GuaraníSoft), `/nande-erp` (landing producto), `/contacto`, `/health`, `/admin/leads`
+- **Jinja2** templates: `templates/home.html` (corporativa) + `templates/index.html` (landing Ñande ERP)
 - **Bootstrap 5** via CDN + custom CSS (`static/css/landing.css`)
 - **Google Sheets** (primary persistence via gspread)
 - **SQLite** (fallback, local only — not persistent on Render Free)
