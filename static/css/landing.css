@@ -1046,7 +1046,7 @@ footer a:hover { color: white; }
     .corp-producto-logo { max-width: 200px; }
 }
 @media (max-width: 480px) {
-    .corp-hero-wordmark { font-size: 1.9rem; }
+    .corp-hero-wordmark { font-size: 1.8rem; }
 }
 
 /* ── Breadcrumbs ────────────────────────────────────────────────────── */
