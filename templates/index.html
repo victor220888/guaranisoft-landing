@@ -372,31 +372,35 @@
 </section>
 
 <!-- ═══ Stats ══════════════════════════════════════════════════════════ -->
-<section class="stats section-compact" aria-label="Indicadores del sistema">
+<section class="stats section-compact" aria-label="Características del sistema">
     <div class="container">
         <div class="row g-4 stagger-children">
             <div class="col-6 col-md-3 fade-in">
-                <div class="stat-item">
-                    <span class="num">Windows</span>
-                    <span class="label">Instalación local, 100% portable. Sin depender de la nube.</span>
+                <div class="atributo-item">
+                    <svg class="atributo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    <h3>Corre en tu Windows</h3>
+                    <p>Instalación local, 100% portable. Sin depender de la nube.</p>
                 </div>
             </div>
             <div class="col-6 col-md-3 fade-in">
-                <div class="stat-item">
-                    <span class="num">Paraguay</span>
-                    <span class="label">Hecho para PyMEs paraguayas. Ley 6380, SIFEN, Marangatú.</span>
+                <div class="atributo-item">
+                    <svg class="atributo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="12" y2="16"/></svg>
+                    <h3>Cumplimiento paraguayo</h3>
+                    <p>Ley 6380, SIFEN y Marangatú, no adaptados de otro país.</p>
                 </div>
             </div>
             <div class="col-6 col-md-3 fade-in">
-                <div class="stat-item">
-                    <span class="num">Integral</span>
-                    <span class="label">POS + Inventario + Cajas + Contabilidad en un solo sistema.</span>
+                <div class="atributo-item">
+                    <svg class="atributo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+                    <h3>Un solo sistema</h3>
+                    <p>POS, inventario, cajas y contabilidad conectados entre sí.</p>
                 </div>
             </div>
             <div class="col-6 col-md-3 fade-in">
-                <div class="stat-item">
-                    <span class="num">Directo</span>
-                    <span class="label">Soporte vía WhatsApp. Sin bots, sin call center, sin vueltas.</span>
+                <div class="atributo-item">
+                    <svg class="atributo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5 C21 16 17 19 12 19 C10.5 19 9 18.7 7.7 18.2 L3 19 L4.3 15.5 C3.5 14.4 3 13 3 11.5 C3 7 7 4 12 4 C17 4 21 7 21 11.5 Z"/></svg>
+                    <h3>Soporte por WhatsApp</h3>
+                    <p>Te responde quien programó el sistema. Sin bots ni call center.</p>
                 </div>
             </div>
         </div>
@@ -459,11 +463,9 @@
             <p>Para las primeras 3 empresas que confíen en Ñande ERP. Beneficio exclusivo y permanente.</p>
         </div>
         <div class="precios-card precios-fundador fade-in">
-            <div class="plan-badge">Quedan 3 de 3 cupos</div>
-            <div class="cupos-progreso" role="img" aria-label="0 de 3 cupos ocupados">
-                <div class="cupos-barra"><span style="width: 0%"></span></div>
-                <span class="cupos-texto">0 de 3 cupos ocupados — sé el primero</span>
-            </div>
+            <!-- La barra de progreso vuelve cuando haya al menos 1 cupo ocupado:
+                 una barra en 0% comunica que nadie compró todavía. -->
+            <div class="plan-badge">Solo 3 cupos</div>
             <h3>Plan Fundador — 70% off</h3>
             <p class="plan-desc">Para nuestras primeras empresas piloto. Acompañamiento total y beneficio exclusivo de por vida.</p>
             <div class="precio-desde">

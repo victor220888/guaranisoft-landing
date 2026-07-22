@@ -588,6 +588,28 @@ h1, h2 { font-weight: 700; }
     color: white;
     padding: 56px 0;
 }
+/* Franja de atributos: para texto, no para cifras.
+   Usar .stat-item solo cuando el dato es realmente un número. */
+.atributo-item { text-align: center; }
+.atributo-item .atributo-icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: var(--space-3);
+    opacity: 0.9;
+}
+.atributo-item h3 {
+    font-size: var(--text-base);
+    font-weight: 600;
+    margin-bottom: var(--space-1);
+    color: #fff;
+}
+.atributo-item p {
+    font-size: var(--text-sm);
+    opacity: 0.8;
+    margin-bottom: 0;
+    line-height: 1.45;
+}
+
 .stat-item { text-align: center; }
 .stat-item .num {
     font-size: var(--text-3xl);
@@ -1031,7 +1053,10 @@ footer a:focus-visible {
 }
 
 /* ── Barra de cupos (Plan Fundador) ─────────────────────────────────── */
-.cupos-progreso { margin: 0.75rem 0 0.25rem; }
+/* Sin uso por ahora: el markup se quitó de index.html porque una barra
+   en 0% comunica que nadie compró todavía. Reactivar cuando haya al
+   menos 1 de los 3 cupos ocupados. */
+.cupos-progreso { margin: var(--space-3) 0 0.25rem; }
 .cupos-barra {
     height: 8px;
     background: var(--morado-light);
