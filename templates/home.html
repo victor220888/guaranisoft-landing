@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#5B2A86">
+    <script>document.documentElement.classList.add('js');</script>
     <title>GuaraníSoft — Software para empresas paraguayas</title>
     <meta name="description" content="GuaraníSoft desarrolla software de gestión para PyMEs paraguayas. Creadores de Ñande ERP: punto de venta, inventario, cajas y contabilidad con cumplimiento fiscal local.">
     <meta property="og:title" content="GuaraníSoft — Software para empresas paraguayas">
@@ -33,6 +35,8 @@
     </script>
 
     <link rel="icon" type="image/svg+xml" href="/static/img/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="/static/css/landing.css" rel="stylesheet">
@@ -58,6 +62,7 @@
         <div class="collapse navbar-collapse" id="navMain">
             <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
                 <li class="nav-item"><a class="nav-link" href="#quienes-somos">Quiénes somos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#por-que">Por qué GuaraníSoft</a></li>
                 <li class="nav-item"><a class="nav-link" href="#producto">Nuestro producto</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
                 <li class="nav-item ms-lg-2">
@@ -72,8 +77,8 @@
 <!-- ═══ Hero ═══════════════════════════════════════════════════════════ -->
 <section class="hero corp-hero" id="top" aria-labelledby="hero-heading">
     <div class="container">
-        <p class="corp-hero-wordmark">Guaraní<span>Soft</span></p>
-        <p class="tagline" id="hero-heading">Software para empresas paraguayas</p>
+        <p class="corp-hero-wordmark" aria-hidden="true">Guaraní<span>Soft</span></p>
+        <h1 class="tagline" id="hero-heading">GuaraníSoft — Software para empresas paraguayas</h1>
         <p class="subtitle">
             Desarrollamos sistemas de gestión pensados para la realidad comercial
             y fiscal de Paraguay. <strong>Hecho en Paraguay. Hecho para Paraguay.</strong>
@@ -207,7 +212,8 @@
             <p>El sistema que ordena tu empresa</p>
         </div>
         <div class="corp-producto-card fade-in">
-            <img src="/static/img/logo-eslogan.svg" alt="Ñande ERP — ERP paraguayo. Cumplimiento real. Soporte local." class="corp-producto-logo">
+            <img src="/static/img/logo-eslogan.svg" alt="Ñande ERP — ERP paraguayo. Cumplimiento real. Soporte local."
+                 width="360" height="140" loading="lazy" class="corp-producto-logo">
             <p class="corp-producto-desc">
                 El sistema de gestión integral que ordena tu empresa. Pensado para PyMEs paraguayas, con cumplimiento fiscal local y soporte directo.
             </p>
@@ -310,7 +316,7 @@
 
 <!-- ═══ WhatsApp flotante ═══════════════════════════════════════════════ -->
 <a href="https://wa.me/595992504620" target="_blank" rel="noopener" class="whatsapp-float"
-   title="¿Hablamos de tu empresa? Escribinos" aria-label="Chatear por WhatsApp">
+   aria-label="Chatear por WhatsApp">
     <span class="whatsapp-float-tip" aria-hidden="true">¿Hablamos de tu empresa? Escribinos</span>
     <svg viewBox="0 0 24 24" fill="currentColor"><use href="#icon-whatsapp"/></svg>
 </a>
@@ -322,6 +328,8 @@
 (function() {
     var container = document.createElement('div');
     container.id = 'toast-container';
+    container.setAttribute('role', 'status');
+    container.setAttribute('aria-live', 'polite');
     document.body.appendChild(container);
 })();
 

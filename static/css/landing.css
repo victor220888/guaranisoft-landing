@@ -12,7 +12,7 @@
     --gris-fondo: #F5F7FA;
     --gris-texto: #1F1F24;
     --gris-medio: #5A6470;
-    --gris-claro: #8E94A0;
+    --gris-claro: #6B7280;
     --blanco: #FFFFFF;
     --borde: #E8ECF0;
 
@@ -39,12 +39,18 @@
 }
 
 /* ── Reset & base ────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: no-preference) {
+    html { scroll-behavior: smooth; }
+}
+
+/* El navbar es fixed-top: sin esto tapa el título al llegar por ancla */
+[id] { scroll-margin-top: 80px; }
+
 body {
     font-family: var(--font-body);
     color: var(--gris-texto);
     font-weight: 400;
     line-height: 1.6;
-    scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -180,6 +186,7 @@ h1, h2, h3, h4, h5, .navbar-brand {
     padding: 120px 0 96px;
     text-align: center;
     position: relative;
+    overflow: hidden; /* contiene el círculo decorativo de ::before */
 }
 .hero::before {
     content: '';
@@ -783,6 +790,11 @@ footer a {
     transition: color var(--duration-fast) var(--ease-out);
 }
 footer a:hover { color: white; }
+footer a:focus-visible {
+    outline: 2px solid var(--blanco);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
 
 /* ── WhatsApp flotante ───────────────────────────────────────────────── */
 .whatsapp-float {
@@ -805,6 +817,10 @@ footer a:hover { color: white; }
     transform: scale(1.08);
     box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45);
 }
+.whatsapp-float:focus-visible {
+    outline: 3px solid var(--morado);
+    outline-offset: 3px;
+}
 .whatsapp-float svg {
     width: 28px;
     height: 28px;
@@ -812,13 +828,15 @@ footer a:hover { color: white; }
 }
 
 /* ── Animaciones ─────────────────────────────────────────────────────── */
-.fade-in {
+/* Ocultamos solo si hay JS: sin el IntersectionObserver el contenido
+   quedaría invisible para siempre. La clase .js la agrega el <head>. */
+.js .fade-in {
     opacity: 0;
     transform: translateY(16px);
     transition: opacity 0.55s var(--ease-out),
                 transform 0.55s var(--ease-out);
 }
-.fade-in.visible {
+.js .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
 }
@@ -1067,6 +1085,26 @@ footer a:hover { color: white; }
 }
 .breadcrumbs a:hover { text-decoration: underline; }
 .breadcrumbs [aria-current] { color: var(--gris-medio); }
+
+/* ── Movimiento reducido ────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    .js .fade-in { opacity: 1; transform: none; }
+    .stagger-children > .fade-in { transition-delay: 0s !important; }
+    .btn-morado:hover,
+    .btn-verde:hover,
+    .badge-cumpl:hover,
+    .problema-card:hover,
+    .feature-card:hover,
+    .whatsapp-float:hover { transform: none; }
+}
 
 /* ── Avatar fallback ────────────────────────────────────────────────── */
 .avatar-fallback {
