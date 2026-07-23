@@ -1165,3 +1165,28 @@ footer a:focus-visible {
     font-size: var(--text-xl);
     letter-spacing: 0.02em;
 }
+
+/* ── Tabla comparativa Antes vs Después ─────────────────────────────── */
+.comparativa-mal {
+    background: rgba(220, 38, 38, 0.05);
+    border-radius: var(--radius-sm);
+    padding: 0.85rem 1rem;
+    font-size: var(--text-sm);
+    color: var(--gris-medio);
+    line-height: 1.5;
+}
+.comparativa-bien {
+    background: rgba(74, 124, 89, 0.06);
+    border-radius: var(--radius-sm);
+    padding: 0.85rem 1rem;
+    font-size: var(--text-sm);
+    color: var(--gris-medio);
+    line-height: 1.5;
+}
+.comparativa-flecha { padding: 0.5rem 0; }
+
+@media (prefers-reduced-motion: reduce) {
+    .comparativa-mal,
+    .comparativa-bien,
+    .comparativa-flecha { transition: none; }
+}
