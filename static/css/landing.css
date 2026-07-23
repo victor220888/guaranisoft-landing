@@ -118,6 +118,17 @@ h1, h2 { font-weight: 700; }
     box-shadow: var(--shadow-md);
 }
 .navbar-landing img { height: 38px; }
+/* El <ul> solo se alinea en fila cuando el navbar ya está expandido; cada
+   página elige su breakpoint vía el bloque navbar_expand de base.html */
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav-inline { align-items: center; gap: 0.5rem; }
+}
+@media (min-width: 1200px) {
+    .navbar-expand-xl .navbar-nav-inline { align-items: center; gap: 0.5rem; }
+}
+@media (max-width: 1199.98px) {
+    .navbar-landing img { height: 32px; }
+}
 .navbar-landing .nav-link {
     color: var(--gris-medio);
     font-weight: 500;
@@ -1027,6 +1038,15 @@ footer a:focus-visible {
     line-height: 1.1;
 }
 .corp-hero-wordmark span { color: var(--verde); }
+/* El hero corporativo lleva wordmark + tagline: sin esto el par compite con
+   el h1 de /nande-erp, que sí debe ir en la escala grande de .hero .tagline */
+.corp-hero .corp-hero-wordmark { font-size: clamp(1.75rem, 4vw, 2.25rem); }
+.corp-hero .tagline {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    max-width: 34ch;
+}
 .corp-producto-card {
     background: var(--blanco);
     border: 1px solid var(--borde);
@@ -1205,27 +1225,32 @@ footer a:focus-visible {
     letter-spacing: 0.02em;
 }
 
-/* ── Tabla comparativa Antes vs Después ─────────────────────────────── */
-.comparativa-mal {
-    background: rgba(220, 38, 38, 0.05);
+/* ── Comparativa Antes vs Después ───────────────────────────────────── */
+.comparativa-head {
+    margin-bottom: var(--space-3);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--text-base);
+}
+.comparativa-head-mal { color: #DC2626; }
+.comparativa-head-bien { color: var(--verde); }
+.comparativa-row + .comparativa-row { margin-top: var(--space-3); }
+.comparativa-mal,
+.comparativa-bien {
+    height: 100%;
     border-radius: var(--radius-sm);
     padding: 0.85rem 1rem;
     font-size: var(--text-sm);
     color: var(--gris-medio);
     line-height: 1.5;
+}
+.comparativa-mal {
+    background: rgba(220, 38, 38, 0.05);
+    border-left: 3px solid rgba(220, 38, 38, 0.45);
 }
 .comparativa-bien {
     background: rgba(74, 124, 89, 0.06);
-    border-radius: var(--radius-sm);
-    padding: 0.85rem 1rem;
-    font-size: var(--text-sm);
-    color: var(--gris-medio);
-    line-height: 1.5;
+    border-left: 3px solid var(--verde);
 }
-.comparativa-flecha { padding: 0.5rem 0; }
-
-@media (prefers-reduced-motion: reduce) {
-    .comparativa-mal,
-    .comparativa-bien,
-    .comparativa-flecha { transition: none; }
-}
+.comparativa-mal strong,
+.comparativa-bien strong { color: var(--gris-texto); }

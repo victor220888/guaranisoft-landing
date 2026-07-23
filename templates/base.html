@@ -26,7 +26,7 @@
 </svg>
 
 <!-- ═══ Navbar ═════════════════════════════════════════════════════════ -->
-<nav class="navbar navbar-landing fixed-top navbar-expand-lg" aria-label="Navegación principal">
+<nav class="navbar navbar-landing fixed-top navbar-expand-{% block navbar_expand %}lg{% endblock %}" aria-label="Navegación principal">
     <div class="container">
         {% block navbar_brand %}{% endblock %}
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
@@ -34,7 +34,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navMain">
-            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+            <ul class="navbar-nav ms-auto navbar-nav-inline">
                 {% block nav_items %}{% endblock %}
             </ul>
         </div>
