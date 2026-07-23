@@ -708,21 +708,60 @@ h1, h2 { font-weight: 700; }
 }
 .precio-desde {
     margin: 1.5rem 0;
-    padding: 1.25rem;
-    background: var(--gris-fondo);
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(91, 42, 134, 0.06) 0%, rgba(74, 124, 89, 0.04) 100%);
+    border: 1.5px solid rgba(91, 42, 134, 0.15);
     border-radius: var(--radius-md);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.2rem;
+    gap: 0.35rem;
 }
 .precio-desde .desde-label {
     font-size: var(--text-xs);
-    color: var(--gris-claro);
+    color: var(--morado);
     text-transform: uppercase;
-    letter-spacing: 0.06em;
-    font-weight: 500;
+    letter-spacing: 0.08em;
+    font-weight: 700;
     font-family: var(--font-display);
+    background: var(--morado-light);
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+}
+.precio-principal {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0.3rem 0;
+}
+.precio-badge-ahorro {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    font-family: var(--font-display);
+    color: #fff;
+    background: #DC2626;
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
+    letter-spacing: -0.01em;
+    animation: pulse-ahorro 2s ease-in-out infinite;
+}
+@keyframes pulse-ahorro {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.06); }
+}
+.precio-ahorro {
+    font-size: var(--text-sm);
+    color: #DC2626;
+    font-weight: 500;
+    margin-top: 0.15rem;
+}
+.precio-ahorro strong {
+    font-weight: 700;
+}
+@media (prefers-reduced-motion: reduce) {
+    .precio-badge-ahorro { animation: none; }
 }
 .precio-tachado {
     font-size: var(--text-base);
