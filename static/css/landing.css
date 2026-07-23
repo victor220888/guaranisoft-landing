@@ -353,7 +353,7 @@ h1, h2 { font-weight: 700; }
     width: 100%;
     height: 100%;
 }
-.pilar h4 {
+.pilar h3 {
     font-size: var(--text-base);
     font-weight: 600;
     color: var(--gris-texto);
@@ -535,7 +535,7 @@ h1, h2 { font-weight: 700; }
     color: var(--morado);
 }
 .feature-icon-sm svg { width: 100%; height: 100%; }
-.feature-card-sm h4 {
+.feature-card-sm h3 {
     font-size: var(--text-base);
     font-weight: 600;
     color: var(--gris-texto);
@@ -964,7 +964,8 @@ footer a:focus-visible {
 }
 @media (max-width: 768px) {
     /* tagline, subtitle y h2 escalan solos vía clamp() */
-    .hero { padding: 90px 0 64px; }
+    /* el navbar es fixed-top: sin este margen el breadcrumb queda debajo */
+    .hero { padding: 104px 0 64px; }
     .hero .subtitle { font-size: var(--text-base); }
     .hero .logo-hero { max-width: 240px; }
     .hero-screenshot { margin-top: var(--space-8); }
