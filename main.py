@@ -63,6 +63,12 @@ async def nande_erp(request: Request, sent: str | None = None):
     return templates.TemplateResponse(request, "index.html", {"sent": sent == "1"})
 
 
+# ── Landing Ñande Tienda ───────────────────────────────────────────────────
+@app.get("/nande-tienda", response_class=HTMLResponse)
+async def nande_tienda(request: Request):
+    return templates.TemplateResponse(request, "nande-tienda.html", {})
+
+
 # ── Formulario de contacto ─────────────────────────────────────────────────
 @app.post("/contacto")
 async def contacto(
@@ -72,7 +78,13 @@ async def contacto(
     telefono: str = Form(""),
     email: str = Form(""),
     mensaje: str = Form(...),
+    producto: str = Form("erp"),   # "erp" | "tienda" | "crm": pestaña del Sheet y asunto del mail
+    usa_erp: str = Form(""),
 ):
+    if producto not in ("erp", "tienda", "crm"):
+        producto = "erp"
+    if producto == "tienda" and usa_erp:
+        mensaje = f"[Usa Ñande ERP: {usa_erp}] {mensaje}"
     client_ip = request.client.host if request.client else "unknown"
 
     # Rate limit
@@ -89,8 +101,9 @@ async def contacto(
     smtp_pass = os.getenv("SMTP_PASSWORD", "")
     contact_email = os.getenv("CONTACT_EMAIL", "ventas@guaranisof.com")
 
+    nombre_producto = {"erp": "Ñande ERP", "tienda": "Ñande Tienda", "crm": "Ñande CRM"}[producto]
     body = f"""\
-Nuevo contacto desde la landing page de Ñande ERP
+Nuevo contacto desde la landing page de {nombre_producto}
 
 Nombre:    {nombre}
 Empresa:   {empresa or '—'}
@@ -101,14 +114,14 @@ Mensaje:
 {mensaje}
 """
     # 1. GUARDAR EN GOOGLE SHEETS (Prioridad máxima)
-    sheet_saved = sheets.append_to_sheet(nombre, empresa, telefono, email, mensaje)
+    sheet_saved = sheets.append_to_sheet(nombre, empresa, telefono, email, mensaje, producto=producto)
     if sheet_saved:
         print(f"[SHEETS] Lead guardado: {nombre} — {email}")
     else:
         print(f"[SHEETS ERROR] No se pudo guardar el lead en Google Sheets")
 
     # 2. BACKUP en SQLite local
-    db.save_lead(nombre, empresa, telefono, email, mensaje)
+    db.save_lead(nombre, empresa, telefono, email, f"[{nombre_producto}] {mensaje}")
 
     # 2. Enviar email (no bloquea la respuesta si falla)
     if smtp_user and smtp_pass:
@@ -122,7 +135,7 @@ Mensaje:
             msg["To"] = contact_email
             if email:
                 msg["Reply-To"] = email
-            msg["Subject"] = f"Contacto landing — {nombre}"
+            msg["Subject"] = f"Contacto landing {nombre_producto} — {nombre}"
             msg.attach(MIMEText(body, "plain", "utf-8"))
 
             await aiosmtplib.send(

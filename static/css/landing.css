@@ -1316,3 +1316,41 @@ footer a:focus-visible {
 }
 .comparativa-mal strong,
 .comparativa-bien strong { color: var(--gris-texto); }
+
+/* ── Página Ñande Tienda (/nande-tienda) ──────────────────────────────── */
+.tienda-wordmark {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.15rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--text-xl);
+    color: var(--morado);
+    letter-spacing: -0.02em;
+    text-decoration: none;
+}
+.tienda-wordmark img { height: 30px; width: auto; display: block; }
+.tienda-wordmark-texto span { color: var(--verde); }
+.tienda-wordmark:hover { color: var(--morado-hover); }
+.tienda-eslogan {
+    color: var(--verde);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: var(--text-sm);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin: 0 0 0.75rem;
+}
+.tienda-hero-nota { color: var(--gris-claro); font-size: var(--text-sm); margin-top: 1.25rem; }
+.tienda-hero-nota a { color: var(--morado); font-weight: 600; }
+.corp-producto-tienda { padding: 2rem; box-shadow: var(--shadow-sm, 0 1px 3px rgba(0,0,0,.06)); }
+.corp-producto-tienda .tienda-wordmark { display: flex; }
+/* En /nande-tienda no hay logo-eslogan grande: el h1 lleva la jerarquía del hero */
+.hero .tagline.tienda-titulo {
+    color: var(--gris-texto);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    max-width: 22ch;
+    margin: 0 auto var(--space-3);
+}

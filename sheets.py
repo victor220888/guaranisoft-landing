@@ -15,6 +15,7 @@ from datetime import datetime
 SHEET_NAME = "Leads GuaraníSoft"
 WORKSHEET_ERP = "Ñande ERP"
 WORKSHEET_CRM = "Ñande CRM"
+WORKSHEET_TIENDA = "Ñande Tienda"   # crear la pestaña en el Sheet con las mismas columnas
 
 # Buscar el JSON en múltiples ubicaciones (local + Render)
 _SA_PATHS = [
@@ -47,12 +48,14 @@ def _get_worksheet(name):
 def append_to_sheet(nombre, empresa, telefono, email, mensaje, producto="erp"):
     """
     Agrega una fila al Google Sheet.
-    producto: "erp" → pestaña Ñande ERP, "crm" → pestaña Ñande CRM
+    producto: "erp" → pestaña Ñande ERP, "crm" → pestaña Ñande CRM, "tienda" → pestaña Ñande Tienda
     Retorna True si tuvo éxito, False si falló.
     """
     try:
         if producto == "crm":
             ws = _get_worksheet(WORKSHEET_CRM)
+        elif producto == "tienda":
+            ws = _get_worksheet(WORKSHEET_TIENDA)
         else:
             ws = _get_worksheet(WORKSHEET_ERP)
 

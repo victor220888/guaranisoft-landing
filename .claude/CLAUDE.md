@@ -14,8 +14,8 @@ cp .env.example .env  # edit with real credentials
 ```
 
 ## Architecture
-- **FastAPI** app with 5 main routes: `/` (corporativa GuaraníSoft), `/nande-erp` (landing producto), `/contacto`, `/health`, `/admin/leads`
-- **Jinja2** templates: `templates/home.html` (corporativa) + `templates/index.html` (landing Ñande ERP)
+- **FastAPI** app with 6 main routes: `/` (corporativa GuaraníSoft), `/nande-erp` (landing producto), `/nande-tienda` (landing Ñande Tienda, e-commerce satélite del ERP — código en `/home/victor/nande-tienda/`), `/contacto`, `/health`, `/admin/leads`
+- **Jinja2** templates: `templates/home.html` (corporativa) + `templates/index.html` (landing Ñande ERP) + `templates/nande-tienda.html` (landing Ñande Tienda)
 - **Bootstrap 5** via CDN + custom CSS (`static/css/landing.css`)
 - **Google Sheets** (primary persistence via gspread)
 - **SQLite** (fallback, local only — not persistent on Render Free)
@@ -31,7 +31,7 @@ cp .env.example .env  # edit with real credentials
 
 ## Form flow
 1. User fills form → `fetch('/contacto', {POST})`
-2. `sheets.append_to_sheet()` → Google Sheet "Leads GuaraníSoft" / "Ñande ERP" tab
+2. `sheets.append_to_sheet(..., producto)` → Google Sheet "Leads GuaraníSoft", pestaña según campo oculto `producto`: "Ñande ERP" (default), "Ñande Tienda", "Ñande CRM". **La pestaña "Ñande Tienda" hay que crearla a mano con las mismas columnas.**
 3. `db.save_lead()` → SQLite (local fallback)
 4. `asyncio.create_task(_send_email_async())` → background SMTP with 10s timeout
 5. Returns `{"status": "ok"}` JSON
@@ -68,7 +68,7 @@ ADMIN_PASSWORD=change_this
 - **Rate limit is in-memory** — resets on app restart. Not a problem for low traffic.
 
 ## Branding
-- **Logo:** Ñ pixelada (morado #5B2A86) + "ande ERP" text + mburucuyá watermark
+- **Logo:** Ñ pixelada (morado #5B2A86) + "ande ERP" text + mburucuyá watermark. La Ñ sola (`static/img/marca-n.svg`) es la marca GuaraníSoft: idéntica en todos los productos, sin agregados. Ñande Tienda usa Ñ + texto "ande Tienda" (clase `.tienda-wordmark`).
 - **Colors:** morado #5B2A86, verde #4A7C59, gris #F5F7FA
 - **Slogan:** "Hecho en Paraguay. Hecho para Paraguay."
 - **Do not change colors or logo without owner authorization**
