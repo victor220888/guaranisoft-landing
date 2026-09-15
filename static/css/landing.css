@@ -1354,3 +1354,5 @@ footer a:focus-visible {
     max-width: 22ch;
     margin: 0 auto var(--space-3);
 }
+.precio-desde .desde-monto small { font-size: 0.45em; font-weight: 600; color: var(--gris-medio); }
+.precios-fundador .precio-desde + .precio-desde { margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed var(--borde); }
