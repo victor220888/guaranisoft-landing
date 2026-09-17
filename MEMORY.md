@@ -12,3 +12,7 @@ When you have nothing to say, respond with ONLY: NO_REPLY
 ❌ Wrong: "Here's help... NO_REPLY"
 ❌ Wrong: "NO_REPLY"
 ✅ Right: NO_REPLY
+## Regla crítica — Sin cambios sin confirmación
+No hacer cambios en ningún archivo del proyecto sin antes presentarle la idea a Victor y recibir su confirmación explícita. Esto aplica a templates, CSS, Python, contenido, configuración, Git y cualquier otro archivo del workspace. Primero se presenta la propuesta, se explica el impacto, y solo después de que él diga "sí" se ejecuta el cambio.
+## Ubicación
+Victor es de Caaguazú, Paraguay. No es de Asunción. En la página dice "Asunción, Paraguay" — hay que corregirlo a "Caaguazú, Paraguay" o simplemente "Paraguay".

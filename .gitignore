@@ -6,3 +6,12 @@ leads.db
 service_account.json
 *.json:Zone.Identifier
 tmp_test*.py
+
+# Workspace de agentes (AutoClaw/OpenClaw): runtime, sesiones y adjuntos — no son parte del sitio
+.agents/
+.autoclaw/
+.cluster/
+.openclaw/
+.openclaw-attachments/
+审美相关skill/
+docs/审美相关skill/
