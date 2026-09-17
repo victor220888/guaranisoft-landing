@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-primary">
+  <!-- Estado de Resultados: documento con flecha ascendente -->
+  <path d="M12 4 L12 44 L36 44 L36 12 L28 4 Z"/>
+  <path d="M28 4 L28 12 L36 12"/>
+  <line x1="17" y1="18" x2="31" y2="18"/>
+  <line x1="17" y1="24" x2="31" y2="24"/>
+  <path d="M18 38 L24 32 L30 38" class="icon-accent"/>
+  <path d="M24 32 L24 42" class="icon-accent"/>
+</svg>

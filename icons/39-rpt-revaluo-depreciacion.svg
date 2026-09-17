@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-primary">
+  <!-- Cuadro de Revalúo y Depreciación: activo con flecha de depreciación -->
+  <rect x="8" y="10" width="22" height="22" rx="3"/>
+  <text x="13" y="26" font-family="sans-serif" font-size="11" font-weight="700" fill="currentColor" stroke="none">A</text>
+  <!-- Flecha de depreciación -->
+  <path d="M32 16 L40 16 L40 28 L32 28" class="icon-accent"/>
+  <path d="M36 24 L36 36" class="icon-accent"/>
+  <path d="M32 32 L36 36 L40 32" class="icon-accent"/>
+  <!-- Valor revaluado -->
+  <text x="12" y="42" font-family="sans-serif" font-size="8" font-weight="700" fill="currentColor" class="icon-accent-fill" stroke="none">$</text>
+</svg>

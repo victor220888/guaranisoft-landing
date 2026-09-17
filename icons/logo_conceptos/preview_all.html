@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ñande ERP — Preview de logos</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: #F5F7FA;
+    color: #2D2D2D;
+    padding: 40px 20px;
+  }
+  h1 {
+    text-align: center;
+    font-size: 28px;
+    color: #5B2A86;
+    margin-bottom: 8px;
+  }
+  .subtitle {
+    text-align: center;
+    color: #5A6470;
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .card {
+    background: white;
+    border-radius: 16px;
+    padding: 32px 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .card.dark {
+    background: #1a1a2e;
+  }
+  .card-label {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #5A6470;
+  }
+  .card.dark .card-label {
+    color: #9B6DC4;
+  }
+  .card-desc {
+    font-size: 12px;
+    color: #5A6470;
+    text-align: center;
+  }
+  .card.dark .card-desc {
+    color: #a0a0b0;
+  }
+  .logo-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 140px;
+  }
+  .logo-wrap.icon {
+    min-height: 160px;
+  }
+  .footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #5A6470;
+    font-size: 13px;
+  }
+  .footer a {
+    color: #5B2A86;
+    text-decoration: none;
+  }
+  .slogan-badge {
+    display: inline-block;
+    margin-top: 4px;
+    padding: 4px 12px;
+    background: #5B2A86;
+    color: white;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+<h1>Ñande ERP — Brand Kit</h1>
+<p class="subtitle">5 variantes del logo · Paleta: Morado #5B2A86 + Verde #4A7C59</p>
+<p class="subtitle"><strong>Eslogan:</strong> "Hecho en Paraguay. Hecho para Paraguay."</p>
+
+<div class="grid">
+
+  <!-- P1: Compacto claro -->
+  <div class="card">
+    <div class="card-label">P1 · Compacto Claro</div>
+    <div class="logo-wrap">
+      <img src="P1_compacto_claro.svg" alt="P1 Compacto Claro" style="max-width: 280px;">
+    </div>
+    <div class="card-desc">Navbar fondo blanco · logo-compacto.svg</div>
+  </div>
+
+  <!-- P2: Compacto oscuro -->
+  <div class="card dark">
+    <div class="card-label">P2 · Compacto Oscuro</div>
+    <div class="logo-wrap">
+      <img src="P2_compacto_oscuro.svg" alt="P2 Compacto Oscuro" style="max-width: 280px;">
+    </div>
+    <div class="card-desc">Navbar fondo oscuro · logo-compacto-dark.svg</div>
+  </div>
+
+  <!-- P3: Con eslogan -->
+  <div class="card">
+    <div class="card-label">P3 · Con Eslogan</div>
+    <div class="logo-wrap">
+      <img src="P3_con_eslogan.svg" alt="P3 Con Eslogan" style="max-width: 320px;">
+    </div>
+    <div class="card-desc">Login / material comercial · logo-eslogan.svg</div>
+  </div>
+
+  <!-- P4: Ícono -->
+  <div class="card">
+    <div class="card-label">P4 · Ícono</div>
+    <div class="logo-wrap icon">
+      <img src="P4_icono.svg" alt="P4 Ícono" style="max-width: 120px;">
+    </div>
+    <div class="card-desc">Favicon / app icon · favicon.svg</div>
+  </div>
+
+  <!-- P5: Avatar -->
+  <div class="card">
+    <div class="card-label">P5 · Avatar</div>
+    <div class="logo-wrap icon">
+      <img src="P5_avatar.svg" alt="P5 Avatar" style="max-width: 120px;">
+    </div>
+    <div class="card-desc">Redes sociales · avatar.svg</div>
+  </div>
+
+</div>
+
+<div class="footer">
+  GuaraníSoft · Ñande ERP · <a href="https://guaranisof.com">guaranisof.com</a>
+</div>
+
+</body>
+</html>

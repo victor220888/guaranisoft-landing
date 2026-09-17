@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-primary">
+  <!-- Mayor de Cuenta: libro con lupa -->
+  <path d="M8 8 L8 40 L24 42 L40 40 L40 8 L24 10 Z"/>
+  <line x1="24" y1="10" x2="24" y2="42"/>
+  <line x1="12" y1="16" x2="20" y2="16"/>
+  <line x1="12" y1="22" x2="20" y2="22"/>
+  <line x1="12" y1="28" x2="20" y2="28"/>
+  <circle cx="34" cy="30" r="6" class="icon-accent"/>
+  <line x1="38" y1="34" x2="42" y2="38" class="icon-accent" stroke-width="3"/>
+</svg>

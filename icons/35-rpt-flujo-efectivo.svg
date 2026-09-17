@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-primary">
+  <!-- Estado de Flujo de Efectivo: billete con ondas de flujo -->
+  <rect x="4" y="16" width="28" height="20" rx="3"/>
+  <circle cx="18" cy="26" r="5" class="icon-accent"/>
+  <circle cx="18" cy="26" r="2" fill="currentColor" class="icon-accent-fill" stroke="none"/>
+  <!-- Ondas de flujo -->
+  <path d="M36 20 Q40 24 36 28 Q40 32 36 36" class="icon-accent"/>
+  <path d="M40 20 Q44 24 40 28 Q44 32 40 36" class="icon-accent"/>
+</svg>

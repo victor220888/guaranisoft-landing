@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-primary">
+  <!-- Top Productos: podio con estrella -->
+  <path d="M24 4 L28 18 L42 18 L31 27 L35 41 L24 33 L13 41 L17 27 L6 18 L20 18 Z" class="icon-accent"/>
+  <rect x="6" y="38" width="36" height="6" rx="1"/>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-primary">
+  <!-- Compras por Proveedor: persona con factura -->
+  <circle cx="14" cy="14" r="6"/>
+  <path d="M4 38 C4 28 9 22 14 22 C19 22 24 28 24 38"/>
+  <rect x="28" y="14" width="16" height="20" rx="2" class="icon-accent"/>
+  <line x1="32" y1="20" x2="40" y2="20" class="icon-accent"/>
+  <line x1="32" y1="25" x2="40" y2="25" class="icon-accent"/>
+  <line x1="32" y1="30" x2="36" y2="30" class="icon-accent"/>
+</svg>

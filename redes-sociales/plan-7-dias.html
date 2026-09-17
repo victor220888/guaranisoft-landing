@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan de Contenidos — Ñande ERP | 7 Días</title>
+<style>
+  :root {
+    --morado: #5B2A86;
+    --verde: #4A7C59;
+    --gris-fondo: #F5F7FA;
+    --gris-texto: #1F1F24;
+    --gris-medio: #5A6470;
+    --blanco: #FFFFFF;
+    --borde: #E8ECF0;
+    --radius: 12px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+    background: #FAFBFC;
+    color: var(--gris-texto);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ── Header ── */
+  header {
+    background: var(--blanco);
+    border-bottom: 1px solid var(--borde);
+    padding: 24px 0;
+    margin-bottom: 48px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--morado);
+    letter-spacing: -0.02em;
+  }
+
+  header p {
+    color: var(--gris-medio);
+    font-size: 0.9rem;
+    margin-top: 4px;
+  }
+
+  /* ── Tabs ── */
+  .tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid var(--borde);
+    padding-bottom: 0;
+  }
+
+  .tab-btn {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--gris-medio);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.15s ease;
+    font-family: inherit;
+  }
+
+  .tab-btn:hover { color: var(--morado); }
+  .tab-btn.active {
+    color: var(--morado);
+    border-bottom-color: var(--morado);
+  }
+
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* ── Cards ── */
+  .section-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--gris-texto);
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+
+  .section-subtitle {
+    font-size: 0.85rem;
+    color: var(--gris-medio);
+    margin-bottom: 28px;
+  }
+
+  .grid-7 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .day-card {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .day-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  }
+
+  .day-card.highlight {
+    border-left: 3px solid var(--morado);
+  }
+
+  .day-num {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--morado);
+    margin-bottom: 6px;
+  }
+
+  .day-tema {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--gris-texto);
+    margin-bottom: 4px;
+  }
+
+  .day-hora {
+    font-size: 0.78rem;
+    color: var(--verde);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .day-copy {
+    font-size: 0.82rem;
+    color: var(--gris-medio);
+    line-height: 1.5;
+    margin-bottom: 10px;
+    font-style: italic;
+  }
+
+  .day-hashtags {
+    font-size: 0.75rem;
+    color: var(--morado);
+    margin-bottom: 8px;
+    word-break: break-word;
+  }
+
+  .day-material {
+    font-size: 0.75rem;
+    color: var(--gris-medio);
+    background: var(--gris-fondo);
+    padding: 6px 10px;
+    border-radius: 6px;
+  }
+
+  .day-estado {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 3px 10px;
+    border-radius: 12px;
+    margin-top: 10px;
+  }
+
+  .estado-pendiente { background: #FEF3C7; color: #92400E; }
+  .estado-programado { background: #DBEAFE; color: #1E40AF; }
+  .estado-publicado { background: #D1FAE5; color: #065F46; }
+
+  /* ── Pub completa ── */
+  .pub-card {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: var(--radius);
+    padding: 32px;
+    box-shadow: var(--shadow);
+    max-width: 700px;
+    margin-bottom: 32px;
+  }
+
+  .pub-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--morado);
+    margin-bottom: 4px;
+  }
+
+  .pub-meta {
+    font-size: 0.78rem;
+    color: var(--gris-medio);
+    margin-bottom: 20px;
+  }
+
+  .pub-copy {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--gris-texto);
+    margin-bottom: 16px;
+    white-space: pre-line;
+  }
+
+  .pub-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--gris-medio);
+    margin-bottom: 4px;
+  }
+
+  .pub-value {
+    font-size: 0.85rem;
+    color: var(--gris-texto);
+    margin-bottom: 14px;
+  }
+
+  .pub-value.mono {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 0.78rem;
+    background: var(--gris-fondo);
+    padding: 8px 12px;
+    border-radius: 6px;
+    color: var(--morado);
+  }
+
+  /* ── Tabla trazable ── */
+  .trace-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+    margin-bottom: 32px;
+    background: var(--blanco);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .trace-table th {
+    background: var(--morado);
+    color: white;
+    font-weight: 600;
+    text-align: left;
+    padding: 12px 14px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .trace-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--borde);
+  }
+
+  .trace-table tr:last-child td { border-bottom: none; }
+
+  .trace-table input, .trace-table select {
+    border: 1px solid var(--borde);
+    border-radius: 4px;
+    padding: 6px 8px;
+    font-size: 0.82rem;
+    font-family: inherit;
+    width: 100%;
+  }
+
+  .trace-table input:focus, .trace-table select:focus {
+    outline: none;
+    border-color: var(--morado);
+    box-shadow: 0 0 0 2px rgba(91,42,134,0.12);
+  }
+
+  .btn-link-input {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px dashed var(--borde);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    background: var(--gris-fondo);
+    color: var(--gris-medio);
+    cursor: text;
+  }
+
+  /* ── Checklist ── */
+  .checklist {
+    list-style: none;
+    margin-bottom: 32px;
+  }
+
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--borde);
+    font-size: 0.88rem;
+  }
+
+  .checklist li:last-child { border-bottom: none; }
+
+  .checklist input[type="checkbox"] {
+    margin-top: 3px;
+    accent-color: var(--verde);
+    width: 16px;
+    height: 16px;
+  }
+
+  /* ── Botones ── */
+  .btn-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+  }
+
+  .btn {
+    padding: 10px 22px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s ease;
+  }
+
+  .btn-morado {
+    background: var(--morado);
+    color: white;
+  }
+
+  .btn-morado:hover { background: #4A2270; }
+
+  .btn-outline {
+    background: transparent;
+    border: 1.5px solid var(--morado);
+    color: var(--morado);
+  }
+
+  .btn-outline:hover { background: rgba(91,42,134,0.06); }
+
+  .btn-green {
+    background: var(--verde);
+    color: white;
+  }
+
+  .btn-green:hover { background: #3D6B4A; }
+
+  /* ── Toast ── */
+  #toast {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    background: var(--gris-texto);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: all 0.25s ease;
+    pointer-events: none;
+    z-index: 100;
+  }
+  #toast.show { opacity: 1; transform: translateY(0); }
+
+  /* ── Footer ── */
+  footer {
+    margin-top: 56px;
+    padding: 24px 0;
+    border-top: 1px solid var(--borde);
+    font-size: 0.78rem;
+    color: var(--gris-medio);
+    text-align: center;
+  }
+
+  @media (max-width: 640px) {
+    .grid-7 { grid-template-columns: 1fr; }
+    .trace-table { font-size: 0.72rem; }
+    .trace-table th, .trace-table td { padding: 8px 6px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>Plan de Contenidos — Ñande ERP</h1>
+    <p>7 días · Instagram · GuaraníSoft · Paraguay, GMT-3</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="plan">Plan 7 Días</button>
+    <button class="tab-btn" data-tab="pub1">Día 1 — Publicación</button>
+    <button class="tab-btn" data-tab="registro">Registro Trazable</button>
+    <button class="tab-btn" data-tab="verificar">Verificar</button>
+  </div>
+
+<!-- ═══════════════ TAB 1: PLAN 7 DÍAS ═══════════════ -->
+<div class="tab-panel active" id="tab-plan">
+  <h2 class="section-title">Calendario de 7 Días</h2>
+  <p class="section-subtitle">Temas diarios con copy sugerido, horarios y materiales necesarios. Franjas de alta interacción para PyMEs paraguayas: 9:00–10:00 AM y 12:00–13:00 PM (GMT-3).</p>
+
+  <div class="grid-7" id="planGrid"></div>
+</div>
+
+<!-- ═══════════════ TAB 2: PUBLICACIÓN DÍA 1 ═══════════════ -->
+<div class="tab-panel" id="tab-pub1">
+  <h2 class="section-title">Día 1 — Publicación Completa</h2>
+  <p class="section-subtitle">Copy, hashtags, descripción del visual y materiales listos para publicar.</p>
+
+  <div class="pub-card" id="pub1Card"></div>
+
+  <h3 style="font-size:0.95rem;font-weight:700;color:var(--gris-texto);margin-bottom:12px">Vista previa (simulación mobile)</h3>
+  <div style="max-width:400px;border:1px solid var(--borde);border-radius:16px;overflow:hidden;background:var(--blanco);box-shadow:0 8px 32px rgba(0,0,0,0.08)">
+    <div style="display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--borde)">
+      <div style="width:32px;height:32px;border-radius:50%;background:var(--morado);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:0.7rem">Ñ</div>
+      <div><div style="font-size:0.78rem;font-weight:600">nande.erp</div><div style="font-size:0.65rem;color:var(--gris-medio)">Asunción, Paraguay</div></div>
+    </div>
+    <div style="aspect-ratio:1;background:linear-gradient(135deg,rgba(91,42,134,0.08),rgba(74,124,89,0.06));display:flex;align-items:center;justify-content:center;position:relative">
+      <div style="text-align:center;padding:40px">
+        <div style="font-size:3rem;margin-bottom:16px">🧾</div>
+        <div style="font-size:1.2rem;font-weight:700;color:var(--morado);margin-bottom:8px">Facturación Electrónica</div>
+        <div style="font-size:0.85rem;color:var(--gris-medio)">Sin dolores de cabeza</div>
+        <div style="margin-top:16px;padding:8px 20px;background:var(--verde);color:white;border-radius:20px;font-size:0.8rem;font-weight:600;display:inline-block">Con SIFEN integrado</div>
+      </div>
+    </div>
+    <div style="padding:12px 14px">
+      <div style="font-size:0.8rem;line-height:1.5;color:var(--gris-texto);margin-bottom:8px">
+        <strong style="font-weight:600">nande.erp</strong> ¿Sabías que la facturación electrónica ya es obligatoria en Paraguay?<br><br>
+        Con Ñande ERP emitís tus comprobantes SIFEN sin ser técnico. Nosotros nos encargamos de todo.<br><br>
+        <span style="color:#8E8E93">… más</span>
+      </div>
+      <div style="font-size:0.7rem;color:var(--morado)">#ÑandeERP #SIFEN #FacturaciónElectrónica</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ TAB 3: REGISTRO TRAZABLE ═══════════════ -->
+<div class="tab-panel" id="tab-registro">
+  <h2 class="section-title">Registro Trazable</h2>
+  <p class="section-subtitle">Tabla editable. Actualizá el estado y agregá el enlace al post después de publicar. Los cambios se guardan en tu navegador.</p>
+
+  <div class="btn-row">
+    <button class="btn btn-green" onclick="exportarCSV()">📥 Descargar CSV</button>
+    <button class="btn btn-outline" onclick="limpiarRegistro()">↺ Restaurar datos iniciales</button>
+  </div>
+
+  <div style="overflow-x:auto">
+    <table class="trace-table" id="traceTable">
+      <thead>
+        <tr>
+          <th>Día</th>
+          <th>Tema</th>
+          <th>Fecha</th>
+          <th>Hora (GMT-3)</th>
+          <th>Formato</th>
+          <th>Estado</th>
+          <th>Enlace al Post</th>
+          <th>Notas</th>
+        </tr>
+      </thead>
+      <tbody id="traceBody"></tbody>
+    </table>
+  </div>
+
+  <p style="font-size:0.75rem;color:var(--gris-medio);margin-top:8px">💡 Los datos se guardan automáticamente en localStorage. Podés cerrar esta página y volver — tus cambios persisten.</p>
+</div>
+
+<!-- ═══════════════ TAB 4: VERIFICAR ═══════════════ -->
+<div class="tab-panel" id="tab-verificar">
+  <h2 class="section-title">Instrucciones de Verificación</h2>
+  <p class="section-subtitle">Seguí estos pasos después de cada publicación programada para asegurar que todo salió bien.</p>
+
+  <h3 style="font-size:0.95rem;font-weight:700;color:var(--morado);margin-bottom:12px">✅ Checklist de verificación diaria</h3>
+  <ul class="checklist" id="checklistEl"></ul>
+
+  <h3 style="font-size:0.95rem;font-weight:700;color:var(--morado);margin:28px 0 12px">📋 Flujo de trabajo</h3>
+  <div style="background:var(--blanco);border:1px solid var(--borde);border-radius:var(--radius);padding:24px;margin-bottom:24px">
+    <ol style="margin-left:20px;font-size:0.88rem;line-height:2;color:var(--gris-texto)">
+      <li><strong>Programar:</strong> Usá Meta Business Suite o Buffer. Copiá el copy de la tarjeta del día. Subí o programá el visual. Fijá la hora según el plan.</li>
+      <li><strong>Esperar:</strong> Dejá que la herramienta publique automáticamente. No necesitás estar presente.</li>
+      <li><strong>Verificar:</strong> 15 minutos después de la hora programada, abrí Instagram y confirmá que el post aparece en tu perfil.</li>
+      <li><strong>Copiar enlace:</strong> Desde Instagram (⋮ → Copiar enlace), pegá el link en la columna "Enlace al Post" del <a href="#" onclick="document.querySelector('[data-tab=registro]').click()" style="color:var(--morado);font-weight:600">Registro Trazable</a>.</li>
+      <li><strong>Actualizar estado:</strong> Cambiá el selector de estado a "Publicado".</li>
+      <li><strong>Repetir:</strong> Volvé al paso 1 para el día siguiente.</li>
+    </ol>
+  </div>
+
+  <h3 style="font-size:0.95rem;font-weight:700;color:var(--morado);margin:28px 0 12px">📊 Métricas a observar (opcional, post-campaña)</h3>
+  <div style="background:var(--blanco);border:1px solid var(--borde);border-radius:var(--radius);padding:24px;margin-bottom:24px">
+    <table style="width:100%;font-size:0.82rem;border-collapse:collapse">
+      <tr style="border-bottom:1px solid var(--borde)"><td style="padding:6px 0;font-weight:600">Alcance</td><td style="padding:6px 0;color:var(--gris-medio)">Cuántas cuentas vieron el post</td></tr>
+      <tr style="border-bottom:1px solid var(--borde)"><td style="padding:6px 0;font-weight:600">Interacciones</td><td style="padding:6px 0;color:var(--gris-medio)">Me gusta + comentarios + compartidos + guardados</td></tr>
+      <tr style="border-bottom:1px solid var(--borde)"><td style="padding:6px 0;font-weight:600">Visitas al perfil</td><td style="padding:6px 0;color:var(--gris-medio)">Cuántos entraron a tu perfil desde el post</td></tr>
+      <tr style="border-bottom:1px solid var(--borde)"><td style="padding:6px 0;font-weight:600">Clics en enlace</td><td style="padding:6px 0;color:var(--gris-medio)">Clics al link de la bio (guaranisof.com)</td></tr>
+      <tr><td style="padding:6px 0;font-weight:600">Guardados</td><td style="padding:6px 0;color:var(--gris-medio)">Indicador de contenido útil que la gente quiere revisitar</td></tr>
+    </table>
+  </div>
+</div>
+
+</div>
+
+<footer>
+  <div class="container">
+    Plan de Contenidos · Ñande ERP por GuaraníSoft · guaranisof.com · Julio 2026
+  </div>
+</footer>
+
+<div id="toast"></div>
+
+<script>
+// ════════════ DATOS ════════════
+const DIAS = [
+  {
+    dia: 1,
+    tema: "SIFEN sin miedo — Facturación electrónica simple",
+    fecha: "Lunes",
+    hora: "10:00 AM",
+    justificacion: "Lunes 10 AM: las PyMEs revisan obligaciones administrativas al iniciar la semana. SIFEN es un tema que genera ansiedad; resolverlo en el primer post posiciona a Ñande como solución inmediata.",
+    formato: "Post (carrusel 3 slides)",
+    copy: `¿Sabías que la facturación electrónica (SIFEN) ya es obligatoria en Paraguay?
+
+Si todavía no emitís comprobantes electrónicos, esto te interesa.
+
+Con Ñande ERP:
+✅ SIFEN integrado, sin programas aparte
+✅ Nosotros configuramos y habilitamos todo
+✅ Vos solo vendés, el sistema emite los DTEs solo
+
+No necesitás ser técnico. No necesitás contratar a nadie más.
+
+🇵🇾 Hecho en Paraguay. Hecho para tu PyME.`,
+    hashtags: "#ÑandeERP #SIFEN #FacturaciónElectrónica #DNIT #PyMEsParaguayas #SoftwareParaguayo #ERP #GuaraníSoft",
+    materiales: [
+      "Slide 1: Texto grande 'SIFEN sin miedo' con ícono de documento electrónico, fondo blanco, acento morado #5B2A86",
+      "Slide 2: Checklist visual de lo que Ñande ERP hace por vos (3 ítems con ✓ verde #4A7C59)",
+      "Slide 3: Logo de Ñande ERP + CTA 'Hablá con nosotros' + WhatsApp"
+    ],
+    visualDesc: "Carrusel de 3 slides, 1080×1080px, diseño limpio con mucho espacio blanco. Paleta: morado #5B2A86 + verde #4A7C59 + blanco. Texto alternativo: 'Infografía de 3 pasos mostrando cómo Ñande ERP simplifica la facturación electrónica SIFEN para PyMEs paraguayas.'",
+    estado: "Pendiente",
+    enlace: ""
+  },
+  {
+    dia: 2,
+    tema: "Cerrando caja en minutos, no en horas",
+    fecha: "Martes",
+    hora: "12:30 PM",
+    justificacion: "Martes mediodía: después del almuerzo, los dueños de comercio revisan la mañana. El dolor del cierre de caja es universal y diario.",
+    formato: "Post (imagen única)",
+    copy: `¿Cuánto tiempo tardás en cerrar tu caja cada día?
+
+Si la respuesta es "más de 15 minutos", hay una forma mejor.
+
+Con Ñande ERP:
+💰 Apertura, arqueo ciego y cierre en un solo panel
+💰 Cada venta actualiza la caja automáticamente
+💰 Adiós a los cuadernos y las diferencias de fin de día
+
+Tu caja siempre cuadrada. Tu tiempo, para lo que importa.`,
+    hashtags: "#CierreDeCaja #PyMEs #ControlFinanciero #ERP #ÑandeERP #NegocioOrdenado #GuaraníSoft",
+    materiales: [
+      "Imagen 1080×1080px mostrando una comparación visual: cuaderno con billetes + calculadora (tachado en rojo) vs dashboard de caja de Ñande ERP (check verde)"
+    ],
+    visualDesc: "Imagen comparativa. Izquierda: foto de cuaderno con anotaciones y calculadora en escala de grises con ✗ rojo. Derecha: screenshot del panel de caja de Ñande ERP a color con ✓ verde. Texto alternativo: 'Comparación: cerrar caja manualmente con cuaderno vs hacerlo en minutos con Ñande ERP.'",
+    estado: "Pendiente",
+    enlace: ""
+  },
+  {
+    dia: 3,
+    tema: "Inventario que nunca miente",
+    fecha: "Miércoles",
+    hora: "10:00 AM",
+    justificacion: "Miércoles: mitad de semana, buen momento para contenido educativo. El control de stock es uno de los módulos más valorados.",
+    formato: "Post (video reel 30s)",
+    copy: `"Creo que me quedan 5 de esos" — famosas últimas palabras antes de descubrir que no hay ninguno.
+
+Con Ñande ERP el inventario se actualiza SOLO:
+📦 Cada venta descuenta stock al instante
+📦 Alertas cuando algo está por agotarse
+📦 Kardex completo por producto
+📦 Múltiples sucursales, un solo control
+
+Nunca más vendas lo que no tenés.`,
+    hashtags: "#Inventario #ControlDeStock #Kardex #ERP #ÑandeERP #PyMEsParaguayas #SinFaltantes #GuaraníSoft",
+    materiales: [
+      "Video reel 1080×1920px (30 seg), grabado con celular mostrando el módulo de inventario en acción: búsqueda de producto → vista de kardex → alerta de stock bajo"
+    ],
+    visualDesc: "Reel vertical 9:16 mostrando la pantalla del sistema con el módulo de inventario. Una mano navega: busca un producto, muestra el kardex, y aparece la alerta de stock bajo. Overlay de texto sincronizado con cada paso. Texto alternativo: 'Video de 30 segundos mostrando el módulo de inventario de Ñande ERP: búsqueda de producto, kardex y alerta de stock bajo.'",
+    estado: "Pendiente",
+    enlace: ""
+  },
+  {
+    dia: 4,
+    tema: "¿Quién está detrás de Ñande ERP?",
+    fecha: "Jueves",
+    hora: "12:30 PM",
+    justificacion: "Jueves: contenido de conexión humana. Mostrar la persona/equipo detrás del producto genera confianza antes del cierre de semana.",
+    formato: "Story (3 secuencias) + Post",
+    copy: `Hola, soy Victor Román. Hace más de 10 años que escribo software para empresas paraguayas.
+
+Ñande ERP no es un sistema genérico adaptado. Lo construí trabajando directo con comerciantes: escuchando qué les frena, qué les hace perder plata, qué les complica el día.
+
+Sin call center. Sin tickets. Sin vueltas.
+Cuando escribís, te respondo yo.
+
+🇵🇾 Hecho en Paraguay. Hecho para vos.`,
+    hashtags: "#HechoEnParaguay #SoftwareParaguayo #EmprendedorPY #ERP #ÑandeERP #GuaraníSoft #QuiénEstáDetrás",
+    materiales: [
+      "Foto de Victor (ya existe: /static/img/victor-roman.jpg) para el post",
+      "3 stories: foto de Victor + texto '10+ años de software local' / 'Trabajando directo con comerciantes' / 'Sin call center, sin vueltas'"
+    ],
+    visualDesc: "Post 1080×1080px con foto de Victor Román a la izquierda sobre fondo blanco, y cita textual a la derecha: 'Cuando elegís Ñande ERP, estás trabajando con el equipo que lo construyó.' Texto alternativo: 'Victor Román, fundador de GuaraníSoft y creador de Ñande ERP.'",
+    estado: "Pendiente",
+    enlace: ""
+  },
+  {
+    dia: 5,
+    tema: "Contabilidad automática — Tu contador te va a amar",
+    fecha: "Viernes",
+    hora: "10:00 AM",
+    justificacion: "Viernes: día de cierre semanal. Conectar con el alivio de tener las cuentas listas para el contador.",
+    formato: "Post (carrusel 2 slides)",
+    copy: `Imaginate llegar a fin de mes y ya tener todo listo para tu contador.
+
+Con Ñande ERP cada venta, cada compra y cada movimiento genera automáticamente el asiento contable.
+
+📊 Plan de cuentas configurado a tu medida
+📊 IRE, IDU, IRP — reportes listos para la DNIT
+📊 Ejercicios fiscales al día
+
+Tu contador te va a amar. Y vos vas a dormir tranquilo.`,
+    hashtags: "#Contabilidad #Tributario #DNIT #Ley6380 #ERP #ÑandeERP #PyMEs #GuaraníSoft",
+    materiales: [
+      "Slide 1: 'Tu contador te va a amar' con emoji 💚, fondo blanco, acento verde",
+      "Slide 2: Viñetas con los beneficios, íconos de reportes y checks verdes"
+    ],
+    visualDesc: "Carrusel de 2 slides 1080×1080px. Slide 1: mensaje emocional con tipografía grande. Slide 2: bullets con beneficios concretos. Texto alternativo: 'Infografía de 2 slides mostrando cómo la contabilidad automática de Ñande ERP genera reportes listos para la DNIT.'",
+    estado: "Pendiente",
+    enlace: ""
+  },
+  {
+    dia: 6,
+    tema: "Plan Fundador — Oferta especial de lanzamiento",
+    fecha: "Sábado",
+    hora: "10:30 AM",
+    justificacion: "Sábado: los dueños de negocio tienen más tiempo para leer. Momento ideal para contenido de venta directa.",
+    formato: "Post (imagen única)",
+    copy: `Ñande ERP está buscando a sus primeras empresas fundadoras.
+
+💰 Plan Fundador: 70% OFF sobre el precio regular
+💸 De Gs. 4.500.000 a Gs. 1.350.000
+🎁 1 mes de prueba sin costo, sin compromiso
+🤝 Implementación VIP y acompañamiento personalizado
+
+Cupos limitados. Esto es para quienes apuestan temprano y nos ayudan a crecer.
+
+Link en la bio para agendar tu demo.`,
+    hashtags: "#PlanFundador #OfertaPY #ERP #ÑandeERP #PyMEsParaguayas #Lanzamiento #GuaraníSoft #DemoGratis",
+    materiales: [
+      "Imagen 1080×1080px con el precio destacado: 'Gs. 1.350.000' en grande, '70% OFF' en badge rojo animado, logo de Ñande ERP. Diseño limpio con el estilo de la landing."
+    ],
+    visualDesc: "Post promocional con el precio del Plan Fundador. Badge rojo '70% OFF', precio grande 'Gs. 1.350.000', tachado 'Gs. 4.500.000', y textos de beneficios. Fondo blanco con detalles en morado y verde. Texto alternativo: 'Oferta del Plan Fundador de Ñande ERP: 70% de descuento, de Gs. 4.500.000 a Gs. 1.350.000 con 1 mes de prueba gratis.'",
+    estado: "Pendiente",
+    enlace: ""
+  },
+  {
+    dia: 7,
+    tema: "Resumen semanal + Lo que viene",
+    fecha: "Domingo",
+    hora: "11:00 AM",
+    justificacion: "Domingo: cierre de semana con tono relajado. Refuerza los temas de la semana e invita a la acción.",
+    formato: "Story (múltiple) + Post",
+    copy: `Esta semana en Ñande ERP hablamos de:
+
+🧾 Cómo resolver SIFEN sin ser técnico
+💰 Cerrar tu caja en minutos
+📦 Inventario que nunca miente
+🧑‍💻 Quién está detrás del sistema
+📊 Contabilidad automática
+🎁 Plan Fundador con 70% OFF
+
+¿Te perdiste alguno? Todos los posts están fijados en nuestro perfil.
+
+La semana que viene: más tips para PyMEs, más herramientas, y una sorpresa.
+
+¿Tenés dudas? Escribinos por WhatsApp, te respondemos directo.`,
+    hashtags: "#ResumenSemanal #ÑandeERP #PyMEs #ERP #SoftwareParaguayo #EmprenderEnParaguay #GuaraníSoft",
+    materiales: [
+      "Post: collage limpio con miniaturas de los 6 posts de la semana, numerados del 1 al 6, y CTA final",
+      "Stories: 7 stories, uno por cada día, con enlace al post original"
+    ],
+    visualDesc: "Collage 1080×1080px con 6 miniaturas en grid de 2×3, cada una con un número y un emoji. Abajo, CTA: '¿Te perdiste algo? Mirá nuestros posts fijados.' Texto alternativo: 'Resumen semanal de contenidos de Ñande ERP con los 6 temas cubiertos durante la semana.'",
+    estado: "Pendiente",
+    enlace: ""
+  }
+];
+
+const CHECKLIST_ITEMS = [
+  "Abrir Instagram y buscar tu perfil (@nande.erp sugerido)",
+  "Confirmar que el post aparece en el feed (no solo en tu vista, también desde otra cuenta o incógnito)",
+  "Verificar que el copy se lee completo y sin errores de formato o caracteres cortados",
+  "Verificar que los hashtags son visibles y no están bloqueados por shadowban (buscar uno en el explorador)",
+  "Confirmar que las imágenes/videos cargan correctamente en mobile y desktop",
+  "Copiar el enlace del post (⋮ → Copiar enlace) y pegarlo en la columna correspondiente del Registro Trazable",
+  "Cambiar el estado de 'Pendiente' a 'Publicado' en la tabla de seguimiento",
+  "Si usaste Meta Business Suite: verificar en la bandeja de notificaciones que no haya errores de publicación",
+  "Anotar en Notas cualquier incidencia (ej: 'se publicó 5 min tarde', 'imagen con baja calidad')",
+  "Revisar después de 2 horas: anotar primeras métricas visibles (likes, comentarios) en Notas"
+];
+
+// ════════════ RENDER ════════════
+
+function renderPlan() {
+  const grid = document.getElementById('planGrid');
+  grid.innerHTML = DIAS.map((d, i) => `
+    <div class="day-card${i === 0 ? ' highlight' : ''}">
+      <div class="day-num">Día ${d.dia} · ${d.fecha}</div>
+      <div class="day-tema">${d.tema}</div>
+      <div class="day-hora">🕐 ${d.hora} (GMT-3) · ${d.formato}</div>
+      <div class="day-copy">${d.copy.replace(/\n/g, '<br>')}</div>
+      <div class="day-hashtags">${d.hashtags}</div>
+      <div class="day-material">📎 ${d.materiales.join(' · ')}</div>
+      <span class="day-estado ${d.estado === 'Publicado' ? 'estado-publicado' : d.estado === 'Programado' ? 'estado-programado' : 'estado-pendiente'}">${d.estado}</span>
+    </div>
+  `).join('');
+}
+
+function renderPub1() {
+  const d = DIAS[0];
+  document.getElementById('pub1Card').innerHTML = `
+    <h3>${d.tema}</h3>
+    <div class="pub-meta">${d.fecha} · ${d.hora} (GMT-3) · ${d.formato} · Estado: <strong>${d.estado}</strong></div>
+
+    <div class="pub-label">📝 Copy del post</div>
+    <div class="pub-copy">${d.copy}</div>
+
+    <div class="pub-label">#️⃣ Hashtags</div>
+    <div class="pub-value mono">${d.hashtags}</div>
+
+    <div class="pub-label">🖼️ Descripción del visual</div>
+    <div class="pub-value">${d.visualDesc}</div>
+
+    <div class="pub-label">📎 Materiales necesarios</div>
+    <div class="pub-value">${d.materiales.map((m,i) => `${i+1}. ${m}`).join('<br>')}</div>
+
+    <div class="pub-label">📐 Especificaciones técnicas</div>
+    <div class="pub-value" style="font-size:0.78rem;color:var(--gris-medio)">
+      Formato: ${d.formato}<br>
+      Dimensiones: 1080×1080px (1:1) para post · 1080×1920px (9:16) para stories/reels<br>
+      Peso máximo: 8 MB por slide<br>
+      Texto alternativo sugerido: "${d.visualDesc.split('Texto alternativo: ')[1]?.replace(/'/g, '') || d.visualDesc}"
+    </div>
+  `;
+}
+
+function renderTrace() {
+  // Cargar datos guardados
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem('nande_trace') || '{}'); } catch(e) {}
+
+  const tbody = document.getElementById('traceBody');
+  tbody.innerHTML = DIAS.map((d, i) => {
+    const s = saved[i] || {};
+    const estado = s.estado || d.estado;
+    return `
+      <tr>
+        <td>${d.dia}</td>
+        <td>${d.tema}</td>
+        <td>${d.fecha}</td>
+        <td>${d.hora}</td>
+        <td>${d.formato}</td>
+        <td>
+          <select data-idx="${i}" data-field="estado" onchange="guardarTrace()">
+            <option value="Pendiente" ${estado === 'Pendiente' ? 'selected' : ''}>Pendiente</option>
+            <option value="Programado" ${estado === 'Programado' ? 'selected' : ''}>Programado</option>
+            <option value="Publicado" ${estado === 'Publicado' ? 'selected' : ''}>Publicado</option>
+          </select>
+        </td>
+        <td><input type="url" data-idx="${i}" data-field="enlace" value="${s.enlace || ''}" placeholder="https://instagram.com/p/..." onchange="guardarTrace()"></td>
+        <td><input type="text" data-idx="${i}" data-field="notas" value="${s.notas || ''}" placeholder="Opcional" onchange="guardarTrace()"></td>
+      </tr>
+    `;
+  }).join('');
+}
+
+function renderChecklist() {
+  document.getElementById('checklistEl').innerHTML = CHECKLIST_ITEMS.map((item, i) => `
+    <li>
+      <input type="checkbox" id="chk${i}" onchange="guardarChecklist()">
+      <label for="chk${i}">${item}</label>
+    </li>
+  `).join('');
+  // Restaurar checks
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem('nande_checks') || '{}'); } catch(e) {}
+  CHECKLIST_ITEMS.forEach((_, i) => {
+    const el = document.getElementById('chk' + i);
+    if (el) el.checked = !!saved[i];
+  });
+}
+
+// ════════════ PERSISTENCIA ════════════
+
+function guardarTrace() {
+  const data = {};
+  document.querySelectorAll('#traceBody select, #traceBody input').forEach(el => {
+    const idx = el.dataset.idx;
+    if (!data[idx]) data[idx] = {};
+    data[idx][el.dataset.field] = el.value;
+  });
+  localStorage.setItem('nande_trace', JSON.stringify(data));
+}
+
+function guardarChecklist() {
+  const data = {};
+  CHECKLIST_ITEMS.forEach((_, i) => {
+    const el = document.getElementById('chk' + i);
+    if (el) data[i] = el.checked;
+  });
+  localStorage.setItem('nande_checks', JSON.stringify(data));
+}
+
+function exportarCSV() {
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem('nande_trace') || '{}'); } catch(e) {}
+  let csv = 'Día,Tema,Fecha,Hora,Formato,Estado,Enlace,Notas\n';
+  DIAS.forEach((d, i) => {
+    const s = saved[i] || {};
+    csv += `${d.dia},"${d.tema}","${d.fecha}","${d.hora}","${d.formato}","${s.estado || d.estado}","${s.enlace || ''}","${s.notas || ''}"\n`;
+  });
+  const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'nande-erp-plan-contenidos-7dias.csv';
+  a.click();
+  toast('CSV descargado ✓');
+}
+
+function limpiarRegistro() {
+  localStorage.removeItem('nande_trace');
+  localStorage.removeItem('nande_checks');
+  renderTrace();
+  renderChecklist();
+  toast('Registro restaurado a valores iniciales');
+}
+
+function toast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 2500);
+}
+
+// ════════════ TABS ════════════
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+  });
+});
+
+// ════════════ INIT ════════════
+renderPlan();
+renderPub1();
+renderTrace();
+renderChecklist();
+</script>
+
+</body>
+</html>

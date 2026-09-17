@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-primary">
+  <!-- Libro de Inventarios y Balances: libro con báscula -->
+  <path d="M8 6 L8 42 L24 44 L40 42 L40 6 L24 8 Z"/>
+  <line x1="24" y1="8" x2="24" y2="44"/>
+  <!-- Mini báscula en lado derecho -->
+  <line x1="32" y1="14" x2="32" y2="22" class="icon-accent"/>
+  <line x1="28" y1="22" x2="36" y2="22" class="icon-accent"/>
+  <path d="M27 22 L33 22 L32 27 L28 27 Z" class="icon-accent"/>
+  <!-- Líneas izquierdas -->
+  <line x1="12" y1="16" x2="20" y2="16"/>
+  <line x1="12" y1="22" x2="20" y2="22"/>
+  <line x1="12" y1="28" x2="20" y2="28"/>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-primary">
+  <!-- Inventario Valorizado: pila de cajas con $ más grandes -->
+  <rect x="8" y="16" width="16" height="14" rx="2"/>
+  <rect x="24" y="16" width="16" height="14" rx="2" class="icon-accent"/>
+  <rect x="16" y="30" width="16" height="14" rx="2"/>
+  <text x="11" y="27" font-family="sans-serif" font-size="9" font-weight="700" fill="currentColor" stroke="none">$</text>
+  <text x="28" y="27" font-family="sans-serif" font-size="9" font-weight="700" fill="currentColor" class="icon-accent-fill" stroke="none">$</text>
+  <text x="21" y="41" font-family="sans-serif" font-size="9" font-weight="700" fill="currentColor" stroke="none">$</text>
+</svg>

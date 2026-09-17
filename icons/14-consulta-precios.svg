@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-primary">
+  <path d="M14 6 L32 6 L42 16 L42 34 L24 42 L6 34 L6 16 Z"/>
+  <path d="M24 42 L24 24 L42 16"/>
+  <path d="M6 16 L24 24 L32 6"/>
+  <text x="20" y="32" font-family="sans-serif" font-size="12" font-weight="700" fill="currentColor" class="icon-accent-fill" stroke="none">$</text>
+</svg>

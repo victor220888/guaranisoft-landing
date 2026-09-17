@@ -1,0 +1,36 @@
+<!-- P5: Avatar circular (redes sociales) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <circle cx="80" cy="80" r="78" fill="#5B2A86"/>
+  <g opacity="0.2" transform="translate(118,95) scale(0.48) translate(-100,-100)">
+    <g fill="#FFFFFF">
+      <ellipse cx="100" cy="50" rx="14" ry="30" transform="rotate(0 100 100)"/>
+      <ellipse cx="100" cy="50" rx="14" ry="30" transform="rotate(60 100 100)"/>
+      <ellipse cx="100" cy="50" rx="14" ry="30" transform="rotate(120 100 100)"/>
+      <ellipse cx="100" cy="50" rx="14" ry="30" transform="rotate(180 100 100)"/>
+      <ellipse cx="100" cy="50" rx="14" ry="30" transform="rotate(240 100 100)"/>
+      <ellipse cx="100" cy="50" rx="14" ry="30" transform="rotate(300 100 100)"/>
+    </g>
+    <g fill="#6FB07F" opacity="0.7">
+      <ellipse cx="100" cy="60" rx="9" ry="20" transform="rotate(30 100 100)"/>
+      <ellipse cx="100" cy="60" rx="9" ry="20" transform="rotate(90 100 100)"/>
+      <ellipse cx="100" cy="60" rx="9" ry="20" transform="rotate(150 100 100)"/>
+      <ellipse cx="100" cy="60" rx="9" ry="20" transform="rotate(210 100 100)"/>
+      <ellipse cx="100" cy="60" rx="9" ry="20" transform="rotate(270 100 100)"/>
+      <ellipse cx="100" cy="60" rx="9" ry="20" transform="rotate(330 100 100)"/>
+    </g>
+  </g>
+  <rect x="52" y="28" width="10" height="10" rx="2" fill="#6FB07F"/>
+  <rect x="66" y="25" width="10" height="10" rx="2" fill="#6FB07F"/>
+  <rect x="80" y="28" width="10" height="10" rx="2" fill="#6FB07F"/>
+  <rect x="47" y="50" width="13" height="13" rx="2" fill="#FFFFFF"/>
+  <rect x="47" y="66" width="13" height="13" rx="2" fill="#FFFFFF"/>
+  <rect x="47" y="82" width="13" height="13" rx="2" fill="#FFFFFF"/>
+  <rect x="47" y="98" width="13" height="13" rx="2" fill="#FFFFFF"/>
+  <rect x="62" y="50" width="13" height="13" rx="2" fill="#FFFFFF"/>
+  <rect x="77" y="66" width="13" height="13" rx="2" fill="#FFFFFF"/>
+  <rect x="92" y="82" width="13" height="13" rx="2" fill="#FFFFFF"/>
+  <rect x="92" y="50" width="13" height="13" rx="2" fill="#FFFFFF"/>
+  <rect x="92" y="66" width="13" height="13" rx="2" fill="#FFFFFF"/>
+  <rect x="92" y="98" width="13" height="13" rx="2" fill="#FFFFFF"/>
+  <rect x="92" y="82" width="13" height="13" rx="2" fill="#FFFFFF"/>
+</svg>

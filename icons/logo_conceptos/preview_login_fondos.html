@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:#1a1a2e;padding:30px;display:flex;flex-direction:column;align-items:center;gap:40px}
+h1{color:#fff;font-size:20px}
+.preview{width:480px;height:340px;border-radius:16px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(0,0,0,0.4)}
+.label{position:absolute;bottom:12px;left:16px;color:#fff;background:rgba(0,0,0,0.6);padding:4px 12px;border-radius:6px;font-size:13px;z-index:10}
+
+/* Opción 1: Degradado + franja morada */
+.opt1{background:linear-gradient(180deg,#FFFFFF 0%,#F5F7FA 100%)}
+.opt1::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:#5B2A86}
+.opt1 .logo{display:flex;flex-direction:column;align-items:center;gap:8px}
+.opt1 .logo-text{font-size:28px;font-weight:700}
+.opt1 .logo-text .a{color:#5B2A86}
+.opt1 .logo-text .e{color:#4A7C59}
+.opt1 .slogan{font-size:11px;color:#5A6470}
+
+/* Opción 2: Patrón Ñ pixelada */
+.opt2{background:#F5F7FA;background-image:
+  linear-gradient(rgba(91,42,134,0.03) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(91,42,134,0.03) 1px,transparent 1px);
+  background-size:20px 20px}
+.opt2 .logo{display:flex;flex-direction:column;align-items:center;gap:8px}
+.opt2 .logo-text{font-size:28px;font-weight:700}
+.opt2 .logo-text .a{color:#5B2A86}
+.opt2 .logo-text .e{color:#4A7C59}
+.opt2 .slogan{font-size:11px;color:#5A6470}
+
+/* Opción 3: Liso */
+.opt3{background:#F5F7FA}
+.opt3 .logo{display:flex;flex-direction:column;align-items:center;gap:8px}
+.opt3 .logo-text{font-size:28px;font-weight:700}
+.opt3 .logo-text .a{color:#5B2A86}
+.opt3 .logo-text .e{color:#4A7C59}
+.opt3 .slogan{font-size:11px;color:#5A6470}
+</style>
+</head>
+<body>
+<h1>Fondos de login — 3 opciones</h1>
+
+<!-- Opción 1 -->
+<div class="preview opt1">
+  <div class="label">Opción 1 — Degradado + franja morada</div>
+  <div class="logo">
+    <svg viewBox="0 0 200 60" width="180" height="54">
+      <rect x="8" y="12" width="5" height="5" rx="1" fill="#4A7C59"/>
+      <rect x="15" y="10" width="5" height="5" rx="1" fill="#4A7C59"/>
+      <rect x="22" y="12" width="5" height="5" rx="1" fill="#4A7C59"/>
+      <rect x="6" y="22" width="6" height="6" rx="1" fill="#5B2A86"/>
+      <rect x="6" y="30" width="6" height="6" rx="1" fill="#5B2A86"/>
+      <rect x="6" y="38" width="6" height="6" rx="1" fill="#5B2A86"/>
+      <rect x="6" y="46" width="6" height="6" rx="1" fill="#5B2A86"/>
+      <rect x="14" y="22" width="6" height="6" rx="1" fill="#5B2A86"/>
+      <rect x="22" y="30" width="6" height="6" rx="1" fill="#5B2A86"/>
+      <rect x="30" y="38" width="6" height="6" rx="1" fill="#5B2A86"/>
+      <rect x="30" y="22" width="6" height="6" rx="1" fill="#5B2A86"/>
+      <rect x="30" y="30" width="6" height="6" rx="1" fill="#5B2A86"/>
+      <rect x="30" y="46" width="6" height="6" rx="1" fill="#5B2A86"/>
+      <text x="40" y="45" font-family="'Segoe UI',sans-serif" font-size="20" font-weight="700" fill="#5B2A86">ande</text>
+      <text x="88" y="45" font-family="'Segoe UI',sans-serif" font-size="20" font-weight="700" fill="#4A7C59">ERP</text>
+    </svg>
+    <div class="slogan">ERP paraguayo. Cumplimiento real. Soporte local.</div>
+  </div>
+</div>
+
+<!-- Opción 2 -->
+<div class="preview opt2">
+  <div class="label">Opción 2 — Patrón Ñ pixelada (grid 3%)</div>
+  <div class="logo">
+    <svg viewBox="0 0 200 60" width="180" height="54">
+      <rect x="8" y="12" width="5" height="5" rx="1" fill="#4A7C59"/>
+      <rect x="15" y="10" width="5" height="5" rx="1" fill="#4A7C59"/>
+      <rect x="22" y="12" width="5" height="5" rx="1" fill="#4A7C59"/>
+      <rect x="6" y="22" width="6" height="6" rx="1" fill="#5B2A86"/>
+      <rect x="6" y="30" width="6" height="6" rx="1" fill="#5B2A86"/>
+      <rect x="6" y="38" width="6" height="6" rx="1" fill="#5B2A86"/>
+      <rect x="6" y="46" width="6" height="6" rx="1" fill="#5B2A86"/>
+      <rect x="14" y="22" width="6" height="6" rx="1" fill="#5B2A86"/>
+      <rect x="22" y="30" width="6" height="6" rx="1" fill="#5B2A86"/>
+      <rect x="30" y="38" width="6" height="6" rx="1" fill="#5B2A86"/>
+      <rect x="30" y="22" width="6" height="6" rx="1" fill="#5B2A86"/>
+      <rect x="30" y="30" width="6" height="6" rx="1" fill="#5B2A86"/>
+      <rect x="30" y="46" width="6" height="6" rx="1" fill="#5B2A86"/>
+      <text x="40" y="45" font-family="'Segoe UI',sans-serif" font-size="20" font-weight="700" fill="#5B2A86">ande</text>
+      <text x="88" y="45" font-family="'Segoe UI',sans-serif" font-size="20" font-weight="700" fill="#4A7C59">ERP</text>
+    </svg>
+    <div class="slogan">ERP paraguayo. Cumplimiento real. Soporte local.</div>
+  </div>
+</div>
+
+<!-- Opción 3 -->
+<div class="preview opt3">
+  <div class="label">Opción 3 — Liso #F5F7FA</div>
+  <div class="logo">
+    <svg viewBox="0 0 200 60" width="180" height="54">
+      <rect x="8" y="12" width="5" height="5" rx="1" fill="#4A7C59"/>
+      <rect x="15" y="10" width="5" height="5" rx="1" fill="#4A7C59"/>
+      <rect x="22" y="12" width="5" height="5" rx="1" fill="#4A7C59"/>
+      <rect x="6" y="22" width="6" height="6" rx="1" fill="#5B2A86"/>
+      <rect x="6" y="30" width="6" height="6" rx="1" fill="#5B2A86"/>
+      <rect x="6" y="38" width="6" height="6" rx="1" fill="#5B2A86"/>
+      <rect x="6" y="46" width="6" height="6" rx="1" fill="#5B2A86"/>
+      <rect x="14" y="22" width="6" height="6" rx="1" fill="#5B2A86"/>
+      <rect x="22" y="30" width="6" height="6" rx="1" fill="#5B2A86"/>
+      <rect x="30" y="38" width="6" height="6" rx="1" fill="#5B2A86"/>
+      <rect x="30" y="22" width="6" height="6" rx="1" fill="#5B2A86"/>
+      <rect x="30" y="30" width="6" height="6" rx="1" fill="#5B2A86"/>
+      <rect x="30" y="46" width="6" height="6" rx="1" fill="#5B2A86"/>
+      <text x="40" y="45" font-family="'Segoe UI',sans-serif" font-size="20" font-weight="700" fill="#5B2A86">ande</text>
+      <text x="88" y="45" font-family="'Segoe UI',sans-serif" font-size="20" font-weight="700" fill="#4A7C59">ERP</text>
+    </svg>
+    <div class="slogan">ERP paraguayo. Cumplimiento real. Soporte local.</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-primary">
+  <path d="M12 4 L12 44 L36 44 L36 12 L28 4 Z"/>
+  <path d="M28 4 L28 12 L36 12"/>
+  <circle cx="24" cy="30" r="8" class="icon-accent"/>
+  <path d="M24 30 L24 22 A8 8 0 0 1 31.66 27.5 Z" fill="currentColor" class="icon-accent-fill" stroke="none"/>
+  <line x1="24" y1="30" x2="31.66" y2="27.5" class="icon-accent"/>
+  <line x1="24" y1="30" x2="24" y2="22" class="icon-accent"/>
+</svg>

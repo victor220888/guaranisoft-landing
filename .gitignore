@@ -15,3 +15,6 @@ tmp_test*.py
 .openclaw-attachments/
 审美相关skill/
 docs/审美相关skill/
+outputs/
+projects/
+memory/

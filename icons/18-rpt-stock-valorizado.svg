@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-primary">
+  <!-- Stock Valorizado: caja 3D con etiqueta de precio al lado -->
+  <path d="M8 14 L22 6 L36 14 L36 32 L22 40 L8 32 Z"/>
+  <path d="M8 14 L22 22 L36 14"/>
+  <line x1="22" y1="22" x2="22" y2="40"/>
+  <!-- Etiqueta de precio separada -->
+  <rect x="30" y="30" width="14" height="12" rx="2" class="icon-accent"/>
+  <text x="34" y="39" font-family="sans-serif" font-size="9" font-weight="700" fill="currentColor" class="icon-accent-fill" stroke="none">$</text>
+</svg>

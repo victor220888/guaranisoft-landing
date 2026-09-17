@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-primary">
+  <!-- Cambios del Patrimonio Neto: gráfico de crecimiento + edificio -->
+  <rect x="8" y="24" width="10" height="18"/>
+  <rect x="20" y="18" width="10" height="24" class="icon-accent"/>
+  <rect x="32" y="12" width="10" height="30"/>
+  <!-- Flecha de crecimiento -->
+  <path d="M8 18 L24 8 L40 4" class="icon-accent"/>
+  <path d="M40 4 L36 4 L40 8" class="icon-accent"/>
+</svg>
