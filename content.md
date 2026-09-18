@@ -144,7 +144,7 @@ Tu puesta en marcha
 Acompañamiento personalizado 1 a 1 para asegurar tu éxito
 
 ### Paso 1: Nos conocemos
-Agendás una demo, nos contás cómo funciona tu local o empresa y vemos juntos si somos el ajuste perfecto para tus necesidades.
+Agendás una demo, nos contás cómo funciona tu negocio y vemos juntos si somos el ajuste perfecto para tus necesidades.
 
 ### Paso 2: Instalación Segura
 Instalamos el software de forma local en tu computadora. Tus datos son 100% privados, y si se te corta el internet no paras: seguís cargando ventas y movimientos, y el sistema sincroniza con el SIFEN apenas vuelve la conexión.
@@ -270,3 +270,20 @@ Software de gestión para PyMEs paraguayas
 
 **Tooltip del WhatsApp flotante:**
 Escribinos, te respondemos al instante
+
+
+---
+
+## Ñande Tienda (página `/nande-tienda`)
+
+**Eslogan:** Tu negocio, abierto en la web.
+
+**Qué es:** la tienda online que se conecta a Ñande ERP. Catálogo, precios y stock salen del ERP; los pedidos web vuelven a él con stock reservado y venta registrada. Requiere Ñande ERP con el módulo "Tienda online".
+
+**Lo que sí existe hoy:** pedidos por WhatsApp, transferencia o pago al recibir, tienda con logo y color propios en `tunegocio.guaranisof.com`, panel desde el celular, hosting/dominio/respaldo incluidos, sin comisión por venta.
+
+**Todavía en plan (no prometer como listo):** pasarela Bancard, dominio propio del cliente.
+
+**Precio:** Plan Fundador Tienda — Gs. 450.000 puesta en marcha + Gs. 75.000/mes (70% off de por vida sobre Gs. 1.500.000 + 250.000/mes).
+
+**Regla de copy:** no usar "local" como sustantivo ("tu local"); usar "tu negocio", "tu empresa" o "tu comercio".

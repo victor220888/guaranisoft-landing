@@ -1204,6 +1204,8 @@ footer a:focus-visible {
     transition: all var(--duration-fast) var(--ease-out);
     height: 100%;
 }
+a.modulo-mini { display: block; color: inherit; }
+.feature-card-sm p a, .precios-nota a, .accordion-body a { color: var(--morado); font-weight: 500; }
 .modulo-mini:hover {
     border-color: var(--morado);
     box-shadow: var(--shadow-sm);

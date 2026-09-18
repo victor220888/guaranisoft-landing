@@ -84,7 +84,7 @@ Victor Roman — victor.roman.czu@gmail.com — +595 992 504 620
 - `docs/GUIA_DEPLOY_RENDER.md` — Step-by-step Render deploy guide
 - `docs/GUIA_DNS_CLOUDFLARE_RENDER.md` — DNS configuration guide
 - `docs/ARQUITECTURA.md` — Full architecture documentation
-- `docs/landing_content.md` — Content source of truth (features, sections)
+- `content.md` — Content source of truth de la landing del ERP (features, sections); Ñande Tienda se documenta en `/home/victor/nande-tienda/docs/`
 
 ## Git conventions
 - Branch: `main`
