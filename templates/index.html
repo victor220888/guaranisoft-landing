@@ -74,13 +74,15 @@
 
 {% block content %}
 <main>
-<section class="hero" id="top" aria-labelledby="hero-heading">
+<section class="hero hero-split" id="top" aria-labelledby="hero-heading">
     <div class="container">
         <nav class="breadcrumbs" aria-label="Ruta de navegación">
             <a href="/">GuaraníSoft</a>
             <span aria-hidden="true">›</span>
             <span aria-current="page">Ñande ERP</span>
         </nav>
+        <div class="hero-grid">
+        <div class="hero-copy">
         <img src="/static/img/logo-eslogan.svg" alt="Ñande ERP — ERP paraguayo. Cumplimiento real. Soporte local."
              width="360" height="140" class="img-fluid logo-hero">
         <h1 class="tagline" id="hero-heading">Controlá tu negocio. Dormí tranquilo con la DNIT.</h1>
@@ -93,12 +95,13 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
             1 mes de prueba sin costo alguno, sin compromiso
         </div>
-        <div class="d-flex gap-3 justify-content-center flex-wrap">
+        <div class="hero-acciones">
             <a href="#contacto" class="btn btn-morado">Solicitar demo</a>
             <a href="https://wa.me/595992504620" target="_blank" rel="noopener" class="btn btn-verde">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="margin-right: 0.5rem; vertical-align: -3px;"><use href="#icon-whatsapp"/></svg>
                 Hablar por WhatsApp
             </a>
+        </div>
         </div>
         <div class="hero-screenshot fade-in">
             <div class="browser-frame">
@@ -112,13 +115,14 @@
                      alt="Dashboard de Ñande ERP mostrando el panel de control con indicadores de ventas, stock y caja">
             </div>
         </div>
+        </div>
     </div>
 </section>
 
 <!-- ═══ Pilares — Por qué Ñande ERP ════════════════════════════════════ -->
 <section class="pilares section-compact" id="pilares" aria-labelledby="pilares-heading">
     <div class="container">
-        <div class="section-title fade-in">
+        <div class="section-title fade-in" data-antetitulo="Por qué Ñande">
             <h2 id="pilares-heading">Por qué las empresas paraguayas eligen Ñande ERP</h2>
             <p>Cuatro razones que hacen la diferencia frente a cualquier otro sistema</p>
         </div>
@@ -182,7 +186,7 @@
 <!-- ═══ ¿Qué problemas resuelve? ═══════════════════════════════════════ -->
 <section class="problemas" id="problemas" aria-labelledby="problemas-heading">
     <div class="container">
-        <div class="section-title fade-in">
+        <div class="section-title fade-in" data-antetitulo="Beneficios">
             <h2 id="problemas-heading">¿Sabés realmente cómo está tu negocio?</h2>
             <p>Las preguntas que más le duelen a un comerciante — y cómo las resolvemos</p>
         </div>
@@ -249,22 +253,24 @@
 <!-- ═══ Módulos ════════════════════════════════════════════════════════ -->
 <section id="modulos" aria-labelledby="modulos-heading">
     <div class="container">
-        <div class="section-title fade-in">
+        <div class="section-title fade-in" data-antetitulo="Qué incluye">
             <h2 id="modulos-heading">Módulos clave para tu empresa</h2>
             <p>Empezá por ordenar tu mostrador y tu depósito, nosotros nos encargamos del resto.</p>
         </div>
 
         <div class="row g-4 stagger-children">
-            <div class="col-md-6 col-lg-3 fade-in">
-                <div class="feature-card">
+            <div class="col-12 fade-in">
+                <div class="feature-card feature-card--destacada">
                     <div class="feature-icon">
                         <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="8" width="36" height="24" rx="3"/><line x1="6" y1="16" x2="42" y2="16"/><rect x="10" y="20" width="10" height="8" rx="1" fill="currentColor" stroke="none" opacity="0.15"/><rect x="10" y="20" width="10" height="8" rx="1"/><circle cx="34" cy="24" r="3" style="stroke:#4A7C59"/><line x1="14" y1="36" x2="34" y2="36"/><line x1="24" y1="32" x2="24" y2="40"/><path d="M18 44 L30 44" stroke-width="2.5" style="stroke:#4A7C59"/></svg>
                     </div>
+                    <div>
                     <h3>Punto de Venta y Facturación</h3>
                     <p>Velocidad extrema en mostrador. Carga rápida para tus operadores, conexión directa con inventario y múltiples métodos de cobro.</p>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3 fade-in">
+            <div class="col-md-4 fade-in">
                 <div class="feature-card">
                     <div class="feature-icon">
                         <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 16 L24 8 L40 16 L40 38 L24 46 L8 38 Z"/><path d="M8 16 L24 24 L40 16"/><line x1="24" y1="24" x2="24" y2="46"/><rect x="15" y="20" width="6" height="6" rx="1" style="stroke:#4A7C59"/><rect x="27" y="20" width="6" height="6" rx="1" style="stroke:#4A7C59"/><rect x="21" y="30" width="6" height="6" rx="1" style="stroke:#4A7C59"/></svg>
@@ -273,7 +279,7 @@
                     <p>Saber qué tenés es clave. Kardex por producto, ajustes de stock, traslados entre depósitos y alertas de stock bajo.</p>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3 fade-in">
+            <div class="col-md-4 fade-in">
                 <div class="feature-card">
                     <div class="feature-icon">
                         <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="16" width="36" height="20" rx="3"/><circle cx="24" cy="26" r="5" style="stroke:#4A7C59"/><circle cx="24" cy="26" r="2" fill="#4A7C59" stroke="none"/><circle cx="12" cy="22" r="1.5" fill="currentColor" stroke="none"/><circle cx="36" cy="30" r="1.5" fill="currentColor" stroke="none"/><line x1="12" y1="30" x2="16" y2="30"/><line x1="32" y1="22" x2="36" y2="22"/></svg>
@@ -282,7 +288,7 @@
                     <p>Terminá con los faltantes. Panel de control detallado, aperturas, movimientos, verificación, arqueo ciego y cierre del día.</p>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3 fade-in">
+            <div class="col-md-4 fade-in">
                 <div class="feature-card">
                     <div class="feature-icon">
                         <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8 L8 40 L24 42 L40 40 L40 8 L24 10 Z"/><line x1="24" y1="10" x2="24" y2="42"/><line x1="12" y1="16" x2="20" y2="16" style="stroke:#4A7C59"/><line x1="12" y1="21" x2="20" y2="21" style="stroke:#4A7C59"/><line x1="12" y1="26" x2="20" y2="26" style="stroke:#4A7C59"/><line x1="12" y1="31" x2="20" y2="31" style="stroke:#4A7C59"/><line x1="28" y1="16" x2="36" y2="16" style="stroke:#4A7C59"/><line x1="28" y1="21" x2="36" y2="21" style="stroke:#4A7C59"/><line x1="28" y1="26" x2="36" y2="26" style="stroke:#4A7C59"/><line x1="28" y1="31" x2="36" y2="31" style="stroke:#4A7C59"/></svg>
@@ -295,54 +301,29 @@
 
         <!-- Secundarios -->
         <div class="modulos-extra fade-in">
-            <h3 class="modulos-extra-title">Y además</h3>
-            <div class="row g-3 stagger-children justify-content-center">
-                <div class="col-md-6 col-lg-4 fade-in">
-                    <div class="feature-card-sm">
-                        <div class="feature-icon-sm">
-                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="24" y1="6" x2="24" y2="42"/><line x1="14" y1="42" x2="34" y2="42"/><line x1="8" y1="14" x2="40" y2="14"/><path d="M3 22 L13 22 L11 27 L5 27 Z" style="stroke:#4A7C59"/><line x1="40" y1="14" x2="40" y2="22"/><path d="M35 22 L45 22 L43 27 L37 27 Z" style="stroke:#4A7C59"/><circle cx="24" cy="10" r="3"/></svg>
-                        </div>
-                        <h3>Tributario y Fiscal</h3>
-                        <p>IRE, IDU, IRP (Ley 6380/2019), retenciones, Marangatú. Tus números claros para la DNIT.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 fade-in">
-                    <div class="feature-card-sm">
-                        <div class="feature-icon-sm">
-                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6 L12 42 L24 38 L36 42 L36 6 L24 10 L12 6 Z"/><line x1="17" y1="18" x2="31" y2="18"/><line x1="17" y1="24" x2="31" y2="24"/></svg>
-                        </div>
-                        <h3>Compras y Cuentas por Pagar</h3>
-                        <p>Registrá compras, controlá vencimientos y mantené un historial limpio con proveedores.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 fade-in">
-                    <div class="feature-card-sm">
-                        <div class="feature-icon-sm">
-                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="36" height="36" rx="8"/><line x1="13" y1="30" x2="13" y2="24" stroke-width="3"/><line x1="20" y1="30" x2="20" y2="18" stroke-width="3"/><line x1="27" y1="30" x2="27" y2="21" style="stroke:#4A7C59" stroke-width="3"/><line x1="34" y1="30" x2="34" y2="14" style="stroke:#4A7C59" stroke-width="3"/><line x1="10" y1="34" x2="38" y2="34"/></svg>
-                        </div>
-                        <h3>Dashboard e Indicadores</h3>
-                        <p>Tableros visuales: ventas del día, top productos, flujo de caja. Decisiones con datos reales.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 fade-in">
-                    <div class="feature-card-sm">
-                        <div class="feature-icon-sm">
-                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="4" width="24" height="40" rx="4"/><rect x="16" y="8" width="16" height="8" rx="2" style="stroke:#4A7C59"/><circle cx="18" cy="22" r="1.5" fill="currentColor" stroke="none"/><circle cx="24" cy="22" r="1.5" fill="currentColor" stroke="none"/><circle cx="30" cy="22" r="1.5" fill="currentColor" style="fill:#4A7C59" stroke="none"/></svg>
-                        </div>
-                        <h3>Préstamos Internos</h3>
-                        <p>Amortización, intereses, cuotas. Ideal si ofrecés financiamiento a clientes o empleados.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 fade-in">
-                    <div class="feature-card-sm">
-                        <div class="feature-icon-sm">
-                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 16 L40 16 L37 42 L11 42 Z"/><path d="M18 16 V12 a6 6 0 0 1 12 0 V16" style="stroke:#4A7C59"/><line x1="18" y1="26" x2="30" y2="26"/></svg>
-                        </div>
-                        <h3>Tienda online</h3>
-                        <p>Módulo opcional: publicás tu catálogo en <a href="/nande-tienda">Ñande Tienda</a> y los pedidos web vuelven al ERP con stock reservado y venta registrada.</p>
-                    </div>
-                </div>
-            </div>
+            <p class="modulos-extra-title">Y además</p>
+            <ul class="modulos-extra-lista fade-in">
+                <li>
+                    <span class="feature-icon-sm"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="24" y1="6" x2="24" y2="42"/><line x1="14" y1="42" x2="34" y2="42"/><line x1="8" y1="14" x2="40" y2="14"/><path d="M3 22 L13 22 L11 27 L5 27 Z" style="stroke:#4A7C59"/><line x1="40" y1="14" x2="40" y2="22"/><path d="M35 22 L45 22 L43 27 L37 27 Z" style="stroke:#4A7C59"/><circle cx="24" cy="10" r="3"/></svg></span>
+                    <span><strong>Tributario y Fiscal</strong>IRE, IDU, IRP (Ley 6380/2019), retenciones, Marangatú. Tus números claros para la DNIT.</span>
+                </li>
+                <li>
+                    <span class="feature-icon-sm"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6 L12 42 L24 38 L36 42 L36 6 L24 10 L12 6 Z"/><line x1="17" y1="18" x2="31" y2="18"/><line x1="17" y1="24" x2="31" y2="24"/></svg></span>
+                    <span><strong>Compras y Cuentas por Pagar</strong>Registrá compras, controlá vencimientos y mantené un historial limpio con proveedores.</span>
+                </li>
+                <li>
+                    <span class="feature-icon-sm"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="36" height="36" rx="8"/><line x1="13" y1="30" x2="13" y2="24" stroke-width="3"/><line x1="20" y1="30" x2="20" y2="18" stroke-width="3"/><line x1="27" y1="30" x2="27" y2="21" style="stroke:#4A7C59" stroke-width="3"/><line x1="34" y1="30" x2="34" y2="14" style="stroke:#4A7C59" stroke-width="3"/><line x1="10" y1="34" x2="38" y2="34"/></svg></span>
+                    <span><strong>Dashboard e Indicadores</strong>Tableros visuales: ventas del día, top productos, flujo de caja. Decisiones con datos reales.</span>
+                </li>
+                <li>
+                    <span class="feature-icon-sm"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="4" width="24" height="40" rx="4"/><rect x="16" y="8" width="16" height="8" rx="2" style="stroke:#4A7C59"/><circle cx="18" cy="22" r="1.5" fill="currentColor" stroke="none"/><circle cx="24" cy="22" r="1.5" fill="currentColor" stroke="none"/><circle cx="30" cy="22" r="1.5" fill="currentColor" style="fill:#4A7C59" stroke="none"/></svg></span>
+                    <span><strong>Préstamos Internos</strong>Amortización, intereses, cuotas. Ideal si ofrecés financiamiento a clientes o empleados.</span>
+                </li>
+                <li>
+                    <span class="feature-icon-sm"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 16 L40 16 L37 42 L11 42 Z"/><path d="M18 16 V12 a6 6 0 0 1 12 0 V16" style="stroke:#4A7C59"/><line x1="18" y1="26" x2="30" y2="26"/></svg></span>
+                    <span><strong>Tienda online</strong>Módulo opcional: publicás tu catálogo en <a href="/nande-tienda">Ñande Tienda</a> y los pedidos web vuelven al ERP con stock reservado y venta registrada.</span>
+                </li>
+            </ul>
             <div class="modulos-extra-note">
                 <p>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 L2 7 L12 12 L22 7 Z"/><path d="M2 17 L12 22 L22 17"/><path d="M2 12 L12 17 L22 12"/></svg>
@@ -364,7 +345,7 @@
 <!-- ===== Casos de Uso ===== -->
 <section class="casos-uso section-compact" id="casos-uso" aria-labelledby="casos-uso-heading">
     <div class="container">
-        <div class="section-title fade-in">
+        <div class="section-title fade-in" data-antetitulo="Rubros">
             <h2 id="casos-uso-heading">Ñande ERP se adapta a tu rubro</h2>
             <p>Tres ejemplos reales de cómo resolvemos los problemas del día a día</p>
         </div>
@@ -403,7 +384,7 @@
 <!-- ===== Antes vs Después ===== -->
 <section class="antes-despues" id="antes-despues" aria-labelledby="antes-despues-heading">
     <div class="container">
-        <div class="section-title fade-in">
+        <div class="section-title fade-in" data-antetitulo="Antes y después">
             <h2 id="antes-despues-heading">El antes y el después de tener Ñande ERP</h2>
             <p>Lo que cambia cuando tu negocio tiene un sistema que trabaja para vos</p>
         </div>
@@ -454,7 +435,7 @@
 <!-- ═══ Cómo funciona ═══════════════════════════════════════════════════ -->
 <section class="como-funciona section-compact" id="como-funciona" aria-labelledby="como-funciona-heading">
     <div class="container">
-        <div class="section-title fade-in">
+        <div class="section-title fade-in" data-antetitulo="Cómo funciona">
             <h2 id="como-funciona-heading">Tu puesta en marcha</h2>
             <p>Acompañamiento personalizado 1 a 1 para asegurar tu éxito</p>
         </div>
@@ -467,7 +448,7 @@
                 </div>
             </div>
             <div class="col-md-4 fade-in">
-                <div class="paso">
+                <div class="paso paso--realce">
                     <span class="num">2</span>
                     <h3>Instalación Segura</h3>
                     <p>Instalamos el software de forma local en tu computadora. Tus datos son 100% privados, con backup automático y opción de respaldo en la nube. Si se corta internet no parás: seguís cargando ventas y el sistema sincroniza con SIFEN al volver.</p>
@@ -543,7 +524,7 @@
         <div class="prueba-social-card fade-in">
             <div class="quien-detras">
                 <div class="quien-avatar">
-                    <img src="/static/img/victor-roman.jpg" alt="Victor Román — GuaraníSoft" width="72" height="72" style="border-radius:50%;object-fit:cover;"
+                    <img src="/static/img/victor-roman.jpg" alt="Victor Román — GuaraníSoft" width="880" height="660" loading="lazy"
                          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                     <span class="avatar-fallback" aria-hidden="true">VR</span>
                 </div>
@@ -571,7 +552,8 @@
 <!-- ═══ Precios ═════════════════════════════════════════════════════════ -->
 <section id="precios" aria-labelledby="precios-heading">
     <div class="container">
-        <div class="section-title fade-in">
+        <div class="precio-grilla">
+        <div class="section-title fade-in" data-antetitulo="Precios">
             <h2 id="precios-heading">Plan Fundador</h2>
             <p>Para las empresas fundadoras que apuestan por Ñande ERP. Beneficio exclusivo y permanente.</p>
         </div>
@@ -625,6 +607,7 @@
                 </a>
             </div>
         </div>
+        </div>
 
         <div class="precios-nota fade-in">
             <p>
@@ -641,7 +624,7 @@
 <!-- ═══ Preguntas frecuentes ════════════════════════════════════════════ -->
 <section class="faq section-compact" id="faq" aria-labelledby="faq-heading">
     <div class="container">
-        <div class="section-title fade-in">
+        <div class="section-title fade-in" data-antetitulo="Ayuda">
             <h2 id="faq-heading">Preguntas frecuentes</h2>
             <p>Las dudas que más nos consultan, respondidas al grano</p>
         </div>
@@ -737,7 +720,7 @@
 <!-- ═══ Contacto ════════════════════════════════════════════════════════ -->
 <section class="contacto" id="contacto" aria-labelledby="contacto-heading">
     <div class="container">
-        <div class="section-title fade-in">
+        <div class="section-title fade-in" data-antetitulo="Hablemos">
             <h2 id="contacto-heading">Hablemos de tu negocio</h2>
             <p>Dejanos tus datos para coordinar una demostración personalizada</p>
         </div>
