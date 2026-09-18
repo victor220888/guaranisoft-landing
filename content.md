@@ -284,6 +284,8 @@ Escribinos, te respondemos al instante
 
 **Todavía en plan (no prometer como listo):** pasarela Bancard, dominio propio del cliente.
 
-**Precio:** Plan Fundador Tienda — Gs. 450.000 puesta en marcha + Gs. 75.000/mes (70% off de por vida sobre Gs. 1.500.000 + 250.000/mes).
+**Precio:** Plan Fundador Tienda en la nube — Gs. 450.000 puesta en marcha (70% off de 1.500.000) + Gs. 150.000/mes (40% off de 250.000, de por vida; cubre servidor, dominio, respaldo). Opción en la PC del cliente — Gs. 750.000 pago único, sin mensualidad (lista 1.500.000); requiere PC encendida y dominio en Cloudflare para el túnel.
+
+**Regla de copy Tienda:** el público no conoce hosting/túnel/DNS: hablar de "servidor", "dirección web", "la publicamos en internet", "computadora encendida". El ERP nunca necesita abrir nada: siempre se conecta él hacia la tienda.
 
 **Regla de copy:** no usar "local" como sustantivo ("tu local"); usar "tu negocio", "tu empresa" o "tu comercio".

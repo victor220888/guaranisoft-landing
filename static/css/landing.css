@@ -1501,3 +1501,6 @@ a.modulo-mini { display: block; color: inherit; }
 }
 .precio-desde .desde-monto small { font-size: 0.45em; font-weight: 600; color: var(--gris-medio); }
 .precios-fundador .precio-desde + .precio-desde { margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed var(--borde); }
+.precio-opcion-local { background: var(--lienzo-alt); border-radius: 12px; padding: 1rem 1.1rem !important; margin-top: 1.25rem !important; border-top: 0 !important; }
+.precio-opcion-local .desde-label { background: var(--blanco); }
+.precio-opcion-local .desde-monto { font-size: var(--text-2xl); }
